@@ -5,6 +5,13 @@ export const getProducts = (categoryId) => (
     })
 )
 
+export const getProduct = (categoryId, productId) => (
+    $.ajax({
+        url: `/api/categories/${categoryId}/products/${productId}`,
+        method: "GET"
+    })
+) 
+
 export const getCategory = (categoryId, productId) => (
     $.ajax({
         url: `/api/categories/${categoryId}/products/${productId}`,

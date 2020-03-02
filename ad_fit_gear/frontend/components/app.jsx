@@ -6,7 +6,7 @@ import LoginContainer from './containers/login_container'
 import Header from './header';
 import CategoryIndexContainer from './containers/categories_container';
 import CategoryProductIndexContainer from './containers/products_container';
-import AllProducts from './all_products';
+import ProductShowContainer from './containers/product_show_container';
 
 const App = () => (
     <div>
@@ -15,8 +15,8 @@ const App = () => (
             <Route path="/login" component={LoginContainer} />
             <Route path="/signup" component={SignupContainer} />
             <Route exact path="/categories" component={CategoryIndexContainer} />
-            <Route path="/allproducts" component={AllProducts} />
-            <Route path="/categories/:categoryId/products" component={CategoryProductIndexContainer} />
+            <Route exact path="/categories/:categoryId/products" component={CategoryProductIndexContainer} />
+            <Route exact path="/categories/:categoryId/products/:productId" component={ProductShowContainer} />
             <Route path="/" component={HomeContainer} />
         </Switch>
     </div>

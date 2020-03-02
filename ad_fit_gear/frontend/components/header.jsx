@@ -31,9 +31,9 @@ class Header extends React.Component {
                     </div>
                 </div>
                 <nav className="nav-bar">
-                    <div class="dropdown">
+                    <div className="dropdown">
                         <Link to="/categories" class="dropbtn">SHOP ⌄</Link>
-                        <div class="droplinks">
+                        <div className="droplinks">
                             <a><Link id="link" to="/categories/1/products">Tanks</Link></a>
                             <a><Link id="link" to="/categories/2/products">Shirts</Link></a>
                             <a><Link id="link" to="/categories/3/products">Hoodies</Link></a>

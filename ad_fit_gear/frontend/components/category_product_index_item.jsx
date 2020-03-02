@@ -3,11 +3,6 @@ import React from 'react'
 class CategoryProductIndexItem extends React.Component {
     constructor(props) {
         super(props)
-        this.handleClick = this.handleClick.bind(this)
-    }
-
-    handleClick() {
-        this.props.history.push('/login')
     }
 
     render() {
@@ -15,12 +10,12 @@ class CategoryProductIndexItem extends React.Component {
         const { name, price, description } = product
         return (
             <div id="product-item" className="product-div">
-                <div>
+                <div id="img">
                     
                 </div>
-                <div>
-                    <p>{name}</p>
-                    <p>{price}</p>
+                <div class="listing-description">
+                    <p>{name.toUpperCase()}</p>
+                    <p>${price}</p>
                 </div>
             </div>
         )
