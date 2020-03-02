@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="Icon Icon--account" role="presentation" viewBox="0 0 20 20">
+      <g transform="translate(1 1)" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <path d="M0 18c0-4.5188182 3.663-8.18181818 8.18181818-8.18181818h1.63636364C14.337 9.81818182 18 13.4811818 18 18"/>
+        <circle cx="9" cy="4.90909091" r="4.90909091"/>
+      </g>
+    </svg>
