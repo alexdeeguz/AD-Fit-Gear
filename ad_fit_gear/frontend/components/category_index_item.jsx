@@ -16,7 +16,6 @@ class CategoryIndexItem extends React.Component {
             <div  id="category-item" className="category-div">
                 <div className="view-product-button-container">
                     {this.props.category.name === "gear" ? <p>LIFTING GEAR</p> : <p>{this.props.category.name.toUpperCase()}</p> }
-                    {this.props.category.name === "all" ? <p>ALL PRODUCTS</p> : "" }
                     <b><button id="view-product-button" onClick={this.handleClick}>VIEW PRODUCTS</button></b>
                 </div>
             </div>

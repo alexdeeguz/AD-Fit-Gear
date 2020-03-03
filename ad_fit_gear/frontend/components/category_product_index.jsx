@@ -14,6 +14,13 @@ class CategoryProductIndex extends React.Component {
         this.props.getProducts(categoryId)
     }
 
+    componentDidUpdate(prevProps) {
+        // const categoryId = this.props.match.params.categoryId
+        if (prevProps.match.params.categoryId != this.props.match.params.categoryId) {
+            this.props.getProducts(this.props.match.params.categoryId)
+        }
+    }
+
     render() {
         const { products } = this.props
 

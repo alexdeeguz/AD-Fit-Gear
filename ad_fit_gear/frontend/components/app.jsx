@@ -14,9 +14,9 @@ const App = () => (
         <Switch>
             <Route path="/login" component={LoginContainer} />
             <Route path="/signup" component={SignupContainer} />
-            <Route exact path="/categories" component={CategoryIndexContainer} />
-            <Route exact path="/categories/:categoryId/products" component={CategoryProductIndexContainer} />
             <Route exact path="/categories/:categoryId/products/:productId" component={ProductShowContainer} />
+            <Route exact path="/categories/:categoryId/products" component={CategoryProductIndexContainer} />
+            <Route exact path="/categories" component={CategoryIndexContainer} />
             <Route path="/" component={HomeContainer} />
         </Switch>
     </div>

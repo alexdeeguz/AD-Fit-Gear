@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import CategoryProductIndex from '../category_product_index'
-import { getProducts } from '../../actions/product_actions'
+import { getProducts, getProduct } from '../../actions/product_actions'
 import { getCategory } from '../../actions/category_actions' 
 
 const mSTP = (state, ownProps) => ({
@@ -9,7 +9,8 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
     getProducts: (categoryId) => dispatch(getProducts(categoryId)),
-    getCategory: id => dispatch(getCategory(id))
+    getCategory: id => dispatch(getCategory(id)),
+    getProduct: (categoryId, productId) => dispatch(getProduct(categoryId, productId))
 })
 
 

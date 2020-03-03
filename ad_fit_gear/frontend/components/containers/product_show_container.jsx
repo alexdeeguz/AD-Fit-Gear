@@ -4,7 +4,7 @@ import { getProduct } from '../../actions/product_actions'
 import { getCategory } from '../../actions/category_actions'
 
 const mSTP = (state, ownProps) => ({
-    product: Object.values(state.entities.products)
+    product: state.entities.products[ownProps.match.params.productId]
 })
 
 const mDTP = dispatch => ({

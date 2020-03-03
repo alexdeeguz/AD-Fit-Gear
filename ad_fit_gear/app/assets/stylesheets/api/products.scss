@@ -1,3 +1,100 @@
 // Place all the styles related to the api/products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product-image {
+    height: 500px;
+    width: 300px;
+    border: 1px solid red;
+}
+
+.product-show-container {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #efefef;
+}
+
+.product-form {
+
+    // border: 1px solid red;
+    width: 25%;
+    font-family: 'Montserrat';
+    letter-spacing: 3.5px;
+    margin-top: 5%;
+    text-align: left;
+}
+
+.product-form > h4 {
+    color: #6a6a6a;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+    width: 30px;
+    outline: none;
+    border-top: 1px solid #ada7a7;
+    border-bottom: 1px solid #ada7a7;
+    border-left: 1px solid  #efefef;
+    border-right: 1px solid  #efefef;
+    background-color:  #efefef;
+    font-size: 15pt;
+}
+
+
+.increment-container {
+    display: flex;
+    // border: 1px solid red;
+    // margin-top: 50px;
+}
+
+.increment-container > div {
+    padding: 7px 15px;
+    font-size: 15pt;
+    border: 1px solid #ada7a7;
+}
+
+.increment {
+    cursor: pointer;
+}
+
+#minus {
+    border-top: 1px solid #ada7a7;
+    border-left: 1px solid #ada7a7;
+    border-bottom: 1px solid #ada7a7;
+}
+
+.sizes {
+    display: flex;
+}
+
+.sizes > li {
+    list-style: none;
+    text-align: center;
+    margin-right: 5%;
+    padding: 5px;
+    height: 15%;
+    width: 15%;
+    cursor: pointer;
+}
+
+.sizes-container > p, .quantity-container > p {
+    // border: 1px solid red;
+    letter-spacing: normal;
+    font-size: 10pt;
+    // margin-top: 50px;
+}
+
+.selected {
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+.non-selected {
+    border: 1px solid rgb(196, 194, 194)
+}

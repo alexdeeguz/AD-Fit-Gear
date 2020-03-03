@@ -32,14 +32,14 @@ class Header extends React.Component {
                 </div>
                 <nav className="nav-bar">
                     <div className="dropdown">
-                        <Link to="/categories" class="dropbtn">SHOP ⌄</Link>
+                        <Link to="/categories" className="dropbtn">SHOP ⌄</Link>
                         <div className="droplinks">
-                            <a><Link id="link" to="/categories/1/products">Tanks</Link></a>
-                            <a><Link id="link" to="/categories/2/products">Shirts</Link></a>
-                            <a><Link id="link" to="/categories/3/products">Hoodies</Link></a>
-                            <a><Link id="link" to="/categories/4/products">Joggers</Link></a>
-                            <a><Link id="link" to="/categories/5/products">Lifting Gear</Link></a>
-                            <a><Link id="link" to="/categories/6/products">All Products</Link></a>
+                            <Link id="link" to="/categories/1/products">Tanks</Link>
+                            <Link id="link" to="/categories/2/products">Shirts</Link>
+                            <Link id="link" to="/categories/3/products">Hoodies</Link>
+                            <Link id="link" to="/categories/4/products">Joggers</Link>
+                            <Link id="link" to="/categories/6/products">Hats</Link>
+                            <Link id="link" to="/categories/5/products">Lifting Gear</Link>
                         </div>
                     </div>
                     <a href="">TRAINING</a>
