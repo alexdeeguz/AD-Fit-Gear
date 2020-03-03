@@ -28,7 +28,7 @@ class ProductShow extends React.Component {
     }
 
     incrementQuantity() {
-        const num = this.state.quantity += 1
+        const num = this.state.quantity + 1
         this.setState({
             quantity: num
         })
@@ -73,11 +73,11 @@ class ProductShow extends React.Component {
                     <div className="sizes-container">
                         <p>Size:</p>
                         <div className="sizes"> 
-                            <li id="xs" className={this.state.selected === "XS" ? "selected" : "non-selected"} onClick={this.updateSize}>XS</li>
-                            <li id="s" className={this.state.selected === "S" ? "selected" : "non-selected"}onClick={this.updateSize}>S</li>
-                            <li id="m" className={this.state.selected === "M" ? "selected" : "non-selected"}onClick={this.updateSize}>M</li>
-                            <li id="l" className={this.state.selected === "L" ? "selected" : "non-selected"}onClick={this.updateSize}>L</li>
-                            <li id="xl" className={this.state.selected === "XL" ? "selected" : "non-selected"}onClick={this.updateSize}>XL</li>
+                            <li  className={this.state.selected === "XS" ? "selected" : "non-selected"} onClick={this.updateSize}>XS</li>
+                            <li  className={this.state.selected === "S" ? "selected" : "non-selected"}onClick={this.updateSize}>S</li>
+                            <li  className={this.state.selected === "M" ? "selected" : "non-selected"}onClick={this.updateSize}>M</li>
+                            <li  className={this.state.selected === "L" ? "selected" : "non-selected"}onClick={this.updateSize}>L</li>
+                            <li  className={this.state.selected === "XL" ? "selected" : "non-selected"}onClick={this.updateSize}>XL</li>
                         </div> 
                     </div>: ""}
                 
