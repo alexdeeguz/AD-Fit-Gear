@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import CartItemsContainer from './containers/cart_items_container'
 
 class Header extends React.Component {
 
@@ -9,7 +9,24 @@ class Header extends React.Component {
 
         this.go_to_login = this.go_to_login.bind(this)
         this.redirect_home = this.redirect_home.bind(this)
+        this.closeModal = this.closeModal.bind(this)
+        this.openModal = this.openModal.bind(this)
     }
+
+    closeModal(e) {
+        // console.log(e.currentTarget)
+        // e.currentTarget.className = "modal-hidden"
+        const modal = $(".modal-container")
+        modal.removeClass("show")
+        modal.addClass("hidden")
+    }
+
+    openModal(e) {
+        const modal = $(".modal-container") 
+        modal.removeClass("hidden")
+        modal.addClass("show")
+    }
+
     go_to_login(e) {
         this.props.history.push('/login')
     }
@@ -27,7 +44,16 @@ class Header extends React.Component {
                     <div className="icons">
                         <div id="user-icon" onClick={this.go_to_login}></div>
                         <div id="search-icon"></div>
-                        <div id="cart-icon"></div>
+                        <div id="cart-icon" onClick={this.openModal}></div>
+                        <div className="modal-container hidden" onClick={this.closeModal}>
+                            <div id="myModal" className="modal">
+                            </div>
+                            <div className="modal-content">
+                                <span onClick={this.closeModal} class="close">&times;</span>
+                                <h2>CART</h2><hr/>
+                                <CartItemsContainer {...this.props}/>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <nav className="nav-bar">

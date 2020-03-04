@@ -5,7 +5,7 @@ import configureStore from './store/store'
 import { log_in, log_out } from './actions/session_actions'
 import { getCategories, getCategory } from './actions/category_actions'
 import { getProducts, getProduct } from './actions/product_actions'
-
+import { getCartItems } from './actions/cart_item_actions'
 document.addEventListener("DOMContentLoaded", () => {
     let store;
     if (window.currentUser) {
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.getCategory = getCategory
     window.getProduct = getProduct
     window.getProducts = getProducts
+    window.getCartItems = getCartItems
     window.login = log_in
     window.logout = log_out
     ReactDOM.render(<Root store={store}/>, root)

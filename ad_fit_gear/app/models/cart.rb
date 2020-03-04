@@ -8,4 +8,16 @@
 #  updated_at :datetime         not null
 #
 class Cart < ApplicationRecord
+
+    has_many :cart_items,
+        foreign_key: :cart_id,
+        class_name: :CartItem
+
+    belongs_to :user,
+        foreign_key: :user_id,
+        class_name: :User
+
+    has_many :products,
+        through: :cart_items,
+        source: :product
 end

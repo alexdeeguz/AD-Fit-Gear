@@ -7,9 +7,9 @@ class Api::ProductsController < ApplicationController
     end
 
     def show
-        category_id = params[:category_id]
+        # category_id = params[:category_id]
         id = params[:id]
-        @product = Product.where(id: id).where(category_id: category_id)
+        @product = Product.where(id: id)
         render :show
     end
 end

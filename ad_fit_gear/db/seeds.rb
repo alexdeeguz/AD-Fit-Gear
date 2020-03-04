@@ -8,6 +8,10 @@
 
 User.destroy_all
 
+User.create(username: "alex", password: "password")
+User.create(username: "test", password: "password")
+
+
 Category.destroy_all
 
 Category.create(name: 'tanks')
@@ -74,4 +78,16 @@ Product.create(name: "big gear", price: 29.99, description: "aesthetic af", cate
 Product.create(name: "small gear", price: 29.99, description: "aesthetic af", category_id: 6)
 Product.create(name: "whatever gear", price: 29.99, description: "aesthetic af", category_id: 6)
 Product.create(name: "yee gear", price: 29.99, description: "aesthetic af", category_id: 6)
+
+Cart.destroy_all
+
+Cart.create(user_id: 1)
+Cart.create(user_id: 2)
+
+CartItem.destroy_all
+
+CartItem.create(product_id: 1, category_id: 1, cart_id: 1, quantity: 1)
+CartItem.create(product_id: 2, category_id: 1, cart_id: 1, quantity: 1)
+CartItem.create(product_id: 3, category_id: 1, cart_id: 1, quantity: 1)
+
 

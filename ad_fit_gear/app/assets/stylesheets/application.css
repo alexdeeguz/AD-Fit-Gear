@@ -16,8 +16,10 @@
 
 .header {
   height: 150px;
-  margin-left: 2%;
-  margin-right: 2%;
+  width: 100%;
+  /* margin-left: 2%; */
+  /* margin-right: 2%; */
+  /* padding: 50px; */
   /* border: 1px solid red; */
 }
 
@@ -96,6 +98,7 @@
 #cart-icon {
   width: 20px;
   height: 20px;
+  /* border: 1px solid red */
   background-image: url("./cart.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -219,10 +222,13 @@ a:visited {
 
 .categories, .products {
   /* padding-top: 50px; */
+  border: 1px solid #efefef;
+  /* width: 100%; */
   background-color: #efefef;
   font-family: 'Montserrat';
   text-align: center;
   letter-spacing: 4px;
+  /* margin-top: 0px; */
 }
 
 .products {
@@ -253,29 +259,6 @@ a:visited {
   height: 1200px;
 }
 
-.category-div {
-  /* border: 1px solid red; */
-  margin-top: 1%;
-  width: 30%;
-  height: 50%;
-  display: flex;
-  align-items: flex-end;
-  background-color: #efefef;
-}
-
-.product-div {
-  width: 20%;
-  height: 40%;
-  float: left;
-  border: 1px solid #efefef;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-top: 50px;
-  background-color: #efefef;
-}
-
-
 #tanks {
   /* background-color: red; */
   background-image: url("./naveen.JPG"); 
@@ -291,11 +274,15 @@ a:visited {
   background-repeat: no-repeat;
 }
 
-/* #picture {
-  min-height: 300px;
+#splash-pic {
+  min-height: 600px;
   width: 100%;
-  border: 1px solid red;
-} */
+  /* border: 1px solid red; */
+  /* margin-bottom: 0px; */
+  background-image: url("./splash-pic.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 #category-name {
   margin-top: 300px;

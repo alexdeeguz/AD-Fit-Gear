@@ -12,6 +12,8 @@
     display: flex;
     justify-content: space-evenly;
     background-color: #efefef;
+    // border: 1px solid red;
+    // height: 1000px;
 }
 
 .product-form {
@@ -43,6 +45,7 @@ input[type=number] {
     border-right: 1px solid  #efefef;
     background-color:  #efefef;
     font-size: 15pt;
+    padding-left: 15px;
 }
 
 
@@ -98,3 +101,25 @@ input[type=number] {
 .non-selected {
     border: 1px solid rgb(196, 194, 194)
 }
+
+//product index
+
+.product-div {
+  width: 20%;
+  height: 40%;
+  float: left;
+  border: 1px solid #efefef;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 50px;
+  background-color: #efefef;
+//   animation: load_content 0.5s;
+}
+
+// @keyframes load_content {
+//     0% {transform: translateX(-100%)}
+//     // 25% {transform: translateX(-75%);}
+//     // 50% {transform: translateX(-50%)}
+//     100% {transform: translateX(0%)}
+// }

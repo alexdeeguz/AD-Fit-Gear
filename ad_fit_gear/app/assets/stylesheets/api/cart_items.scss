@@ -1,0 +1,13 @@
+// Place all the styles related to the api/cart_items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart-items-container {
+    border: 1px solid red;
+}
+
+.cart-item {
+    border: 1px solid red;
+    height: 100px;
+    width: 100%;
+}

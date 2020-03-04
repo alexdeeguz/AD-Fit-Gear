@@ -41,4 +41,9 @@ class User < ApplicationRecord
     self.save!
     self.session_token
   end
+
+
+  has_one :cart,
+    foreign_key: :user_id,
+    class_name: :Cart
 end

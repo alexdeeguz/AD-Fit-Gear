@@ -26,9 +26,8 @@ class Home extends React.Component {
             )
         }
         return (   
-            <div className="main">
-                <div id="picture"></div>
-                <button className="form-input" id="view-all-products-button" type="submit">VIEW ALL PRODUCTS</button>
+            <div>
+                <div id="splash-pic"></div>
                 <CategoryIndexContainer {...this.props} />
             </div>
         )
