@@ -4,19 +4,12 @@ import CartItem from './cart_item'
 class CartItems extends React.Component {
     constructor(props) {
         super(props)
-        console.log(props)
+        // console.log(props)
     }
 
     componentDidMount() {
         this.props.getCartItems()
-            // .then(res => {
-            //     this.props.items.forEach(item => {
-            //         const categoryId = item.category_id
-            //         const productId = item.product_id
-            //         this.props.getProduct(categoryId, productId)
-            //     })
-            // })
-        
+        this.props.getCart(this.props.user.id)
     }
 
     // getExtraProps(productId) {
@@ -28,19 +21,31 @@ class CartItems extends React.Component {
     //     }
     // }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.items.length !== this.props.items.length) {
+            this.props.getCartItems()
+        }
+    }
+
     render() {
+        debugger
         return (
-            <div className="cart-items-container">
-                {
-                    // Object.values(this.props.products).map(prod => {
-                    //     let cartItem = this.getExtraProps(prod.id)
-                    //     return < CartItem cartItem={cartItem} product={prod} getProduct={this.props.getProduct} key={prod.id} />
-                    // })
-                    this.props.items.map(item => {
-                        // let cartItem = this.getExtraProps(item.id)
-                        return < CartItem item={item} key={item.id} products={this.props.products} getProduct={this.props.getProduct.bind(this)}/>
-                    })
-                }
+            <div>
+                <div className="cart-items-container">
+                    {
+                        // Object.values(this.props.products).map(prod => {
+                        //     let cartItem = this.getExtraProps(prod.id)
+                        //     return < CartItem cartItem={cartItem} product={prod} getProduct={this.props.getProduct} key={prod.id} />
+                        // })
+                        this.props.items.map(item => {
+                            // let cartItem = this.getExtraProps(item.id)
+                            return < CartItem item={item} key={item.id} products={this.props.products} product={this.props.products[item.product_id]} removeItem={this.props.removeItem} />
+                        })
+                    }
+                </div>
+                <div className="checkout-container">
+                    <button id="checkout-button">CHECKOUT</button>
+                </div>
             </div>
         )
     }

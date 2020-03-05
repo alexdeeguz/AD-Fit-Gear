@@ -3,10 +3,12 @@ import React from 'react'
 class ProductShow extends React.Component {
     constructor(props) {
         super(props)
+    
         this.state = {
+            // product_id: props.product.id,
+            // cart_id: props.cart.id,
             quantity: 1,
-            size: "",
-            selected: ""
+            size: ""
         }
         this.incrementQuantity = this.incrementQuantity.bind(this)
         this.decrementQuantity = this.decrementQuantity.bind(this)
@@ -45,14 +47,13 @@ class ProductShow extends React.Component {
             this.setState({
                 quantity: num
             })
-
         }
     }
 
     updateSize(e) {
         this.setState({
             size: e.target.innerHTML,
-            selected: e.target.innerHTML
+            // selected: e.target.innerHTML
         })
     }
     nothing() {
@@ -73,11 +74,11 @@ class ProductShow extends React.Component {
                     <div className="sizes-container">
                         <p>Size:</p>
                         <div className="sizes"> 
-                            <li  className={this.state.selected === "XS" ? "selected" : "non-selected"} onClick={this.updateSize}>XS</li>
-                            <li  className={this.state.selected === "S" ? "selected" : "non-selected"}onClick={this.updateSize}>S</li>
-                            <li  className={this.state.selected === "M" ? "selected" : "non-selected"}onClick={this.updateSize}>M</li>
-                            <li  className={this.state.selected === "L" ? "selected" : "non-selected"}onClick={this.updateSize}>L</li>
-                            <li  className={this.state.selected === "XL" ? "selected" : "non-selected"}onClick={this.updateSize}>XL</li>
+                            <li  className={this.state.size === "XS" ? "selected" : "non-selected"} onClick={this.updateSize}>XS</li>
+                            <li  className={this.state.size === "S" ? "selected" : "non-selected"}onClick={this.updateSize}>S</li>
+                            <li  className={this.state.size === "M" ? "selected" : "non-selected"}onClick={this.updateSize}>M</li>
+                            <li  className={this.state.size === "L" ? "selected" : "non-selected"}onClick={this.updateSize}>L</li>
+                            <li  className={this.state.size === "XL" ? "selected" : "non-selected"}onClick={this.updateSize}>XL</li>
                         </div> 
                     </div>: ""}
                 

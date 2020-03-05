@@ -3,11 +3,105 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cart-items-container {
-    border: 1px solid red;
+    background-color: #efefef;
+    width: 100%;
 }
 
 .cart-item {
-    border: 1px solid red;
+    // border: 1px solid red;
+    width: 100%;
+    display: flex;
+    font-family: "Nunito Sans";
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+.cart-product-image {
+    width: 40%;
+    // border: 1px solid red;
+}
+
+.product-details {
+    // border: 1px solid green;
+    letter-spacing: 3px;
+}
+
+#name {
+    font-size: 10pt;
+}
+
+#price {
+    font-size: 8pt;
+}
+
+.cart-increment-container {
+    display: flex;
+    height: 25px;
+    // border: 1px solid red;
+    // margin-top: 50px;
+}
+
+.cart-increment-container > div {
+    padding: 3px 8px;
+    font-size: 10pt;
+    border: 1px solid #ada7a7;
+}
+
+.cart-increment {
+    cursor: pointer;
+}
+
+#cart-minus {
+    border-top: 1px solid #ada7a7;
+    border-left: 1px solid #ada7a7;
+    border-bottom: 1px solid #ada7a7;
+}
+
+// #cart-minus, #cart-plus {
+//     height: 15px;
+// }
+
+#cart-input {
+    width: 10px;
+    outline: none;
+    border-top: 1px solid #ada7a7;
+    border-bottom: 1px solid #ada7a7;
+    border-left: 1px solid  #efefef;
+    border-right: 1px solid  #efefef;
+    background-color:  #efefef;
+    font-size: 7pt;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.update-cart-container {
+    display: flex;
+    // border: 1px solid red;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.update-cart-container > h6 {
+    // border: 1px solid red;
+    font-size: 8pt;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+#checkout-button {
+    position: absolute;
+    bottom: 20px;
+    height: 50px;
+    width: 90%;
+    border: 1px solid black;
+    outline: none;
+}
+
+.checkout-container {
+    position: absolute;
+    bottom: 0;
     height: 100px;
     width: 100%;
 }
+
+

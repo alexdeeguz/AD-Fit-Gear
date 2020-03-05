@@ -9,7 +9,7 @@ class Api::CartItemsController < ApplicationController
     def create
         @cart_item = CartItem.new(cart_item_params)
         if @cart_item.save
-            render :index
+            render :show
         else     
             render json: @cart_item.errors.full_messages
         end
@@ -20,7 +20,8 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy
-        
+        cart_item = CartItem.find(params[:id])
+        cart_item.delete
     end
 
     def cart_item_params

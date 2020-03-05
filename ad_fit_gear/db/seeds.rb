@@ -86,8 +86,12 @@ Cart.create(user_id: 2)
 
 CartItem.destroy_all
 
-CartItem.create(product_id: 1, category_id: 1, cart_id: 1, quantity: 1)
-CartItem.create(product_id: 2, category_id: 1, cart_id: 1, quantity: 1)
-CartItem.create(product_id: 3, category_id: 1, cart_id: 1, quantity: 1)
+CartItem.create(product_id: 1, category_id: 1, cart_id: 1, quantity: 1, size: "M")
+CartItem.create(product_id: 2, category_id: 1, cart_id: 1, quantity: 1, size: "M")
+CartItem.create(product_id: 3, category_id: 1, cart_id: 1, quantity: 1, size: "L")
+CartItem.create(product_id: 10, category_id: 2, cart_id: 1, quantity: 3, size: "L")
+CartItem.create(product_id: 11, category_id: 2, cart_id: 1, quantity: 5, size: "L")
+CartItem.create(product_id: 12, category_id: 2, cart_id: 1, quantity: 3, size: "L")
+CartItem.create(product_id: 13, category_id: 2, cart_id: 1, quantity: 1, size: "S")
 
 

@@ -174,12 +174,12 @@ a:visited {
   padding-left: 10px;
 }
 
-#button, #view-all-products-button, #view-product-button, #add-to-cart-button {
+#button, #view-all-products-button, #view-product-button, #add-to-cart-button, #checkout-button {
   background: linear-gradient(to right, black 50%, #efefef 50%);
   background-size: 200% 100%;
   background-position:right bottom;
 }
-#button:hover, #view-all-products-button:hover, #view-product-button:hover, #add-to-cart-button:hover {
+#button:hover, #view-all-products-button:hover, #view-product-button:hover, #add-to-cart-button:hover, #checkout-button:hover {
   background-position: left bottom;
   transition: all 1s ease;
   color: white;
@@ -197,6 +197,7 @@ a:visited {
   height: 30px;
   margin-top: 20px;
   outline: none;
+  /* border: 1px solid black; */
 }
 
 #view-product-button {

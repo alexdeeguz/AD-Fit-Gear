@@ -38,7 +38,10 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 400px;
+  width: 15vw;
+  background-color: #efefef;
+  height: 96vh;
+  overflow-y: auto;
 }
 
 .modal-content > h2 {
