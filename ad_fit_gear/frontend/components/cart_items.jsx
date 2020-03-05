@@ -4,7 +4,6 @@ import CartItem from './cart_item'
 class CartItems extends React.Component {
     constructor(props) {
         super(props)
-        // console.log(props)
     }
 
     componentDidMount() {
@@ -38,7 +37,7 @@ class CartItems extends React.Component {
                         // })
                         this.props.items.map(item => {
                             // let cartItem = this.getExtraProps(item.id)
-                            return < CartItem item={item} key={item.id} products={this.props.products} product={this.props.products[item.product_id]} removeItem={this.props.removeItem} />
+                            return < CartItem key={item.id} item={item} products={this.props.products} product={this.props.products[item.product_id]} removeItem={this.props.removeItem} />
                         })
                     }
                 </div>

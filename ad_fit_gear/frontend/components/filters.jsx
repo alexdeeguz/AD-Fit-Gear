@@ -14,12 +14,10 @@ class Filters extends React.Component {
         this.setState({
             selected: e.target.innerHTML
         })
-        console.log(e.target.className)
         this.props.getProducts(e.target.id)
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className="filters">
                 <h6>FILTERS</h6>

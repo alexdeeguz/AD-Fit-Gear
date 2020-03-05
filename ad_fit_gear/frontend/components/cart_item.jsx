@@ -14,10 +14,14 @@ class CartItem extends React.Component {
         this.props.removeItem(this.props.item.id)
     }
 
+    nothing() {
+        return null
+    }
+
     render() {
             const size = this.props.item.size
-            const name = this.props.item.product.name.toUpperCase()
-            const price = this.props.item.product.price
+            const name = this.props.item.product === undefined ? null : this.props.item.product.name.toUpperCase() 
+            const price = this.props.item.product === undefined ? null : this.props.item.product.price
             return (
                 <div className="cart-item">
                     <div className="cart-product-image"></div>

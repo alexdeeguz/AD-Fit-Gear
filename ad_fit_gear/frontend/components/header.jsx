@@ -14,7 +14,6 @@ class Header extends React.Component {
     }
 
     closeModal(e) {
-        // console.log(e.currentTarget)
         // e.currentTarget.className = "modal-hidden"
         const modal = $(".modal-container")
         modal.removeClass("show")
@@ -49,7 +48,7 @@ class Header extends React.Component {
                             <div id="myModal" className="modal">
                             </div>
                             <div className="modal-content">
-                                <span onClick={this.closeModal} class="close">&times;</span>
+                                <span onClick={this.closeModal} className="close">&times;</span>
                                 <h2>CART</h2><hr/>
                                 <CartItemsContainer {...this.props}/>
                             </div>
