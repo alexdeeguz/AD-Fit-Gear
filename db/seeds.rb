@@ -16,10 +16,10 @@ Category.destroy_all
 
 c1 = Category.create(name: 'tanks')
 c2 = Category.create(name: 'shirts')
-c2 = Category.create(name: 'hoodies')
-c2 = Category.create(name: 'joggers')
-c2 = Category.create(name: 'hats')
-c2 = Category.create(name: 'gear')
+c3 = Category.create(name: 'hoodies')
+c4 = Category.create(name: 'joggers')
+c5 = Category.create(name: 'hats')
+c6 = Category.create(name: 'gear')
 
 Product.destroy_all
 
