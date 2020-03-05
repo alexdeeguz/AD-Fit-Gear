@@ -1219,7 +1219,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   return {
-    products: Object.values(state.entities.products)
+    products: Object.values(state.entities.products),
+    categories: Object.values(state.entities.categories)
   };
 };
 
@@ -1233,6 +1234,9 @@ var mDTP = function mDTP(dispatch) {
     },
     getProduct: function getProduct(categoryId, productId) {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["getProduct"])(categoryId, productId));
+    },
+    getCategories: function getCategories() {
+      return dispatch(Object(_actions_category_actions__WEBPACK_IMPORTED_MODULE_3__["getCategories"])());
     }
   };
 };
@@ -1326,6 +1330,11 @@ var Filters = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(Filters, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getCategories();
+    }
+  }, {
     key: "handleClick",
     value: function handleClick(e) {
       this.setState({
@@ -1336,30 +1345,36 @@ var Filters = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var id1 = this.props.categories[0] ? this.props.categories[0].id : "";
+      var id2 = this.props.categories[1] ? this.props.categories[1].id : "";
+      var id3 = this.props.categories[2] ? this.props.categories[2].id : "";
+      var id4 = this.props.categories[3] ? this.props.categories[3].id : "";
+      var id5 = this.props.categories[4] ? this.props.categories[4].id : "";
+      var id6 = this.props.categories[5] ? this.props.categories[5].id : "";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "filters"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, "FILTERS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        id: "1",
+        id: id1,
         className: this.state.selected === "Tanks" ? "selected-filter" : "non-selected-filter",
         onClick: this.handleClick
       }, "Tanks"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        id: "2",
+        id: id2,
         className: this.state.selected === "Shirts" ? "selected-filter" : "non-selected-filter",
         onClick: this.handleClick
       }, "Shirts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        id: "3",
+        id: id3,
         className: this.state.selected === "Hoodies" ? "selected-filter" : "non-selected-filter",
         onClick: this.handleClick
       }, "Hoodies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        id: "4",
+        id: id4,
         className: this.state.selected === "Joggers" ? "selected-filter" : "non-selected-filter",
         onClick: this.handleClick
       }, "Joggers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        id: "5",
+        id: id5,
         className: this.state.selected === "Hats" ? "selected-filter" : "non-selected-filter",
         onClick: this.handleClick
       }, "Hats"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        id: "6",
+        id: id6,
         className: this.state.selected === "Lifting Gear" ? "selected-filter" : "non-selected-filter",
         onClick: this.handleClick
       }, "Lifting Gear"));
