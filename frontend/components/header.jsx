@@ -47,11 +47,15 @@ class Header extends React.Component {
             <div className="header">
                 <div className="icon-header">
                     <p>USD</p>
-                    <div id="logo-icon" onClick={this.redirect_home}></div>
+                    {/* <div id="logo-icon" onClick={this.redirect_home}></div> */}
+                    <img id="logo-icon" src={window.logoURL} onClick={this.redirect_home}/>
                     <div className="icons">
-                        <div id="user-icon" onClick={this.go_to_login}></div>
-                        <div id="search-icon"></div>
-                        <div id="cart-icon" onClick={this.openModal}></div>
+                        {/* <div id="user-icon" onClick={this.go_to_login}></div> */}
+                        <img id="user-icon" src={window.userURL} onClick={this.go_to_login}/>
+                        {/* <div id="search-icon"></div> */}
+                        <img id="search-icon" src={window.searchURL} />
+                        {/* <div id="cart-icon" onClick={this.openModal}></div> */}
+                        <img id="cart-icon" src={window.cartURL} onClick={this.openModal}/>
                         <div className="modal-container hidden" onClick={this.closeModal}>
                             <div id="myModal" className="modal">
                             </div>

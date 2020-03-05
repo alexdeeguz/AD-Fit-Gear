@@ -1518,18 +1518,22 @@ var Header = /*#__PURE__*/function (_React$Component) {
         className: "header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "icon-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "USD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "USD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "logo-icon",
+        src: window.logoURL,
         onClick: this.redirect_home
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "icons"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "user-icon",
+        src: window.userURL,
         onClick: this.go_to_login
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "search-icon"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        id: "search-icon",
+        src: window.searchURL
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "cart-icon",
+        src: window.cartURL,
         onClick: this.openModal
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-container hidden",
