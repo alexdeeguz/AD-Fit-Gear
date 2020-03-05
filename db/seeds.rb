@@ -81,8 +81,8 @@ Product.create(name: "white gear", price: 29.99, description: "aesthetic af", ca
 
 Cart.destroy_all
 
-ca1 = Cart.create(user_id: u1.id)
-ca2 = Cart.create(user_id: u2.id)
+ca1 = Cart.create(user_id: User.first.id)
+# ca2 = Cart.create(user_id: u2.id)
 
 CartItem.destroy_all
 
