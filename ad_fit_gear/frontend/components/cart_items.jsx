@@ -28,7 +28,6 @@ class CartItems extends React.Component {
     }
 
     render() {
-        debugger
         return (
             <div>
                 <div className="cart-items-container">
