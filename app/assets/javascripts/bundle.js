@@ -439,6 +439,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers_categories_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./containers/categories_container */ "./frontend/components/containers/categories_container.jsx");
 /* harmony import */ var _containers_products_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./containers/products_container */ "./frontend/components/containers/products_container.jsx");
 /* harmony import */ var _containers_product_show_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./containers/product_show_container */ "./frontend/components/containers/product_show_container.jsx");
+/* harmony import */ var _containers_header_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./containers/header_container */ "./frontend/components/containers/header_container.jsx");
+
 
 
 
@@ -452,7 +454,7 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
-    component: _header__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _containers_header_container__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/login",
     component: _containers_login_container__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -1079,6 +1081,40 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/containers/header_container.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/containers/header_container.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../header */ "./frontend/components/header.jsx");
+/* harmony import */ var _actions_category_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/category_actions */ "./frontend/actions/category_actions.js");
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  return {
+    categories: Object.values(state.entities.categories)
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    getCategories: function getCategories() {
+      return dispatch(Object(_actions_category_actions__WEBPACK_IMPORTED_MODULE_2__["getCategories"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_header__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/containers/home_container.jsx":
 /*!***********************************************************!*\
   !*** ./frontend/components/containers/home_container.jsx ***!
@@ -1440,6 +1476,11 @@ var Header = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(Header, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getCategories();
+    }
+  }, {
     key: "closeModal",
     value: function closeModal(e) {
       // e.currentTarget.className = "modal-hidden"
@@ -1467,6 +1508,12 @@ var Header = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var id1 = this.props.categories[0] ? this.props.categories[0].id : "";
+      var id2 = this.props.categories[1] ? this.props.categories[1].id : "";
+      var id3 = this.props.categories[2] ? this.props.categories[2].id : "";
+      var id4 = this.props.categories[3] ? this.props.categories[3].id : "";
+      var id5 = this.props.categories[4] ? this.props.categories[4].id : "";
+      var id6 = this.props.categories[5] ? this.props.categories[5].id : "";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1506,22 +1553,22 @@ var Header = /*#__PURE__*/function (_React$Component) {
         className: "droplinks"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "link",
-        to: "/categories/1/products"
+        to: "/categories/".concat(id1, "/products")
       }, "Tanks"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "link",
-        to: "/categories/2/products"
+        to: "/categories/".concat(id2, "/products")
       }, "Shirts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "link",
-        to: "/categories/3/products"
+        to: "/categories/".concat(id3, "/products")
       }, "Hoodies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "link",
-        to: "/categories/4/products"
+        to: "/categories/".concat(id4, "/products")
       }, "Joggers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "link",
-        to: "/categories/6/products"
+        to: "/categories/".concat(id5, "/products")
       }, "Hats"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "link",
-        to: "/categories/5/products"
+        to: "/categories/".concat(id6, "/products")
       }, "Lifting Gear"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
       }, "TRAINING"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {

@@ -7,10 +7,11 @@ import Header from './header';
 import CategoryIndexContainer from './containers/categories_container';
 import CategoryProductIndexContainer from './containers/products_container';
 import ProductShowContainer from './containers/product_show_container';
+import HeaderContainer from './containers/header_container';
 
 const App = () => (
     <div>
-        <Route path="/" component={Header} />
+        <Route path="/" component={HeaderContainer} />
         <Switch>
             <Route path="/login" component={LoginContainer} />
             <Route path="/signup" component={SignupContainer} />
