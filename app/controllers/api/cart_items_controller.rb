@@ -2,7 +2,11 @@ class Api::CartItemsController < ApplicationController
 
     def index
         # @cart_items = current_user.cart.products
-        @cart_items = current_user.cart.cart_items
+        if logged_in?
+            @cart_items = current_user.cart.cart_items
+        else  
+            @cart_items = CartItem.all
+        end
         render :index
     end
 

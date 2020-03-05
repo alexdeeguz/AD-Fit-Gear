@@ -8,7 +8,7 @@ class CartItems extends React.Component {
 
     componentDidMount() {
         this.props.getCartItems()
-        this.props.getCart(this.props.user.id)
+        // this.props.getCart(this.props.user.id)
     }
 
     // getExtraProps(productId) {
