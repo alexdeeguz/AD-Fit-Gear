@@ -5,7 +5,7 @@ import { getCart } from '../../actions/cart_actions'
 import { getProduct, getProducts } from '../../actions/product_actions'
 const mSTP = (state, ownProps) => ({
     items: Object.values(state.entities.cartItems),
-    user: Object.values(state.entities.users)[0],
+    user: Object.values(state.entities.users)[Object.values(state.entities.users).length-1],
     products: state.entities.products,
     currentUser: state.entities.users[state.session.id]
 })

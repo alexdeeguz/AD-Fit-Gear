@@ -69,7 +69,7 @@ class ProductShow extends React.Component {
     }
 
     handleSubmit() {
-        const cartId = this.props.cart ? Number(this.props.cart.id) : ""
+        const cartId = this.props.currentUser ? Number(this.props.currentUser.id) : ""
         this.setState({
             cart_id: cartId
         })

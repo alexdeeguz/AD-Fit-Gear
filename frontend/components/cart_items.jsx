@@ -10,8 +10,8 @@ class CartItems extends React.Component {
     componentDidMount() {
         this.props.getCartItems()
         this.props.getProducts()
-        if (this.props.user) {
-            this.props.getCart(this.props.user.id)
+        if (this.props.currentUser) {
+            this.props.getCart(this.props.currentUser.id)
         }
     }
 

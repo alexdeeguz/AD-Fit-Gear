@@ -700,8 +700,8 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
       this.props.getCartItems();
       this.props.getProducts();
 
-      if (this.props.user) {
-        this.props.getCart(this.props.user.id);
+      if (this.props.currentUser) {
+        this.props.getCart(this.props.currentUser.id);
       }
     } // getExtraProps(productId) {
     //     let items = this.props.items
@@ -1106,7 +1106,7 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   return {
     items: Object.values(state.entities.cartItems),
-    user: Object.values(state.entities.users)[0],
+    user: Object.values(state.entities.users)[Object.values(state.entities.users).length - 1],
     products: state.entities.products,
     currentUser: state.entities.users[state.session.id]
   };
@@ -1309,7 +1309,8 @@ var mSTP = function mSTP(state, ownProps) {
   return {
     product: state.entities.products[ownProps.match.params.productId],
     cart: Object.values(state.entities.cart)[0],
-    categories: Object.values(state.entities.categories)
+    categories: Object.values(state.entities.categories),
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
@@ -1885,7 +1886,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit() {
-      var cartId = this.props.cart ? Number(this.props.cart.id) : "";
+      var cartId = this.props.currentUser ? Number(this.props.currentUser.id) : "";
       this.setState({
         cart_id: cartId
       });

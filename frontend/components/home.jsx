@@ -8,11 +8,13 @@ class Home extends React.Component {
         this.logout = this.logout.bind(this)
     }
 
+
     logout(e) {
         e.preventDefault()
         this.props.logout()
         this.props.history.push('/login')
     }
+
 
     render() {
         if (this.props.currentUser) {

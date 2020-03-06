@@ -7,7 +7,8 @@ import { addToCart } from '../../actions/cart_item_actions'
 const mSTP = (state, ownProps) => ({
     product: state.entities.products[ownProps.match.params.productId],
     cart: Object.values(state.entities.cart)[0],
-    categories: Object.values(state.entities.categories)
+    categories: Object.values(state.entities.categories),
+    currentUser: state.entities.users[state.session.id]
 })
 
 const mDTP = dispatch => ({
