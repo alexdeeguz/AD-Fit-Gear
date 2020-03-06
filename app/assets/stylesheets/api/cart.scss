@@ -15,9 +15,9 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.modal-container {
-  position: fixed; /* Stay in place */
-}
+// .modal-container {
+//   position: fixed; /* Stay in place */
+// }
 
 .hidden {
   display: none;
@@ -29,9 +29,9 @@
 
 /* Modal Content */
 .modal-content {
-  top: -55px;
-  right: -40px;
-  position: absolute;
+  top: 0;
+  right: 0;
+  position: fixed;
   z-index: 1;
   background-color: #fefefe;
   margin: auto;
@@ -39,7 +39,7 @@
   border: 1px solid #888;
   width: 15vw;
   background-color: #efefef;
-  height: 96vh;
+  height: 95vh;
   overflow-y: auto;
 }
 

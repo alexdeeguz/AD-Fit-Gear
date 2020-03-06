@@ -715,6 +715,10 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
+      if (this.props.currentUser !== prevProps.currentUser) {
+        this.props.getCartItems();
+      }
+
       if (this.props.items) {
         if (prevProps.items.length !== this.props.items.length) {
           this.props.getCartItems();

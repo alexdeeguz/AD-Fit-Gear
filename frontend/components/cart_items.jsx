@@ -25,6 +25,10 @@ class CartItems extends React.Component {
     // }
 
     componentDidUpdate(prevProps) {
+        if (this.props.currentUser !== prevProps.currentUser) {
+                this.props.getCartItems()
+        }
+
         if (this.props.items) {
             if (prevProps.items.length !== this.props.items.length) {
                 this.props.getCartItems()

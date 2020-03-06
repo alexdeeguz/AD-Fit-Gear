@@ -89,8 +89,9 @@
 }
 
 #checkout-button {
-    position: absolute;
-    bottom: 20px;
+    // position: fixed;
+    // bottom: 20px;
+    bottom: 0;
     height: 50px;
     width: 90%;
     border: 1px solid black;
