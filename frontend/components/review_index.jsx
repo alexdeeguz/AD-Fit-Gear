@@ -1,15 +1,17 @@
-// import React from 'react'
+import React from 'react'
 
-// class ReviewIndex extends React.Component {
-//     constructor(props) {
-//         super(props)
-//     }
+class ReviewIndex extends React.Component {
+    constructor(props) {
+        super(props)
+    }
 
-//     render() {
-//         <div className="review-index-container">
+    render() {
+        return (
+            <div className="review-index-container">
 
-//         </div>
-//     }
-// }
+            </div>
+        )
+    }
+}
 
-// export default ReviewIndex
+export default ReviewIndex

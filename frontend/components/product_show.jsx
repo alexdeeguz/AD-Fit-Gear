@@ -1,5 +1,6 @@
 import React from 'react'
 import ReviewForm from './review_form'
+import ReviewIndex from './review_index'
 
 class ProductShow extends React.Component {
     constructor(props) {
@@ -148,6 +149,7 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
                     
+                    <ReviewIndex />
                 </div>
             )
         }

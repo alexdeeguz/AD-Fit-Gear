@@ -6,7 +6,6 @@ class ReviewForm extends React.Component {
 
         this.state = {
             form: "star-rating",
-            // form: "review-description",
             rating: "",
             body: ""
         }
