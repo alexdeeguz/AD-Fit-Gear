@@ -90,8 +90,6 @@ CartItem.create(product_id: p1.id, category_id: c1.id, cart_id: ca1.id, quantity
 CartItem.create(product_id: p2.id, category_id: c1.id, cart_id: ca1.id, quantity: 1, size: "M")
 CartItem.create(product_id: p3.id, category_id: c1.id, cart_id: ca1.id, quantity: 1, size: "L")
 CartItem.create(product_id: p10.id, category_id: c2.id, cart_id: ca1.id, quantity: 3, size: "L")
-CartItem.create(product_id: p11.id, category_id: c2.id, cart_id: ca1.id, quantity: 5, size: "L")
-CartItem.create(product_id: p12.id, category_id: c2.id, cart_id: ca1.id, quantity: 3, size: "L")
-CartItem.create(product_id: p13.id, category_id: c2.id, cart_id: ca1.id, quantity: 1, size: "S")
+
 
 

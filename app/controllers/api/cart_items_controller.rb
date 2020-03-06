@@ -10,6 +10,11 @@ class Api::CartItemsController < ApplicationController
         render :index
     end
 
+    def show
+        @cart_item = CartItem.find(params[:id])
+        render :show
+    end
+
     def create
         @cart_item = CartItem.new(cart_item_params)
         if @cart_item.save
@@ -20,7 +25,12 @@ class Api::CartItemsController < ApplicationController
     end
 
     def update
-        
+        @cart_item = CartItem.find(params[:id])
+        if @cart_item.update(cart_item_params)
+            render :show
+        else  
+            render json: @cart_item.errors.full_messages
+        end
     end
 
     def destroy

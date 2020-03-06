@@ -57,7 +57,7 @@ class Header extends React.Component {
                         {/* <div id="cart-icon" onClick={this.openModal}></div> */}
                         <img id="cart-icon" src={window.cartURL} onClick={this.openModal}/>
                         <div className="modal-container hidden" onClick={this.closeModal}>
-                            <div id="myModal" className="modal">
+                            <div className="modal">
                             </div>
                             <div className="modal-content">
                                 <span onClick={this.closeModal} className="close">&times;</span>

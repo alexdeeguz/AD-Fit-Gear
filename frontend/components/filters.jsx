@@ -18,7 +18,7 @@ class Filters extends React.Component {
         this.setState({
             selected: e.target.innerHTML
         })
-        this.props.getProducts(e.target.id)
+        this.props.history.push(`/categories/${e.target.id}/products`)
     }
 
     render() {

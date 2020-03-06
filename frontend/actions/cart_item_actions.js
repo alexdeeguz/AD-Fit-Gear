@@ -22,9 +22,16 @@ const receiveCartItem = item => ({
 export const getCartItems = () => dispatch => cartAPIUtil.getCartItems()
     .then(items => dispatch(receiveAllCartItems(items)))
 
+export const getCartItem = id => dispatch => cartAPIUtil.getCartItem(id)
+    .then(item => dispatch(receiveCartItem(item)))
+
 export const deleteCartItem = id => dispatch => cartAPIUtil.removeCartItem(id)
     .then(() => dispatch(removeCartItem(id)))
 
 export const addToCart = (productId, cartId, size, quantity) => dispatch => 
     cartAPIUtil.addCartItem(productId, cartId, size, quantity)
     .then(createdItem => dispatch(receiveCartItem(createdItem)))
+
+export const updateCart = (id, productId, cartId, size, quantity) => dispatch => 
+    cartAPIUtil.updateCartItem(id, productId, cartId, size, quantity)
+    .then(updatedItem => dispatch(receiveCartItem(updatedItem)))

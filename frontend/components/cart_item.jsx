@@ -7,6 +7,8 @@ class CartItem extends React.Component {
             quantity: this.props.item.quantity
         }
         this.removeItem = this.removeItem.bind(this)
+        this.decrementQuantity = this.decrementQuantity.bind(this)
+        this.incrementQuantity = this.incrementQuantity.bind(this)
     }
 
     removeItem(e) {
@@ -17,6 +19,42 @@ class CartItem extends React.Component {
     nothing() {
         return null
     }
+
+    incrementQuantity(e) {
+        e.stopPropagation()
+        const id = this.props.item.id
+        const productId = this.props.item.product_id
+        const cartId = this.props.item.cart_id
+        const size = this.props.item.size
+        const quantity = this.props.item.quantity + 1
+        this.props.updateCart(id, productId, cartId, size, quantity)
+        this.setState({
+            quantity: quantity
+        })
+    }
+    decrementQuantity(e) {
+        e.stopPropagation()
+        const id = this.props.item.id
+        const productId = this.props.item.product_id
+        const cartId = this.props.item.cart_id
+        const size = this.props.item.size
+        const quantity = this.props.item.quantity - 1
+        if (quantity < 1) { quantity = 1 }
+        this.props.updateCart(id, productId, cartId, size, quantity)
+        this.setState({
+            quantity: quantity
+        })
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.item) {
+            if (prevProps.item.quantity !== this.props.item.quantity) {
+                this.props.getCartItem(this.props.item.id)
+            }
+        }
+    }
+
+    
 
     render() {
             const size = this.props.item.size
