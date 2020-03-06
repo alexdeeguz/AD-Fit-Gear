@@ -12,28 +12,28 @@ class Header extends React.Component {
         this.openModal = this.openModal.bind(this)
     }
 
-    componentDidMount() {
-        this.props.getCategories()
-    }
+    // componentDidMount() {
+    //     this.props.getCategories()
+    // }
 
-    closeModal(e) {
+    closeModal() {
         // e.currentTarget.className = "modal-hidden"
         const modal = $(".modal-container")
         modal.removeClass("show")
         modal.addClass("hidden")
     }
 
-    openModal(e) {
+    openModal() {
         const modal = $(".modal-container") 
         modal.removeClass("hidden")
         modal.addClass("show")
     }
 
-    go_to_login(e) {
+    go_to_login() {
         this.props.history.push('/login')
     }
 
-    redirect_home(e) {
+    redirect_home() {
         this.props.history.push('/')
     }
     render() {
@@ -59,7 +59,7 @@ class Header extends React.Component {
                         <div className="modal-container hidden" onClick={this.closeModal}>
                             <div className="modal">
                             </div>
-                            <div className="modal-content">
+                            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                                 <span onClick={this.closeModal} className="close">&times;</span>
                                 <h2>CART</h2><hr/>
                                 <CartItemsContainer {...this.props}/>

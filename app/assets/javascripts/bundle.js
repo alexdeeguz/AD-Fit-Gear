@@ -697,8 +697,7 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
   _createClass(CartItems, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.getCartItems();
-      this.props.getProducts();
+      this.props.getCartItems(); // this.props.getProducts()
 
       if (this.props.currentUser) {
         this.props.getCart(this.props.currentUser.id);
@@ -721,13 +720,12 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
         }
 
         this.props.getCartItems();
-      }
+      } //  else if (this.props.items) {
+      //     if (prevProps.items.length !== this.props.items.length) {
+      //         this.props.getCartItems()
+      //     }
+      // }
 
-      if (this.props.items) {
-        if (prevProps.items.length !== this.props.items.length) {
-          this.props.getCartItems();
-        }
-      }
     }
   }, {
     key: "render",
@@ -735,6 +733,10 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
       var _this = this;
 
       if (this.props.currentUser) {
+        if (this.props.items === undefined) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "FIRST RENDER THIS IS NULL OIASDJFIOASDJO");
+        }
+
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-items-container"
         }, // Object.values(this.props.products).map(prod => {
@@ -1570,16 +1572,14 @@ var Header = /*#__PURE__*/function (_React$Component) {
     _this.closeModal = _this.closeModal.bind(_assertThisInitialized(_this));
     _this.openModal = _this.openModal.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // componentDidMount() {
+  //     this.props.getCategories()
+  // }
+
 
   _createClass(Header, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.getCategories();
-    }
-  }, {
     key: "closeModal",
-    value: function closeModal(e) {
+    value: function closeModal() {
       // e.currentTarget.className = "modal-hidden"
       var modal = $(".modal-container");
       modal.removeClass("show");
@@ -1587,19 +1587,19 @@ var Header = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "openModal",
-    value: function openModal(e) {
+    value: function openModal() {
       var modal = $(".modal-container");
       modal.removeClass("hidden");
       modal.addClass("show");
     }
   }, {
     key: "go_to_login",
-    value: function go_to_login(e) {
+    value: function go_to_login() {
       this.props.history.push('/login');
     }
   }, {
     key: "redirect_home",
-    value: function redirect_home(e) {
+    value: function redirect_home() {
       this.props.history.push('/');
     }
   }, {
@@ -1638,7 +1638,10 @@ var Header = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-content"
+        className: "modal-content",
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         onClick: this.closeModal,
         className: "close"
@@ -1810,8 +1813,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ProductShow).call(this, props));
     _this.state = {
-      // product_id: props.product.id,
-      // cart_id: props.cart.id,
       product_id: Number(_this.props.match.params.productId),
       cart_id: "",
       size: "",
@@ -1876,6 +1877,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "updateSize",
     value: function updateSize(e) {
+      e.preventDefault();
       this.setState({
         size: e.target.innerHTML
       });
@@ -1893,14 +1895,17 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       var productId = this.state.product_id;
       var size = this.state.size;
       var quantity = this.state.quantity;
-      this.props.addToCart(productId, cartId, size, quantity);
       var modal = $(".modal-container");
-      modal.removeClass("hidden");
-      modal.addClass("show");
+      this.props.addToCart(productId, cartId, size, quantity).then(function () {
+        return modal.removeClass("hidden");
+      }).then(function () {
+        return modal.addClass("show");
+      });
     }
   }, {
     key: "openModal",
     value: function openModal(e) {
+      e.preventDefault();
       var modal = $(".review-modal-container");
       modal.removeClass("hidden");
       modal.addClass("show");
@@ -1908,6 +1913,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "closeModal",
     value: function closeModal(e) {
+      e.preventDefault();
       var modal = $(".review-modal-container");
       modal.removeClass("show");
       modal.addClass("hidden");
@@ -1919,6 +1925,10 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
       if (this.props.product) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "main"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "main-product-show-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-show-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-image"
@@ -1965,22 +1975,25 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         }, "+"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "submit",
           id: "add-to-cart-button"
-        }, "ADD TO CART")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "ADD TO CART")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-button-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2606\u2606\u2606\u2606\u2606"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           onClick: this.openModal,
           id: "write-review-button"
-        }, "Write a review"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Write a review")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-modal-container hidden",
           onClick: this.closeModal
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-modal"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "review-modal-content"
+          className: "review-modal-content",
+          onClick: function onClick(e) {
+            return e.stopPropagation();
+          }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           onClick: this.closeModal,
           className: "close"
-        }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_form__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
+        }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_form__WEBPACK_IMPORTED_MODULE_1__["default"], null)))));
       } else return null;
     }
   }]);
@@ -2013,9 +2026,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -2027,37 +2040,103 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
   _inherits(ReviewForm, _React$Component);
 
   function ReviewForm(props) {
+    var _this;
+
     _classCallCheck(this, ReviewForm);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ReviewForm).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ReviewForm).call(this, props));
+    _this.state = {
+      form: "star-rating",
+      // form: "review-description",
+      rating: "",
+      body: ""
+    };
+    _this.updateRating = _this.updateRating.bind(_assertThisInitialized(_this));
+    _this.updateReviewDescription = _this.updateReviewDescription.bind(_assertThisInitialized(_this));
+    _this.updateBody = _this.updateBody.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(ReviewForm, [{
+    key: "updateReviewDescription",
+    value: function updateReviewDescription(e) {
+      e.stopPropagation();
+    }
+  }, {
+    key: "updateRating",
+    value: function updateRating(e) {
+      this.setState({
+        rating: Number(e.currentTarget.id),
+        form: "review-description"
+      });
+      e.stopPropagation();
+    }
+  }, {
+    key: "updateBody",
+    value: function updateBody(e) {
+      this.setState({
+        body: e.target.value
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "review-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "HOW WOULD YOU RATE THIS ITEM?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "star-rating-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "star-rating"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Love it!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2605\u2605\u2605\u2605"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "star-rating-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "star-rating"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Like it"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2605\u2605\u2605\u2606"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "star-rating-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "star-rating"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's okay"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2605\u2605\u2606\u2606"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "star-rating-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "star-rating"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Didn't like it"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2605\u2606\u2606\u2606"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "star-rating-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "star-rating"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hate it"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2606\u2606\u2606\u2606"))));
+      var _this2 = this;
+
+      if (this.state.form === "star-rating") {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "review-form"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "HOW WOULD YOU RATE THIS ITEM?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: this.updateRating,
+          id: "5",
+          className: this.state.rating === 5 ? "star-rating-container selected" : "star-rating-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "star-rating"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Love it!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2605\u2605\u2605\u2605"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: this.updateRating,
+          id: "4",
+          className: this.state.rating === 4 ? "star-rating-container selected" : "star-rating-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "star-rating"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Like it"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2605\u2605\u2605\u2606"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: this.updateRating,
+          id: "3",
+          className: this.state.rating === 3 ? "star-rating-container selected" : "star-rating-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "star-rating"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's okay"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2605\u2605\u2606\u2606"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: this.updateRating,
+          id: "2",
+          className: this.state.rating === 2 ? "star-rating-container selected" : "star-rating-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "star-rating"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Didn't like it"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2605\u2606\u2606\u2606"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: this.updateRating,
+          id: "1",
+          className: this.state.rating === 1 ? "star-rating-container selected" : "star-rating-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "star-rating"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hate it"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2606\u2606\u2606\u2606"))));
+      } else if (this.state.form === "review-description") {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "review-form"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "TELL US MORE!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+          placeholder: "Share your experience",
+          value: this.state.body,
+          onChange: this.updateBody
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          id: "terms-agreement"
+        }, "By submitting, I acknowledge the Privacy Policy and that my review will be publicly posted and shared online"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          id: "next-button"
+        }, "Done"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          id: "back-button",
+          onClick: function onClick() {
+            return _this2.setState({
+              form: "star-rating"
+            });
+          }
+        }, "Back"));
+      }
     }
   }]);
 

@@ -5,8 +5,6 @@ class ProductShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            // product_id: props.product.id,
-            // cart_id: props.cart.id,
             product_id: Number(this.props.match.params.productId),
             cart_id: "",
             size: "",
@@ -61,6 +59,7 @@ class ProductShow extends React.Component {
     }
 
     updateSize(e) {
+        e.preventDefault()
         this.setState({
             size: e.target.innerHTML
         })
@@ -76,19 +75,21 @@ class ProductShow extends React.Component {
         const productId = this.state.product_id
         const size = this.state.size
         const quantity = this.state.quantity
-        this.props.addToCart(productId, cartId, size, quantity)
         const modal = $(".modal-container")
-        modal.removeClass("hidden")
-        modal.addClass("show")
+        this.props.addToCart(productId, cartId, size, quantity)
+        .then(() => modal.removeClass("hidden"))
+        .then(() => modal.addClass("show"))
     }
 
     openModal(e) {
+        e.preventDefault()
         const modal = $(".review-modal-container")
         modal.removeClass("hidden")
         modal.addClass("show")
     }
 
     closeModal(e) {
+        e.preventDefault()
         const modal = $(".review-modal-container")
         modal.removeClass("show")
         modal.addClass("hidden")
@@ -97,51 +98,56 @@ class ProductShow extends React.Component {
     render() {
         const { product } = this.props 
         if (this.props.product){
-
             return (
-                <div className="product-show-container">
-                    <div className="product-image"></div>
-                    <div className="product-form">
-                        <form onSubmit={this.handleSubmit}>
-                            <h3>{product.name.toUpperCase()}</h3>
-                            <h4>${product.price}</h4>
-                            {this.hasSize() ? 
-                            <div className="sizes-container">
-                                <p>Size:</p>
-                                <div className="sizes"> 
-                                    <li  className={this.state.size === "XS" ? "selected" : "non-selected"} onClick={this.updateSize}>XS</li>
-                                    <li  className={this.state.size === "S" ? "selected" : "non-selected"}onClick={this.updateSize}>S</li>
-                                    <li  className={this.state.size === "M" ? "selected" : "non-selected"}onClick={this.updateSize}>M</li>
-                                    <li  className={this.state.size === "L" ? "selected" : "non-selected"}onClick={this.updateSize}>L</li>
-                                    <li  className={this.state.size === "XL" ? "selected" : "non-selected"}onClick={this.updateSize}>XL</li>
-                                </div> 
-                            </div>: ""}
-                        
-                            <div className="quantity-container">
-                                <p>Quantity:</p>
-                                <div className="increment-container">
-                                    <div id="minus" className="increment"  onClick={this.decrementQuantity}>-</div>
-                                    <input type="number" min="1" onChange={this.nothing} value={this.state.quantity}/>
-                                    <div id="plus" className="increment" onClick={this.incrementQuantity}>+</div>
-                                </div>
+                <div className="main">
+                    <div className="main-product-show-container">
+                        <div className="product-show-container">
+                            <div className="product-image"></div>
+                            <div className="product-form">
+                                <form onSubmit={this.handleSubmit}>
+                                    <h3>{product.name.toUpperCase()}</h3>
+                                    <h4>${product.price}</h4>
+                                    {this.hasSize() ? 
+                                    <div className="sizes-container">
+                                        <p>Size:</p>
+                                        <div className="sizes"> 
+                                            <li  className={this.state.size === "XS" ? "selected" : "non-selected"} onClick={this.updateSize}>XS</li>
+                                            <li  className={this.state.size === "S" ? "selected" : "non-selected"}onClick={this.updateSize}>S</li>
+                                            <li  className={this.state.size === "M" ? "selected" : "non-selected"}onClick={this.updateSize}>M</li>
+                                            <li  className={this.state.size === "L" ? "selected" : "non-selected"}onClick={this.updateSize}>L</li>
+                                            <li  className={this.state.size === "XL" ? "selected" : "non-selected"}onClick={this.updateSize}>XL</li>
+                                        </div> 
+                                    </div>: ""}
+                                
+                                    <div className="quantity-container">
+                                        <p>Quantity:</p>
+                                        <div className="increment-container">
+                                            <div id="minus" className="increment"  onClick={this.decrementQuantity}>-</div>
+                                            <input type="number" min="1" onChange={this.nothing} value={this.state.quantity}/>
+                                            <div id="plus" className="increment" onClick={this.incrementQuantity}>+</div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" id="add-to-cart-button">ADD TO CART</button>
+                                </form>
                             </div>
-                            <button type="submit" id="add-to-cart-button">ADD TO CART</button>
-                        </form>
+
+                        </div>
+
                         <div className="review-button-container">
                             <h3>☆☆☆☆☆</h3>
                             <p onClick={this.openModal} id="write-review-button">Write a review</p>
                         </div>
-                    </div>
 
-                    <div className="review-modal-container hidden" onClick={this.closeModal}>
-                        <div className="review-modal">
-                        </div>
-                        <div className="review-modal-content">
-                            <span onClick={this.closeModal} className="close">&times;</span>
-                            <ReviewForm />
+                        <div className="review-modal-container hidden" onClick={this.closeModal}>
+                            <div className="review-modal">
+                            </div>
+                            <div className="review-modal-content" onClick={(e) => e.stopPropagation()}>
+                                <span onClick={this.closeModal} className="close">&times;</span>
+                                <ReviewForm />
+                            </div>
                         </div>
                     </div>
-
+                    
                 </div>
             )
         }

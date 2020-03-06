@@ -9,7 +9,7 @@ class CartItems extends React.Component {
 
     componentDidMount() {
         this.props.getCartItems()
-        this.props.getProducts()
+        // this.props.getProducts()
         if (this.props.currentUser) {
             this.props.getCart(this.props.currentUser.id)
         }
@@ -29,18 +29,21 @@ class CartItems extends React.Component {
             if (this.props.currentUser) {
                 this.props.getCart(this.props.currentUser.id)
             }
-                this.props.getCartItems()
-        }
+            this.props.getCartItems()
+        } 
 
-        if (this.props.items) {
-            if (prevProps.items.length !== this.props.items.length) {
-                this.props.getCartItems()
-            }
-        }
+        //  else if (this.props.items) {
+        //     if (prevProps.items.length !== this.props.items.length) {
+        //         this.props.getCartItems()
+        //     }
+        // }
     }
 
     render() {
         if (this.props.currentUser) {
+            if (this.props.items === undefined) {
+                return <h1>FIRST RENDER THIS IS NULL OIASDJFIOASDJO</h1>
+            }
         return (
             <div>
                 <div className="cart-items-container">
