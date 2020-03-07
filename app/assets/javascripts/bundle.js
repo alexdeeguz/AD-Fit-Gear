@@ -2151,8 +2151,8 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
     };
     _this.updateRating = _this.updateRating.bind(_assertThisInitialized(_this));
     _this.updateReviewDescription = _this.updateReviewDescription.bind(_assertThisInitialized(_this));
-    _this.updateBody = _this.updateBody.bind(_assertThisInitialized(_this));
-    _this.submitReview = _this.submitReview.bind(_assertThisInitialized(_this));
+    _this.updateBody = _this.updateBody.bind(_assertThisInitialized(_this)); // this.submitReview = this.submitReview.bind(this)
+
     return _this;
   } // submitReview() {
   //     console.log(this.props)
@@ -2230,8 +2230,7 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "terms-agreement"
         }, "By submitting, I acknowledge the Privacy Policy and that my review will be publicly posted and shared online"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          id: "next-button",
-          onClick: this.submitReview
+          id: "next-button"
         }, "Done"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "back-button",
           onClick: function onClick() {
