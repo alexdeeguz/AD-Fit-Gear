@@ -2030,7 +2030,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           onSubmit: this.handleSubmit
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.name.toUpperCase()), this.props.reviews.length === 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "product-stars"
-        }, "(\u2606\u2606\u2606\u2606\u2606", this.props.reviews.length, ")") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, "\u2606\u2606\u2606\u2606\u2606(", this.props.reviews.length, ")") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "product-stars"
         }, "\u2605\u2605\u2605\u2605\u2605(", this.props.reviews.length, ")"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "$", product.price), this.hasSize() ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sizes-container"
@@ -2250,7 +2250,7 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "terms-agreement"
         }, "By submitting, I acknowledge the Privacy Policy and that my review will be publicly posted and shared online"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          id: "next-button",
+          id: "done-button",
           onClick: this.submitReview
         }, "Done"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "back-button",

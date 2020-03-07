@@ -213,7 +213,7 @@ input[type=number] {
     border: 1px solid #888;
     width: 45vw;
     background-color: white;
-    height: 50vh;
+    height: 60vh;
     overflow-y: auto;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -231,6 +231,7 @@ input[type=number] {
     margin-left: 18%;
     margin-right: 18%;
     margin-top: 2%;
+    // height: 1%;
     // height: 45px;
 }
 
@@ -256,6 +257,7 @@ input[type=number] {
 .star-rating > h3 {
     // border: 1px solid red;
     margin-right: 5%;
+    font-size: 12pt;
     // margin-left: 5%;
 }
 .star-rating > p {
@@ -276,18 +278,17 @@ textarea {
 }
 
 
-#next-button {
+#done-button {
     font-size: 17pt;
     text-align: center;
     border: 1px solid black;
-    padding: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-left: 25%;
     margin-right: 25%;
 }
 
-#next-button:hover {
+#done-button:hover {
     background-color: black;
     color: white;
     transition: ease 1s;
@@ -305,7 +306,7 @@ textarea {
 }
 
 #terms-agreement {
-    font-size: 12pt;
+    font-size: 9pt;
     margin-right: 25%;
     margin-left: 25%;
     color: #999999;

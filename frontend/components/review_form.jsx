@@ -101,7 +101,7 @@ class ReviewForm extends React.Component {
                 <h2>TELL US MORE!</h2>
                 <textarea placeholder="Share your experience" value={this.state.body} onChange={this.updateBody}></textarea>
                 <p id="terms-agreement">By submitting, I acknowledge the Privacy Policy and that my review will be publicly posted and shared online</p>
-                <p id="next-button" onClick={this.submitReview}>Done</p>
+                <p id="done-button" onClick={this.submitReview}>Done</p>
                 <p id="back-button" onClick={() => this.setState({form: "star-rating"})}>Back</p>
             </div>
             )

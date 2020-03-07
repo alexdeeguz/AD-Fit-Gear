@@ -108,7 +108,7 @@ class ProductShow extends React.Component {
                             <div className="product-form">
                                 <form onSubmit={this.handleSubmit}>
                                     <h3>{product.name.toUpperCase()}</h3>
-                                    {this.props.reviews.length === 0 ? <p id="product-stars">(☆☆☆☆☆{this.props.reviews.length})</p> : <p id="product-stars">★★★★★({this.props.reviews.length})</p>}
+                                    {this.props.reviews.length === 0 ? <p id="product-stars">☆☆☆☆☆({this.props.reviews.length})</p> : <p id="product-stars">★★★★★({this.props.reviews.length})</p>}
                                     <h4>${product.price}</h4>
                                     {this.hasSize() ? 
                                     <div className="sizes-container">
