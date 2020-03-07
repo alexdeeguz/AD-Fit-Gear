@@ -2028,7 +2028,11 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           className: "product-form"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.name.toUpperCase()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "$", product.price), this.hasSize() ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.name.toUpperCase()), this.props.reviews.length === 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          id: "product-stars"
+        }, "(\u2606\u2606\u2606\u2606\u2606", this.props.reviews.length, ")") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          id: "product-stars"
+        }, "\u2605\u2605\u2605\u2605\u2605(", this.props.reviews.length, ")"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "$", product.price), this.hasSize() ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sizes-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Size:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "sizes"
@@ -2088,7 +2092,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_form__WEBPACK_IMPORTED_MODULE_1__["default"], {
           postReview: this.props.postReview,
           currentUser: this.props.currentUser,
-          match: this.props.match
+          match: this.props.match,
+          closeModal: this.closeModal
         }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_review_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
           match: this.props.match,
           currentUser: this.props.currentUser
@@ -2151,16 +2156,31 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
     };
     _this.updateRating = _this.updateRating.bind(_assertThisInitialized(_this));
     _this.updateReviewDescription = _this.updateReviewDescription.bind(_assertThisInitialized(_this));
-    _this.updateBody = _this.updateBody.bind(_assertThisInitialized(_this)); // this.submitReview = this.submitReview.bind(this)
-
+    _this.updateBody = _this.updateBody.bind(_assertThisInitialized(_this));
+    _this.submitReview = _this.submitReview.bind(_assertThisInitialized(_this));
     return _this;
-  } // submitReview() {
-  //     console.log(this.props)
-  //     console.log(this.state)
-  // }
-
+  }
 
   _createClass(ReviewForm, [{
+    key: "submitReview",
+    value: function submitReview(e) {
+      var categoryId = this.props.match.params.categoryId;
+      var productId = this.props.match.params.productId;
+      var review = {
+        rating: this.state.rating,
+        body: this.state.body,
+        user_id: this.props.currentUser.id,
+        product_id: Number(this.props.match.params.productId)
+      };
+      this.props.closeModal(e);
+      this.setState({
+        form: "star-rating",
+        rating: "",
+        body: ""
+      });
+      this.props.postReview(categoryId, productId, review);
+    }
+  }, {
     key: "updateReviewDescription",
     value: function updateReviewDescription(e) {
       e.stopPropagation();
@@ -2230,7 +2250,8 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "terms-agreement"
         }, "By submitting, I acknowledge the Privacy Policy and that my review will be publicly posted and shared online"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          id: "next-button"
+          id: "next-button",
+          onClick: this.submitReview
         }, "Done"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "back-button",
           onClick: function onClick() {
@@ -2298,6 +2319,16 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
       var categoryId = this.props.match.params.categoryId;
       var productId = this.props.match.params.productId;
       this.props.getReviews(categoryId, productId);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var categoryId = this.props.match.params.categoryId;
+      var productId = this.props.match.params.productId;
+
+      if (prevProps.reviews.length !== this.props.reviews.length) {
+        this.props.getReviews(categoryId, productId);
+      }
     }
   }, {
     key: "render",
@@ -2380,11 +2411,15 @@ var ReviewIndexItem = /*#__PURE__*/function (_React$Component) {
         rating = "★";
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "review-item-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.review.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        id: "review-rating"
-      }, rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.review.body));
+      if (this.props.review.user) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "review-item-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.review.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          id: "review-rating"
+        }, rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.review.body));
+      } else {
+        return null;
+      }
     }
   }]);
 

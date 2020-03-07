@@ -9,7 +9,6 @@
 User.destroy_all
 
 u1 = User.create(username: "alex", password: "password")
-u2 = User.create(username: "test", password: "password")
 
 
 Category.destroy_all
@@ -82,13 +81,9 @@ p48 =Product.create(name: "yee gear", price: 29.99, description: "aesthetic af",
 Cart.destroy_all
 
 ca1 = Cart.create(user_id: u1.id)
-ca2 = Cart.create(user_id: u2.id)
 
 CartItem.destroy_all
 
-CartItem.create(product_id: p1.id, category_id: c1.id, cart_id: ca1.id, quantity: 1, size: "M")
-CartItem.create(product_id: p2.id, category_id: c1.id, cart_id: ca1.id, quantity: 1, size: "M")
-CartItem.create(product_id: p3.id, category_id: c1.id, cart_id: ca1.id, quantity: 1, size: "L")
-CartItem.create(product_id: p10.id, category_id: c2.id, cart_id: ca1.id, quantity: 3, size: "L")
+
 
 

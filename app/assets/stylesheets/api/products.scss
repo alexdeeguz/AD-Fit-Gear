@@ -64,6 +64,10 @@ input[type=number] {
     padding-left: 15px;
 }
 
+#product-stars {
+    font-size: 10pt;
+}
+
 
 .increment-container {
     display: flex;
@@ -146,6 +150,7 @@ input[type=number] {
     padding-right: 5px;
     justify-content: flex-end;
     margin-right: 5%;
+    // margin-top: 1%;
 }
 
 #write-review-button:hover {
@@ -165,6 +170,7 @@ input[type=number] {
 
 .review-button-container > h3 {
     // margin-left: 5%;
+    // border: 1px solid red;
     font-family: "Nunito Sans";
     font-size: 12pt;
 }
@@ -315,6 +321,7 @@ textarea {
     display: flex;
     margin-left: 15%;
     margin-right: 15%;
+    flex-wrap: wrap;
 }
 
 .review-item-container {
