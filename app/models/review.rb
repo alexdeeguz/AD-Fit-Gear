@@ -9,10 +9,11 @@
 #  product_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  date       :string
 #
 class Review < ApplicationRecord
 
-    validates :rating, :body, presence: true
+    validates :date, :rating, :body, presence: true
 
     belongs_to :user,
         foreign_key: :user_id,

@@ -2166,7 +2166,10 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
     value: function submitReview(e) {
       var categoryId = this.props.match.params.categoryId;
       var productId = this.props.match.params.productId;
+      var today = new Date();
+      var date = today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear();
       var review = {
+        date: date,
         rating: this.state.rating,
         body: this.state.body,
         user_id: this.props.currentUser.id,
@@ -2397,6 +2400,7 @@ var ReviewIndexItem = /*#__PURE__*/function (_React$Component) {
   _createClass(ReviewIndexItem, [{
     key: "render",
     value: function render() {
+      console.log(this.props);
       var rating = "";
 
       if (this.props.review.rating === 5) {
@@ -2415,6 +2419,8 @@ var ReviewIndexItem = /*#__PURE__*/function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-item-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.review.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          id: "review-date"
+        }, this.props.review.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "review-rating"
         }, rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.review.body));
       } else {

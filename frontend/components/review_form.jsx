@@ -21,7 +21,11 @@ class ReviewForm extends React.Component {
     submitReview(e) {
         const categoryId = this.props.match.params.categoryId
         const productId = this.props.match.params.productId
+        const today = new Date()
+        const date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear()
+
         const review = {
+            date: date,
             rating: this.state.rating,
             body: this.state.body,
             user_id: this.props.currentUser.id,

@@ -340,4 +340,19 @@ textarea {
 
 #review-rating {
     font-size: 8pt;
+    // border: 1px solid red;
+    margin: 0;
 }
+
+#review-date {
+    font-size: 9pt;
+    // border: 1px solid green;
+    color: #999999;
+    margin: 0;
+}
+
+.review-item-container > h3, #review-date {
+    // border: 1px solid red;
+    margin-bottom: 5px;
+}
+

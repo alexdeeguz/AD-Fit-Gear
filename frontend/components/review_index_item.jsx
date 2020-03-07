@@ -6,6 +6,7 @@ class ReviewIndexItem extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         let rating = ""
         if (this.props.review.rating === 5) {rating = "★★★★★"} 
         else if (this.props.review.rating === 4) { rating = "★★★★"}
@@ -16,6 +17,7 @@ class ReviewIndexItem extends React.Component {
             return (
                 <div className="review-item-container">
                     <h3>{this.props.review.user.username}</h3>
+                    <p id="review-date">{this.props.review.date}</p>
                     <p id="review-rating">{rating}</p>
                     <p>{this.props.review.body}</p>
                 </div>
