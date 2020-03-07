@@ -15,7 +15,7 @@ class ReviewIndexItem extends React.Component {
         
         return (
             <div className="review-item-container">
-                <h3>{this.props.currentUser.username}</h3>
+                <h3>{this.props.review.user.username}</h3>
                 <p id="review-rating">{rating}</p>
                 <p>{this.props.review.body}</p>
             </div>

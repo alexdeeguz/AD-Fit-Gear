@@ -2367,7 +2367,7 @@ var ReviewIndexItem = /*#__PURE__*/function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review-item-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.review.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         id: "review-rating"
       }, rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.review.body));
     }
