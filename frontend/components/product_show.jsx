@@ -18,7 +18,6 @@ class ProductShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.openModal = this.openModal.bind(this)
         this.closeModal = this.closeModal.bind(this)
-        console.log(props)
     }
 
     hasSize() {
@@ -136,7 +135,7 @@ class ProductShow extends React.Component {
                         </div>
 
                         <div className="review-button-container">
-                            <h3>☆☆☆☆☆</h3>
+                            {this.props.reviews.length === 0 ? <h3>☆☆☆☆☆ 0 Reviews</h3> : <h3>★★★★★ {this.props.reviews.length} Reviews</h3>}
                             <p onClick={this.openModal} id="write-review-button">Write a review</p>
                         </div>
 
@@ -148,9 +147,8 @@ class ProductShow extends React.Component {
                                 <ReviewForm />
                             </div>
                         </div>
-                    </div>
-                    
-                    <ReviewIndexContainer match={this.props.match}/>
+                        <ReviewIndexContainer match={this.props.match} currentUser={this.props.currentUser}/>
+                    </div> 
                 </div>
             )
         }

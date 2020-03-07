@@ -1361,7 +1361,8 @@ var mSTP = function mSTP(state, ownProps) {
     product: state.entities.products[ownProps.match.params.productId],
     cart: Object.values(state.entities.cart)[0],
     categories: Object.values(state.entities.categories),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    reviews: Object.values(state.entities.reviews)
   };
 };
 
@@ -1910,7 +1911,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.openModal = _this.openModal.bind(_assertThisInitialized(_this));
     _this.closeModal = _this.closeModal.bind(_assertThisInitialized(_this));
-    console.log(props);
     return _this;
   }
 
@@ -2063,7 +2063,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           id: "add-to-cart-button"
         }, "ADD TO CART")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-button-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2606\u2606\u2606\u2606\u2606"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, this.props.reviews.length === 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2606\u2606\u2606\u2606\u2606 0 Reviews") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u2605\u2605\u2605\u2605\u2605 ", this.props.reviews.length, " Reviews"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           onClick: this.openModal,
           id: "write-review-button"
         }, "Write a review")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2079,9 +2079,10 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           onClick: this.closeModal,
           className: "close"
-        }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_form__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_review_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          match: this.props.match
-        }));
+        }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_form__WEBPACK_IMPORTED_MODULE_1__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_review_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          match: this.props.match,
+          currentUser: this.props.currentUser
+        })));
       } else return null;
     }
   }]);
@@ -2271,13 +2272,9 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
   _inherits(ReviewIndex, _React$Component);
 
   function ReviewIndex(props) {
-    var _this;
-
     _classCallCheck(this, ReviewIndex);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ReviewIndex).call(this, props));
-    console.log(props);
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(ReviewIndex).call(this, props));
   }
 
   _createClass(ReviewIndex, [{
@@ -2290,12 +2287,15 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review-index-container"
       }, this.props.reviews.map(function (review) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           review: review,
-          key: review.id
+          key: review.id,
+          currentUser: _this.props.currentUser
         });
       }));
     }
@@ -2351,7 +2351,25 @@ var ReviewIndexItem = /*#__PURE__*/function (_React$Component) {
   _createClass(ReviewIndexItem, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "HELLO");
+      var rating = "";
+
+      if (this.props.review.rating === 5) {
+        rating = "★★★★★";
+      } else if (this.props.review.rating === 4) {
+        rating = "★★★★";
+      } else if (this.props.review.rating === 3) {
+        rating = "★★★";
+      } else if (this.props.review.rating === 2) {
+        rating = "★★";
+      } else if (this.props.review.rating === 1) {
+        rating = "★";
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-item-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        id: "review-rating"
+      }, rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.review.body));
     }
   }]);
 

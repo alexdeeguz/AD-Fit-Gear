@@ -8,7 +8,8 @@ const mSTP = (state, ownProps) => ({
     product: state.entities.products[ownProps.match.params.productId],
     cart: Object.values(state.entities.cart)[0],
     categories: Object.values(state.entities.categories),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    reviews: Object.values(state.entities.reviews)
 })
 
 const mDTP = dispatch => ({

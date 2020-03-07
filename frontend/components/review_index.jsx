@@ -4,7 +4,6 @@ import ReviewIndexItem from './review_index_item'
 class ReviewIndex extends React.Component {
     constructor(props) {
         super(props)
-        console.log(props)
     }
 
 
@@ -20,7 +19,7 @@ class ReviewIndex extends React.Component {
             <div className="review-index-container">
                 {
                     this.props.reviews.map(review => (
-                        <ReviewIndexItem review={review} key={review.id} />
+                        <ReviewIndexItem review={review} key={review.id} currentUser={this.props.currentUser}/>
                     ))
                 }
             </div>
