@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import ReviewIndex from '../review_index'
-import { getAllReviews } from '../../actions/review_actions'
+import { getAllReviews, postReview } from '../../actions/review_actions'
 
 const mSTP = (state, ownProps) => ({
     reviews: Object.values(state.entities.reviews)

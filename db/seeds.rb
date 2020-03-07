@@ -92,4 +92,3 @@ CartItem.create(product_id: p3.id, category_id: c1.id, cart_id: ca1.id, quantity
 CartItem.create(product_id: p10.id, category_id: c2.id, cart_id: ca1.id, quantity: 3, size: "L")
 
 
-

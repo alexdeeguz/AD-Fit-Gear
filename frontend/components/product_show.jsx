@@ -68,7 +68,8 @@ class ProductShow extends React.Component {
     nothing() {
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault()
         const cartId = this.props.currentUser ? Number(this.props.currentUser.id) : ""
         this.setState({
             cart_id: cartId
@@ -144,7 +145,7 @@ class ProductShow extends React.Component {
                             </div>
                             <div className="review-modal-content" onClick={(e) => e.stopPropagation()}>
                                 <span onClick={this.closeModal} className="close">&times;</span>
-                                <ReviewForm />
+                                <ReviewForm postReview={this.props.postReview} currentUser={this.props.currentUser} match={this.props.match}/>
                             </div>
                         </div>
                         <ReviewIndexContainer match={this.props.match} currentUser={this.props.currentUser}/>

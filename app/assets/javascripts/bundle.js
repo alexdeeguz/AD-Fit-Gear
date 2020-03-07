@@ -1350,6 +1350,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
 /* harmony import */ var _actions_category_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/category_actions */ "./frontend/actions/category_actions.js");
 /* harmony import */ var _actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/cart_item_actions */ "./frontend/actions/cart_item_actions.js");
+/* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/review_actions */ "./frontend/actions/review_actions.js");
+
 
 
 
@@ -1376,6 +1378,9 @@ var mDTP = function mDTP(dispatch) {
     },
     addToCart: function addToCart(productId, cartId, size, quantity) {
       return dispatch(Object(_actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_4__["addToCart"])(productId, cartId, size, quantity));
+    },
+    postReview: function postReview(categoryId, productId, review) {
+      return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_5__["postReview"])(categoryId, productId, review));
     }
   };
 };
@@ -1973,7 +1978,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function nothing() {}
   }, {
     key: "handleSubmit",
-    value: function handleSubmit() {
+    value: function handleSubmit(e) {
+      e.preventDefault();
       var cartId = this.props.currentUser ? Number(this.props.currentUser.id) : "";
       this.setState({
         cart_id: cartId
@@ -2079,7 +2085,11 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           onClick: this.closeModal,
           className: "close"
-        }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_form__WEBPACK_IMPORTED_MODULE_1__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_review_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          postReview: this.props.postReview,
+          currentUser: this.props.currentUser,
+          match: this.props.match
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_review_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
           match: this.props.match,
           currentUser: this.props.currentUser
         })));
@@ -2142,8 +2152,13 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
     _this.updateRating = _this.updateRating.bind(_assertThisInitialized(_this));
     _this.updateReviewDescription = _this.updateReviewDescription.bind(_assertThisInitialized(_this));
     _this.updateBody = _this.updateBody.bind(_assertThisInitialized(_this));
+    _this.submitReview = _this.submitReview.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // submitReview() {
+  //     console.log(this.props)
+  //     console.log(this.state)
+  // }
+
 
   _createClass(ReviewForm, [{
     key: "updateReviewDescription",
@@ -2215,7 +2230,8 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "terms-agreement"
         }, "By submitting, I acknowledge the Privacy Policy and that my review will be publicly posted and shared online"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          id: "next-button"
+          id: "next-button",
+          onClick: this.submitReview
         }, "Done"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "back-button",
           onClick: function onClick() {

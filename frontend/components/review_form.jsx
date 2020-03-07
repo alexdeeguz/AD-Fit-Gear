@@ -13,7 +13,13 @@ class ReviewForm extends React.Component {
         this.updateRating = this.updateRating.bind(this)
         this.updateReviewDescription = this.updateReviewDescription.bind(this)
         this.updateBody = this.updateBody.bind(this)
+        this.submitReview = this.submitReview.bind(this)
     }
+
+    // submitReview() {
+    //     console.log(this.props)
+    //     console.log(this.state)
+    // }
 
     updateReviewDescription(e) {
         e.stopPropagation()
@@ -80,7 +86,7 @@ class ReviewForm extends React.Component {
                 <h2>TELL US MORE!</h2>
                 <textarea placeholder="Share your experience" value={this.state.body} onChange={this.updateBody}></textarea>
                 <p id="terms-agreement">By submitting, I acknowledge the Privacy Policy and that my review will be publicly posted and shared online</p>
-                <p id="next-button">Done</p>
+                <p id="next-button" onClick={this.submitReview}>Done</p>
                 <p id="back-button" onClick={() => this.setState({form: "star-rating"})}>Back</p>
             </div>
             )
