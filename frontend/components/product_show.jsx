@@ -1,6 +1,6 @@
 import React from 'react'
 import ReviewForm from './review_form'
-import ReviewIndex from './review_index'
+import ReviewIndexContainer from './containers/review_index_container'
 
 class ProductShow extends React.Component {
     constructor(props) {
@@ -18,6 +18,7 @@ class ProductShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.openModal = this.openModal.bind(this)
         this.closeModal = this.closeModal.bind(this)
+        console.log(props)
     }
 
     hasSize() {
@@ -149,7 +150,7 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
                     
-                    <ReviewIndex />
+                    <ReviewIndexContainer match={this.props.match}/>
                 </div>
             )
         }

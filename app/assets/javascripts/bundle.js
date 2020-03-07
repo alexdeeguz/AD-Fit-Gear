@@ -298,6 +298,55 @@ var getProduct = function getProduct(categoryId, productId) {
 
 /***/ }),
 
+/***/ "./frontend/actions/review_actions.js":
+/*!********************************************!*\
+  !*** ./frontend/actions/review_actions.js ***!
+  \********************************************/
+/*! exports provided: RECEIVE_ALL_REVIEWS, RECEIVE_REVIEW, getAllReviews, postReview */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_REVIEWS", function() { return RECEIVE_ALL_REVIEWS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_REVIEW", function() { return RECEIVE_REVIEW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllReviews", function() { return getAllReviews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postReview", function() { return postReview; });
+/* harmony import */ var _utils_review_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/review_utils */ "./frontend/utils/review_utils.jsx");
+
+var RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
+var RECEIVE_REVIEW = "RECEIVE_REVIEW";
+
+var receiveAllReviews = function receiveAllReviews(reviews) {
+  return {
+    type: RECEIVE_ALL_REVIEWS,
+    reviews: reviews
+  };
+};
+
+var receiveReview = function receiveReview(review) {
+  return {
+    type: RECEIVE_REVIEW,
+    review: review
+  };
+};
+
+var getAllReviews = function getAllReviews(categoryId, productId) {
+  return function (dispatch) {
+    return _utils_review_utils__WEBPACK_IMPORTED_MODULE_0__["getAllReviews"](categoryId, productId).then(function (reviews) {
+      return dispatch(receiveAllReviews(reviews));
+    });
+  };
+};
+var postReview = function postReview(categoryId, productId, review) {
+  return function (dispatch) {
+    return _utils_review_utils__WEBPACK_IMPORTED_MODULE_0__["postReview"](categoryId, productId, review).then(function (createdReview) {
+      return dispatch(receiveReview(createdReview));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -1380,6 +1429,40 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/containers/review_index_container.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/containers/review_index_container.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _review_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../review_index */ "./frontend/components/review_index.jsx");
+/* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/review_actions */ "./frontend/actions/review_actions.js");
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  return {
+    reviews: Object.values(state.entities.reviews)
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    getReviews: function getReviews(categoryId, productId) {
+      return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_2__["getAllReviews"])(categoryId, productId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_review_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/containers/signup_container.jsx":
 /*!*************************************************************!*\
   !*** ./frontend/components/containers/signup_container.jsx ***!
@@ -1782,7 +1865,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _review_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./review_form */ "./frontend/components/review_form.jsx");
-/* harmony import */ var _review_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./review_index */ "./frontend/components/review_index.jsx");
+/* harmony import */ var _containers_review_index_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./containers/review_index_container */ "./frontend/components/containers/review_index_container.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1827,6 +1910,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.openModal = _this.openModal.bind(_assertThisInitialized(_this));
     _this.closeModal = _this.closeModal.bind(_assertThisInitialized(_this));
+    console.log(props);
     return _this;
   }
 
@@ -1995,7 +2079,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           onClick: this.closeModal,
           className: "close"
-        }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_form__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_index__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+        }, "\xD7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_form__WEBPACK_IMPORTED_MODULE_1__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_review_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          match: this.props.match
+        }));
       } else return null;
     }
   }]);
@@ -2159,6 +2245,7 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _review_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./review_index_item */ "./frontend/components/review_index_item.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2179,21 +2266,38 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var ReviewIndex = /*#__PURE__*/function (_React$Component) {
   _inherits(ReviewIndex, _React$Component);
 
   function ReviewIndex(props) {
+    var _this;
+
     _classCallCheck(this, ReviewIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ReviewIndex).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ReviewIndex).call(this, props));
+    console.log(props);
+    return _this;
   }
 
   _createClass(ReviewIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var categoryId = this.props.match.params.categoryId;
+      var productId = this.props.match.params.productId;
+      this.props.getReviews(categoryId, productId);
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review-index-container"
-      });
+      }, this.props.reviews.map(function (review) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          review: review,
+          key: review.id
+        });
+      }));
     }
   }]);
 
@@ -2201,6 +2305,60 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (ReviewIndex);
+
+/***/ }),
+
+/***/ "./frontend/components/review_index_item.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/review_index_item.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var ReviewIndexItem = /*#__PURE__*/function (_React$Component) {
+  _inherits(ReviewIndexItem, _React$Component);
+
+  function ReviewIndexItem(props) {
+    _classCallCheck(this, ReviewIndexItem);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ReviewIndexItem).call(this, props));
+  }
+
+  _createClass(ReviewIndexItem, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "HELLO");
+    }
+  }]);
+
+  return ReviewIndexItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ReviewIndexItem);
 
 /***/ }),
 
@@ -2487,6 +2645,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _products_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./products_reducer */ "./frontend/reducers/products_reducer.js");
 /* harmony import */ var _cart_item_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cart_item_reducer */ "./frontend/reducers/cart_item_reducer.js");
 /* harmony import */ var _cart_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cart_reducer */ "./frontend/reducers/cart_reducer.js");
+/* harmony import */ var _reviews_reducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reviews_reducer */ "./frontend/reducers/reviews_reducer.js");
+
 
 
 
@@ -2498,7 +2658,8 @@ var EntitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers
   cart: _cart_reducer__WEBPACK_IMPORTED_MODULE_5__["default"],
   categories: _categories_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   products: _products_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
-  cartItems: _cart_item_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
+  cartItems: _cart_item_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
+  reviews: _reviews_reducer__WEBPACK_IMPORTED_MODULE_6__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (EntitiesReducer);
 
@@ -2556,6 +2717,41 @@ var ProductsReducer = function ProductsReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductsReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/reviews_reducer.js":
+/*!**********************************************!*\
+  !*** ./frontend/reducers/reviews_reducer.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/review_actions */ "./frontend/actions/review_actions.js");
+
+
+var ReviewsReducer = function ReviewsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var newState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_REVIEWS"]:
+      return action.reviews;
+
+    case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_REVIEW"]:
+      newState[action.review.id] = action.review;
+      return newState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReviewsReducer);
 
 /***/ }),
 
@@ -2849,6 +3045,35 @@ var getCategory = function getCategory(categoryId, productId) {
   return $.ajax({
     url: "/api/categories/".concat(categoryId, "/products/").concat(productId),
     method: "GET"
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/utils/review_utils.jsx":
+/*!*****************************************!*\
+  !*** ./frontend/utils/review_utils.jsx ***!
+  \*****************************************/
+/*! exports provided: getAllReviews, postReview */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllReviews", function() { return getAllReviews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postReview", function() { return postReview; });
+var getAllReviews = function getAllReviews(categoryId, productId) {
+  return $.ajax({
+    url: "/api/categories/".concat(categoryId, "/products/").concat(productId, "/reviews"),
+    method: "GET"
+  });
+};
+var postReview = function postReview(categoryId, productId, review) {
+  return $.ajax({
+    url: "/api/categories/".concat(categoryId, "/products/").concat(productId, "/reviews"),
+    method: "POST",
+    data: {
+      review: review
+    }
   });
 };
 
