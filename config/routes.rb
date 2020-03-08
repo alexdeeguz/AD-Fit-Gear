@@ -14,5 +14,6 @@ Rails.application.routes.draw do
       end
     end 
     resources :products, only: [:show]
+    resources :search, only: [:show]
   end
 end

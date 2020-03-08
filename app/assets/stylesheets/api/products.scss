@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.product-index-div {
+  // border: 1px solid red; 
+  width: 100%;
+  background-color: #efefef;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  // height: 1200px;
+}
+
 .product-image {
     height: 100%;
     width: 20%;
@@ -9,15 +19,27 @@
     margin-left: 5%;
 }
 
+#img {
+  background-color: black;
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 300px;
+}
+
+#img:hover {
+  cursor: pointer;
+}
+
 .main-product-show-container {
-    height: 100%;
+    // height: 100%;
+    // background-color: red;
     // border: 1px solid green;
 }
 .product-show-container {
     display: flex;
     justify-content: space-between;
     background-color: #efefef;
-    // border: 1px solid purple;
+    // border: 1px solid red;
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 5%;
@@ -129,7 +151,7 @@ input[type=number] {
 
 .product-div {
   width: 20%;
-  height: 40%;
+  // height: 40%;
   float: left;
   border: 1px solid #efefef;
   display: flex;
@@ -137,222 +159,54 @@ input[type=number] {
   justify-content: flex-end;
   margin-top: 50px;
   background-color: #efefef;
+  // border: 1px solid red;
 }
 
-#write-review-button {
+
+
+#product-description {
     letter-spacing: normal;
-    font-family: "Nunito Sans";
-    font-size: 12pt;
-    border: 1px solid black;
-    text-align: center;
-    padding: 3px;
-    padding-left: 5px;
-    padding-right: 5px;
-    justify-content: flex-end;
-    margin-right: 5%;
-    // margin-top: 1%;
+    font-size: 10pt;
+    margin-top: 15%;
 }
 
-#write-review-button:hover {
-    color: white;
-    background-color: black;
-    cursor: pointer;
+#view-all-products-button {
+  margin: 50px;
+  width: 25%;
+  border: 1px solid black;
 }
 
-.review-button-container {
-    // border: 1px solid red;
-    margin-top: 5%;
-    margin-left: 15%;
-    margin-right: 15%;
-    display: flex;
-    justify-content: space-between;
+#add-to-cart-button {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  outline: none;
+  /* border: 1px solid black; */
 }
 
-.review-button-container > h3 {
-    // margin-left: 5%;
-    // border: 1px solid red;
-    font-family: "Nunito Sans";
-    font-size: 12pt;
+#view-product-button {
+  height: 30px;
+  width: 50%;
+  margin-top: 5%;
 }
 
-
-
-// review modal
-
-
-.review-modal {
-  // display: none;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.view-product-button-container {
+  margin-bottom: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-family: 'Montserrat';
 }
 
-.review-modal-container {
-//   position: fixed; /* Stay in place */
+.view-product-button-container > p {
+  letter-spacing: 4px;
+  font-size: 22px;
 }
 
-.review-modal-content {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    position: absolute;
-    z-index: 1;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 45vw;
-    background-color: white;
-    height: 60vh;
-    overflow-y: auto;
-    font-family: Arial, Helvetica, sans-serif;
+.products {
+  display: flex;
+  // border: 1px solid yellow;
+  // height: 500px;
 }
-
-.review-form > h3, .review-form > h2 {
-    margin-left: 18%;
-    margin-right: 18%;
-    text-align: center;
-}
-
-.star-rating-container {
-    border: 1px solid black;
-    display: flex;
-    justify-content: flex-end;
-    margin-left: 18%;
-    margin-right: 18%;
-    margin-top: 2%;
-    // height: 1%;
-    // height: 45px;
-}
-
-.star-rating-container:hover {
-    background-color: black;
-    color: white;
-    cursor: pointer;
-}
-
-.selected {
-    background-color: black;
-    color: white;
-}
-
-.star-rating {
-    // border: 1px solid black;
-    width: 100%;
-    // padding: 0px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.star-rating > h3 {
-    // border: 1px solid red;
-    margin-right: 5%;
-    font-size: 12pt;
-    // margin-left: 5%;
-}
-.star-rating > p {
-    // border: 1px solid red;
-    display: flex;
-    align-items: center;
-    margin-left: 5%;
-}
-
-textarea {
-    width: 94%;
-    height: 23vh;
-    margin-left: 3%;
-    margin-right: 3%;
-    border: 1px solid black;
-    outline: none;
-    font-size: 15pt;
-}
-
-
-#done-button {
-    font-size: 17pt;
-    text-align: center;
-    border: 1px solid black;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 25%;
-    margin-right: 25%;
-}
-
-#done-button:hover {
-    background-color: black;
-    color: white;
-    transition: ease 1s;
-    cursor: pointer;
-}
-
-#back-button {
-    margin-left: 3%;
-    // margin-top: 7%;
-    font-size: 15pt;
-}
-
-#back-button:hover {
-    cursor: pointer;
-}
-
-#terms-agreement {
-    font-size: 9pt;
-    margin-right: 25%;
-    margin-left: 25%;
-    color: #999999;
-    // border: 1px solid red;
-    text-align: center;
-}
-
-
-.review-index-container {
-    // width: 100%;
-    // height: 10px;
-    // border: 1px solid red;
-    display: flex;
-    margin-left: 15%;
-    margin-right: 15%;
-    flex-wrap: wrap;
-}
-
-.review-item-container {
-    // border: 1px solid red;
-    text-align: left;
-    width: 15%;
-    padding: 10px;
-    word-wrap: break-word;
-}
-
-.review-item-container:hover {
-    opacity: .5;
-    // cursor: pointer;
-}
-
-#review-rating {
-    font-size: 8pt;
-    // border: 1px solid red;
-    margin: 0;
-}
-
-#review-date {
-    font-size: 9pt;
-    // border: 1px solid green;
-    color: #999999;
-    margin: 0;
-}
-
-.review-item-container > h3, #review-date {
-    // border: 1px solid red;
-    margin-bottom: 5px;
-}
-

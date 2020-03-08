@@ -12,6 +12,62 @@
   display: flex;
   align-items: flex-end;
   background-color: #efefef;
-//   animation: load_content 0.5s;  
+}
+
+.categories > h4 {
+  margin-bottom: 50px;
+  /* background-color: red; */
+  padding-top: 50px;
+}
+.category-index-div {
+  /* border: 1px solid red; */
+  background-color: #efefef;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 1000px;
+}
+
+#category-name {
+  margin-top: 300px;
+  /* border: 1px solid red; */
+  text-align: left;
+  margin-left: 5%;
+  font-family: 'Montserrat';
+  color: white;
+}
+
+#category-item {
+  background-color: black;
+}
+
+.filters {
+  height: 300px;
+  width: 100px;
+  /* border: 1px solid red; */
+  text-align: left;
+}
+
+.filters li {
+  /* list-style: none; */
+  padding: 5px;
+  font-size: 8pt;
+  letter-spacing: normal;
+  /* color: gray; */
+}
+
+.filters li:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.selected-filter {
+  list-style: square;
+  color: black;
+}
+
+.non-selected-filter {
+  list-style: none;
+  color: gray;
 }
 

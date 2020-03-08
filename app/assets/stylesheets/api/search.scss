@@ -1,0 +1,44 @@
+// Place all the styles related to the api/search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search-bar-container {
+    background-color: #efefef;
+}
+
+#search-bar {
+    height: 30px;
+    width: 100%;
+    padding: 20px;
+    // border: 1px solid red;
+    font-size: 15pt;
+    background-color: #efefef;
+    border: 1px solid #efefef;
+    font-family: 'Montserrat';
+    letter-spacing: 4px;
+    outline: none;
+}
+
+.search-bar {
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    // margin-left: 3%;
+}
+
+#magnifying-glass {
+    // border: 1px solid green;
+    font-size: 15pt;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.search-modal {
+  position: absolute;
+  z-index: 1; 
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+}

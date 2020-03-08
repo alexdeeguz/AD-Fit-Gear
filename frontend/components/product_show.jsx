@@ -78,16 +78,26 @@ class ProductShow extends React.Component {
         const size = this.state.size
         const quantity = this.state.quantity
         const modal = $(".modal-container")
+        if (this.props.currentUser) {
         this.props.addToCart(productId, cartId, size, quantity)
         .then(() => modal.removeClass("hidden"))
         .then(() => modal.addClass("show"))
+        } else {
+            alert("Please log in to add items to cart :)")
+            this.props.history.push("/login")
+        }
     }
 
     openModal(e) {
         e.preventDefault()
-        const modal = $(".review-modal-container")
-        modal.removeClass("hidden")
-        modal.addClass("show")
+        if (this.props.currentUser) {
+            const modal = $(".review-modal-container")
+            modal.removeClass("hidden")
+            modal.addClass("show")
+        } else {
+            alert("Please log in to write a review :)")
+            this.props.history.push("/login")
+        }
     }
 
     closeModal(e) {
@@ -131,6 +141,7 @@ class ProductShow extends React.Component {
                                         </div>
                                     </div>
                                     <button type="submit" id="add-to-cart-button">ADD TO CART</button>
+                                    <li id="product-description">{product.description}</li>
                                 </form>
                             </div>
 
