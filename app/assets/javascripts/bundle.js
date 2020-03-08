@@ -2496,7 +2496,6 @@ var ReviewIndexItem = /*#__PURE__*/function (_React$Component) {
   _createClass(ReviewIndexItem, [{
     key: "render",
     value: function render() {
-      console.log(this.props);
       var rating = "";
 
       if (this.props.review.rating === 5) {

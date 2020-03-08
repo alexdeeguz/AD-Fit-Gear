@@ -6,7 +6,6 @@ class ReviewIndexItem extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         let rating = ""
         if (this.props.review.rating === 5) {rating = "★★★★★"} 
         else if (this.props.review.rating === 4) { rating = "★★★★"}
