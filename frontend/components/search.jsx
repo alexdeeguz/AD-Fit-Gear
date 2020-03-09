@@ -19,9 +19,6 @@ class Search extends React.Component {
 
     componentDidMount() {
         this.props.getSearchResults()
-    }
-
-    componentDidUpdate() {
         const header = $(".header-main")
         header.addClass("white-header")
     }

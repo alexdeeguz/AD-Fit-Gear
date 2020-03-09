@@ -1,6 +1,6 @@
 .header-main {
   position: fixed;
-  height: 20vh;
+  height: 13vh;
   width: 100vw;
   background-color: transparent;
   z-index: 1;
@@ -10,44 +10,21 @@
 
 .white-header {
   position: fixed;
-  height: 20vh;
+  height: 13vh;
   width: 100vw;
   background-color: white;
   z-index: 1;
   transition: 0.5s ease;
 }
 
+.placement {
+  height: 13vh;
+  /* border: 1px solid red; */
+}
+
 .header-main:hover {
   background-color: white;
   transition: 0.5s ease;
-}
-
-.search-modal-container {
-  display: none;
-  // height: 10vh;
-}
-
-.search-modal-content {
-  height: 8vh;
-  background-color: white;
-  position: fixed;
-  z-index: 1;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 100%;
-  overflow-y: auto;
-}
-
-.s-modal {
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  bottom: 0;
-  width: 100%; /* Full width */
-  height: 75vh; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .dropdown {
@@ -93,8 +70,8 @@
 }
 
 #user-icon {
-  width: 20px;
-  height: 20px;
+  width: 40%;
+  height: 40%;
   background-image: url("./profile.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -105,16 +82,16 @@
 }
 
 #search-icon {
-  width: 20px;
-  height: 20px;
+  width: 40%;
+  height: 40%;
   background-image: url("./search.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #cart-icon {
-  width: 20px;
-  height: 20px;
+  width: 40%;
+  height: 40%;
   /* border: 1px solid red */
   background-image: url("./cart.svg");
   background-size: cover;
@@ -130,33 +107,34 @@
 }
 
 .icons {
-  width: 100px;
+  width: 5%;
+  // border: 1px solid red;
   display: flex;
   justify-content: space-around;
   // margin-right: 1%;
 }
 
 .icon-header > p, .icons {
-  margin-top: 50px;
+  margin-top: 1%;
   font-family: 'Montserrat';
   font-size: 9pt;
+  // border: 1px solid red;
 }
 
 .nav-bar {
   font-family: 'Montserrat';
-  font-size: 12pt;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 35%;
+  margin-right: 35%;
   text-align: center;
   display: flex;
   justify-content: space-around;
+  // border: 1px solid red;
 }
 
 .nav-bar > a {
   letter-spacing: 2.4px;
   text-decoration: none;
   padding: 5px;
-  padding-bottom: 7px;
 }
 
 .nav-bar > a:hover {
@@ -177,3 +155,4 @@ a:visited {
 .icon-header > h1:hover {
   cursor: pointer;
 }
+

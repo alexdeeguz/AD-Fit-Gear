@@ -1,7 +1,7 @@
 import React from 'react'
 import CategoryIndexItem from './category_index_item'
 import HeaderContainer from './containers/header_container'
-
+import Footer from './footer'
 class CategoryIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -12,11 +12,6 @@ class CategoryIndex extends React.Component {
         const header = $(".header-main")
         header.addClass("white-header")
         this.props.getCategories()
-    }
-
-    componentDidUpdate(prevProps) {
-        const header = $(".header-main")
-        header.addClass("white-header")
     }
 
     render() {
@@ -36,6 +31,7 @@ class CategoryIndex extends React.Component {
                     }
                 </div>
             </div>
+            <Footer />
             </div>
         )
     }

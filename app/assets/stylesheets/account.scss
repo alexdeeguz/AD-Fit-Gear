@@ -1,0 +1,65 @@
+.account-container-main {
+    // border: 1px solid red;
+    width: 100%;
+}
+.account-container {
+    // border: 1px solid green;
+    margin-left: 23%;
+    margin-right: 23%;
+    font-family: 'Montserrat';
+    height: 40vh;
+    margin-top: 5%;
+}
+
+.account-container > p, .my-orders > p, .addresses > p {
+    font-size: 9pt;
+}
+
+.account-container > h5, .my-orders > h5, .addresses > h5 {
+    letter-spacing: 2px;
+    color: #6a6a6a;
+    font-family: 'Montserrat';
+    font-size: 9pt;
+}
+
+.account-container > h5:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.account-container > h3 {
+    letter-spacing: 3px;
+    font-family: 'Montserrat';
+}
+
+.orders {
+    // border: 1px solid red;
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-orders {
+    // border: 1px solid blue;
+    width: 50%;
+}
+
+#manage-address-button {
+  background: linear-gradient(to right,#efefef 50%, black 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 1s ease;
+  color: white;
+  letter-spacing: 3px;
+  font-family: 'Montserrat';
+  height: 30%;
+  padding: 10px;
+  margin-top: 5%;
+}
+
+#manage-address-button:hover {
+  background-position: left bottom;
+  transition: all 1s ease;
+  color: black;
+  cursor: pointer;
+}

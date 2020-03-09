@@ -37,7 +37,7 @@ class Footer extends React.Component {
                 </div>
                 <div className="payment-images">
                     <div className="footer-logo-name">
-                        <h5>ADFITGEAR</h5> 
+                        <h5>© ADFITGEAR</h5> 
                     </div>
                     <div className="payments">
                         <img src={window.card1URL} />

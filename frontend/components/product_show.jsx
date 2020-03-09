@@ -2,6 +2,8 @@ import React from 'react'
 import ReviewForm from './review_form'
 import ReviewIndexContainer from './containers/review_index_container'
 import HeaderContainer from './containers/header_container'
+import Footer from './footer'
+
 class ProductShow extends React.Component {
     constructor(props) {
         super(props)
@@ -38,11 +40,6 @@ class ProductShow extends React.Component {
         this.setState({
             cart_id: this.props.cartId
         })
-    }
-
-    componentDidUpdate() {
-        const header = $(".header-main")
-        header.addClass("white-header")
     }
 
     incrementQuantity() {
@@ -173,6 +170,7 @@ class ProductShow extends React.Component {
                             <ReviewIndexContainer match={this.props.match} currentUser={this.props.currentUser}/>
                         </div> 
                     </div>
+                    <Footer />
                 </div>
             )
         }

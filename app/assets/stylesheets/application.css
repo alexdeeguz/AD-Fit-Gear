@@ -19,11 +19,6 @@ body {
   background-color: #efefef;
 }
 
-.placement {
-  height: 20vh;
-  /* border: 1px solid red; */
-}
-
 .main {
   background-color: #efefef;
   height: 100vh;
@@ -65,6 +60,21 @@ body {
   transition: all 1s ease;
   color: white;
   cursor: pointer;
+}
+
+#demo-button {
+  background: linear-gradient(to right, #efefef 50%, black 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 1s ease;
+  color: white;
+}
+
+#demo-button:hover {
+  background-position: left bottom;
+  transition: all 1s ease;
+  cursor: pointer;
+  color: black;
 }
 
 #shop-now-button, #view-product-button {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import HeaderContainer from './containers/header_container';
+import Footer from './footer'
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -8,22 +9,39 @@ class SessionForm extends React.Component {
         this.updateUsername = this.updateUsername.bind(this)
         this.updatePassword = this.updatePassword.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demoLogin = this.demoLogin.bind(this)
 
         this.state = {
             username: "",
             password: ""
         }
+        
     }
 
     componentDidMount() {
         const header = $(".header-main")
         header.addClass("white-header")
+        this.props.removeErrors()
     }
 
-    componentDidUpdate(prevProps) {
-        const header = $(".header-main")
-        header.addClass("white-header")
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.match.url !== this.props.match.url) {
+    //         this.props.removeErrors()
+    //     }
+    // }
+
+
+    demoLogin(e) {
+        e.preventDefault()
+        const user = {
+            username: "demo-user",
+            password: "password"
+        }
+        this.props.login(user)
+            .then(() => this.props.history.push('/'))
     }
+
+
 
     handleSubmit(e) {
         e.preventDefault()
@@ -78,9 +96,10 @@ class SessionForm extends React.Component {
                                 <input className="form-input" type="password" onChange={this.updatePassword} value={this.state.password} placeholder="Password" />
                             </label>
                             <br />
-
                             <button className="form-input" id="button" type="submit">{formType.toUpperCase()}</button>
-                            <br />
+                            <br/>
+                            {this.props.formType === "login" ? <button className="form-input" id="demo-button" onClick={this.demoLogin}>DEMO LOGIN</button> : ""}
+                             <br />
                             {
                                 this.props.errors.session.map(error => (
                                     <p className="errors">{error}</p>
@@ -90,6 +109,7 @@ class SessionForm extends React.Component {
                         </form>
                     </div>
                 </div>
+                <Footer /> 
             </div>
         )
     }

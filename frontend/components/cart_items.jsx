@@ -10,6 +10,7 @@ class CartItems extends React.Component {
     componentDidMount() {
         this.props.getCartItems()
         // this.props.getProducts()
+
         if (this.props.currentUser) {
             this.props.getCart(this.props.currentUser.id)
         }
@@ -39,7 +40,16 @@ class CartItems extends React.Component {
         // }
     }
 
+    total() {
+        let total = 0
+        Object.values(this.props.items).forEach(item => {
+            total += Number(item.product.price)
+        })
+        return total
+    }
+
     render() {
+        const total = this.total()
         if (this.props.currentUser) {
             if (this.props.items === undefined) {
                 return <h1>FIRST RENDER THIS IS NULL OIASDJFIOASDJO</h1>
@@ -64,7 +74,7 @@ class CartItems extends React.Component {
                     }
                 </div>
                 <div className="checkout-container">
-                    <button id="checkout-button">CHECKOUT</button>
+                <button id="checkout-button">CHECKOUT * ${total}</button>
                 </div>
             </div>
         )

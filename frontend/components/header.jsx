@@ -14,16 +14,8 @@ class Header extends React.Component {
     }
 
     componentDidMount() {
-        const header = $(".header-main")
-        header.removeClass("white-header")
         this.props.getCategories()
     }
-
-    componentDidUpdate() {
-        const header = $(".header-main")
-        header.removeClass("white-header")
-    }
-
 
     closeModal() {
         const modal = $(".modal-container")
@@ -94,7 +86,8 @@ class Header extends React.Component {
                             </div>
                         </div>
                         <a href="">TRAINING</a>
-                        <a href="">CONTACT US</a>
+                        {/* <a href="">CONTACT US</a> */}
+                        <Link to="/contact-us">CONTACT US</Link>
                     </nav>
                 </div>
             </div>

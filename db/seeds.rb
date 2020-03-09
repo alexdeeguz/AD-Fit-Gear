@@ -9,7 +9,7 @@
 User.destroy_all
 
 u1 = User.create(username: "alex", password: "password")
-
+u2 = User.create(username: "demo-user", password: "password")
 
 Category.destroy_all
 
@@ -81,7 +81,7 @@ p48 =Product.create(name: "red wrist wraps", price: 19.99, description: "wrist w
 Cart.destroy_all
 
 ca1 = Cart.create(user_id: u1.id)
-
+ca2 = Cart.create(user_id: u2.id)
 CartItem.destroy_all
 
 Review.destroy_all

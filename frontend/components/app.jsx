@@ -11,6 +11,7 @@ import SearchContainer from './containers/search_container';
 import AccountContainer from './containers/account_container';
 import { AuthRoute } from '../utils/route_utils'
 import Error404 from './404'
+import ContactUs from './contact_us';
 const App = () => (
     <div>
         {/* <Route path="/" component={HeaderContainer} /> */}
@@ -22,6 +23,7 @@ const App = () => (
             <Route exact path="/categories" component={CategoryIndexContainer} />
             <Route exact path="/search" component={SearchContainer} />
             <Route exact path="/account" component={AccountContainer} />
+            <Route exact path="/contact-us" component={ContactUs} />
             <Route exact path="/" component={HomeContainer} />
             <Route component={Error404}/>
         </Switch>

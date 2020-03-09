@@ -1,0 +1,30 @@
+.contact-us-container {
+    // border: 1px solid red;
+}
+
+
+.contact-us-content {
+    // border: 1px solid green;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 5%;
+    font-family: "Nunito Sans";
+}
+
+.contact-us-content > h3 {
+    text-align: center;
+    letter-spacing: 3px;
+    font-family: "Montserrat";
+    margin-bottom: 15%;
+}
+
+.contact-us-content > p {
+    font-size: 12px;
+}
+
+#contact-closing {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 130px;
+    font-family: 'Montserrat Subrayada', sans-serif;
+}

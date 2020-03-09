@@ -13,6 +13,8 @@ class CategoryProductIndex extends React.Component {
         const categoryId = this.props.match.params.categoryId
         this.props.getCategory(categoryId)
         this.props.getProducts(categoryId)
+        const header = $(".header-main")
+        header.addClass("white-header")
     }
 
     componentDidUpdate(prevProps) {
@@ -20,8 +22,6 @@ class CategoryProductIndex extends React.Component {
         if (prevProps.match.params.categoryId != this.props.match.params.categoryId) {
             this.props.getProducts(this.props.match.params.categoryId)
         }
-        const header = $(".header-main")
-        header.addClass("white-header")
     }
 
     render() {
