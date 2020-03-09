@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
                 .then(() => this.props.history.push('/'))
         } else {
             this.props.login(user)
-                .then(() => this.props.history.goBack())
+                .then(() => this.props.history.push('/'))
         }
         this.setState({
             username: "",

@@ -2931,7 +2931,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         });
       } else {
         this.props.login(user).then(function () {
-          return _this2.props.history.goBack();
+          return _this2.props.history.push('/');
         });
       }
 
