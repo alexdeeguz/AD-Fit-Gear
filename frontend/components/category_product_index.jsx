@@ -2,6 +2,8 @@ import React from 'react'
 import CategoryProductIndexItem from './category_product_index_item'
 import FiltersComponent from '../components/filters'
 import HeaderContainer from './containers/header_container'
+import Footer from './footer'
+
 class CategoryProductIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -40,6 +42,7 @@ class CategoryProductIndex extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

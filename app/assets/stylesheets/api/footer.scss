@@ -1,0 +1,89 @@
+#footer-linked-in-logo, #footer-github-logo {
+  height: 16px;
+  background-color: black;
+}
+
+#footer-github-logo {
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.footer-container {
+    // border: 1px solid red;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+}
+
+.footer-container h5 {
+    letter-spacing: 3px;
+}
+
+.main-footer-container {
+    width: 100%;
+    background-color: white;
+    border: 1px solid white;
+}
+
+.footer-links > li, .footer-about > p, .footer-newsletter > p {
+    list-style: none;
+    margin-bottom: 10%;
+    font-size: 9pt;
+}
+
+.footer-links > li {
+    cursor: pointer;
+}
+
+#subscribe-button {
+  background: linear-gradient(to right, white 50%, black 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 1s ease;
+  color: white;
+  letter-spacing: 3px;
+    font-family: 'Montserrat';
+}
+
+#subscribe-button:hover {
+  background-position: left bottom;
+  transition: all 1s ease;
+  color: black;
+  cursor: pointer;
+}
+
+.footer-newsletter {
+    // border: 1px solid red;
+    width: 15%;
+}
+
+#newsletter-email-input {
+    height: 13%;
+    width: 100%;
+}
+
+#subscribe-button {
+    height: 15%;
+    margin-top: 5%;
+    width: 50%;
+}
+
+.payment-images {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1%;
+}
+
+.payments {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+}
+
+
