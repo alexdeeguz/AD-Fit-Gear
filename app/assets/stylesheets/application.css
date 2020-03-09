@@ -119,12 +119,28 @@ body {
 #shop-now-button {
   margin: 50px;
   width: 25%;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   position: absolute;
   top: 50%;
   left: 45%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+
+.social-container {
+  /* border: 1px solid white; */
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#linked-in-logo {
+  height: 64px;
 }
 
 

@@ -1008,6 +1008,12 @@ var CategoryIndexItem = /*#__PURE__*/function (_React$Component) {
         }) : "", id === "joggers" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           id: id,
           src: window.joggersURL
+        }) : "", id === "shirts" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          id: id,
+          src: window.shirtsURL
+        }) : "", id === "hats" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          id: id,
+          src: window.hatsURL
         }) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "view-product-button-container"
         }, this.props.category.name === "gear" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "LIFTING GEAR") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.category.name.toUpperCase()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1954,12 +1960,28 @@ var Home = /*#__PURE__*/function (_React$Component) {
       if (this.props.currentUser) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "main"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome ", this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: this.logout
-        }, "Log out"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "home-pic",
+          src: window.splashPicURL
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "form-input",
-          id: "shop-now-button"
-        }, "VIEW ALL PRODUCTS"));
+          id: "shop-now-button",
+          onClick: function onClick() {
+            return _this2.props.history.push("/categories");
+          }
+        }, "SHOP NOW"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "social-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://github.com/alexdeeguz/AD-Fit-Gear"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: window.githubURL,
+          id: "github-logo"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://www.linkedin.com/in/alex-de-guzman-491728163/"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: window.linkedinURL,
+          id: "linked-in-logo"
+        }))));
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2675,6 +2697,12 @@ var Search = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.getSearchResults();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      var header = $(".header-main");
+      header.addClass("white-header");
     }
   }, {
     key: "render",
