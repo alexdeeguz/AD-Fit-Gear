@@ -9,13 +9,13 @@ import ProductShowContainer from './containers/product_show_container';
 import HeaderContainer from './containers/header_container';
 import SearchContainer from './containers/search_container';
 import AccountContainer from './containers/account_container';
-
+import AuthRoute from '../utils/route_utils'
 const App = () => (
     <div>
         <Route path="/" component={HeaderContainer} />
         <Switch>
-            <Route path="/login" component={LoginContainer} />
-            <Route path="/signup" component={SignupContainer} />
+            <AuthRoute path="/login" component={LoginContainer} />
+            <AuthRoute path="/signup" component={SignupContainer} />
             <Route exact path="/categories/:categoryId/products/:productId" component={ProductShowContainer} />
             <Route exact path="/categories/:categoryId/products" component={CategoryProductIndexContainer} />
             <Route exact path="/categories" component={CategoryIndexContainer} />
