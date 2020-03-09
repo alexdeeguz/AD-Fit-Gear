@@ -2910,7 +2910,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate() {
+    value: function componentDidUpdate(prevProps) {
       var header = $(".header-main");
       header.addClass("white-header");
     }
@@ -2931,7 +2931,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         });
       } else {
         this.props.login(user).then(function () {
-          return _this2.props.history.push('/');
+          return _this2.props.history.goBack();
         });
       }
 
@@ -2985,7 +2985,11 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         className: "form-input",
         id: "button",
         type: "submit"
-      }, formType.toUpperCase()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), linkToSignup)));
+      }, formType.toUpperCase()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.errors.session.map(function (error) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "errors"
+        }, error);
+      }), linkToSignup)));
     }
   }]);
 

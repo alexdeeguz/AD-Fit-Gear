@@ -143,5 +143,9 @@ body {
   height: 64px;
 }
 
+.errors {
+  color: red;
+}
+
 
 

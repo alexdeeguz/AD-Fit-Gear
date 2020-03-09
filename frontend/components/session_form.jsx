@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
         header.addClass("white-header")
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
         const header = $(".header-main")
         header.addClass("white-header")
     }
@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
                 .then(() => this.props.history.push('/'))
         } else {
             this.props.login(user)
-                .then(() => this.props.history.push('/'))
+                .then(() => this.props.history.goBack())
         }
         this.setState({
             username: "",
@@ -78,6 +78,11 @@ class SessionForm extends React.Component {
 
                         <button className="form-input" id="button" type="submit">{formType.toUpperCase()}</button>
                         <br />
+                        {
+                            this.props.errors.session.map(error => (
+                                <p className="errors">{error}</p>
+                            ))
+                        }
                         {linkToSignup}
                     </form>
                 </div>
