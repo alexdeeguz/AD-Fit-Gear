@@ -5,19 +5,9 @@ import CategoryIndexContainer from './containers/categories_container';
 class Home extends React.Component {
     constructor(props) {
         super(props)
-        this.logout = this.logout.bind(this)
     }
-
-
-    logout(e) {
-        e.preventDefault()
-        this.props.logout()
-        this.props.history.push('/login')
-    }
-
 
     render() {
-        if (this.props.currentUser) {
         return (
             <div className="main">
                 {/* <h1>Welcome {this.props.currentUser.username}</h1>
@@ -28,14 +18,6 @@ class Home extends React.Component {
                     <a href="https://github.com/alexdeeguz/AD-Fit-Gear"><img src={window.githubURL} id="github-logo" /></a>
                     <a href="https://www.linkedin.com/in/alex-de-guzman-491728163/"><img src={window.linkedinURL} id="linked-in-logo" /></a>
                 </div>
-                {/* <CategoryIndexContainer {...this.props} /> */}
-            </div>
-            )
-        }
-        return (   
-            <div className="home-container">
-                <img className="home-pic" src={window.splashPicURL}/>
-                <button className="form-input" id="shop-now-button" onClick={() => this.props.history.push("/categories")}>SHOP NOW</button>
                 {/* <CategoryIndexContainer {...this.props} /> */}
             </div>
         )

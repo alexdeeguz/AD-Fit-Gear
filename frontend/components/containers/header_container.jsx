@@ -3,7 +3,8 @@ import Header from '../header'
 import { getCategories } from '../../actions/category_actions'
 
 const mSTP = (state, ownProps) => ({
-    categories: Object.values(state.entities.categories)
+    categories: Object.values(state.entities.categories),
+    currentUser: state.entities.users[state.session.id]
 })
 
 const mDTP = dispatch => ({

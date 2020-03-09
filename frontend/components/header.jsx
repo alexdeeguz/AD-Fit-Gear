@@ -26,7 +26,6 @@ class Header extends React.Component {
 
 
     closeModal() {
-        // e.currentTarget.className = "modal-hidden"
         const modal = $(".modal-container")
         modal.removeClass("show")
         modal.addClass("hidden")
@@ -39,7 +38,11 @@ class Header extends React.Component {
     }
 
     go_to_login() {
+        if (this.props.currentUser) {
+            this.props.history.push('/account')
+        } else {
         this.props.history.push('/login')
+        }
     }
 
     redirect_home() {
@@ -62,15 +65,10 @@ class Header extends React.Component {
                 <div className="header-main">
                     <div className="icon-header">
                         <p>USD</p>
-                        {/* <div id="logo-icon" onClick={this.redirect_home}></div> */}
-                        {/* <img id="logo-icon" src={window.logoURL} onClick={this.redirect_home}/> */}
                         <h1 onClick={this.redirect_home}>AD</h1>
                         <div className="icons">
-                            {/* <div id="user-icon" onClick={this.go_to_login}></div> */}
                             <img id="user-icon" src={window.userURL} onClick={this.go_to_login}/>
-                            {/* <div id="search-icon"></div> */}
                             <img id="search-icon" src={window.searchURL} onClick={this.go_to_search}/>
-                            {/* <div id="cart-icon" onClick={this.openModal}></div> */}
                             <img id="cart-icon" src={window.cartURL} onClick={this.openModal}/>
                             <div className="modal-container hidden" onClick={this.closeModal}>
                                 <div className="modal">

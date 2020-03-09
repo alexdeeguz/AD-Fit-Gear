@@ -517,6 +517,93 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./frontend/components/account.jsx":
+/*!*****************************************!*\
+  !*** ./frontend/components/account.jsx ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Account = /*#__PURE__*/function (_React$Component) {
+  _inherits(Account, _React$Component);
+
+  function Account(props) {
+    var _this;
+
+    _classCallCheck(this, Account);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Account).call(this, props));
+    _this.logout = _this.logout.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Account, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var header = $(".header-main");
+      header.addClass("white-header");
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      var header = $(".header-main");
+      header.addClass("white-header");
+    }
+  }, {
+    key: "logout",
+    value: function logout(e) {
+      e.preventDefault();
+      this.props.logout();
+      this.props.history.push('/login');
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (this.props.currentUser) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "placement"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "account-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome ", this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: this.logout
+        }, "Log out")));
+      }
+
+      return null;
+    }
+  }]);
+
+  return Account;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Account);
+
+/***/ }),
+
 /***/ "./frontend/components/app.jsx":
 /*!*************************************!*\
   !*** ./frontend/components/app.jsx ***!
@@ -528,7 +615,7 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_containers_home_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/containers/home_container */ "./frontend/components/containers/home_container.jsx");
+/* harmony import */ var _containers_home_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./containers/home_container */ "./frontend/components/containers/home_container.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _containers_signup_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./containers/signup_container */ "./frontend/components/containers/signup_container.jsx");
 /* harmony import */ var _containers_login_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./containers/login_container */ "./frontend/components/containers/login_container.jsx");
@@ -537,6 +624,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers_product_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./containers/product_show_container */ "./frontend/components/containers/product_show_container.jsx");
 /* harmony import */ var _containers_header_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./containers/header_container */ "./frontend/components/containers/header_container.jsx");
 /* harmony import */ var _containers_search_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./containers/search_container */ "./frontend/components/containers/search_container.jsx");
+/* harmony import */ var _containers_account_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./containers/account_container */ "./frontend/components/containers/account_container.jsx");
+
 
 
 
@@ -575,8 +664,12 @@ var App = function App() {
     path: "/search",
     component: _containers_search_container__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/account",
+    component: _containers_account_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
-    component: _components_containers_home_container__WEBPACK_IMPORTED_MODULE_1__["default"]
+    component: _containers_home_container__WEBPACK_IMPORTED_MODULE_1__["default"]
   })));
 };
 
@@ -1201,6 +1294,43 @@ var CategoryProductIndexItem = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
+/***/ "./frontend/components/containers/account_container.jsx":
+/*!**************************************************************!*\
+  !*** ./frontend/components/containers/account_container.jsx ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _account__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../account */ "./frontend/components/account.jsx");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  return {
+    currentUser: state.entities.users[state.session.id]
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    login: function login(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["log_in"])(user));
+    },
+    logout: function logout() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["log_out"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_account__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/containers/cart_items_container.jsx":
 /*!*****************************************************************!*\
   !*** ./frontend/components/containers/cart_items_container.jsx ***!
@@ -1312,7 +1442,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   return {
-    categories: Object.values(state.entities.categories)
+    categories: Object.values(state.entities.categories),
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
@@ -1786,7 +1917,6 @@ var Header = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "closeModal",
     value: function closeModal() {
-      // e.currentTarget.className = "modal-hidden"
       var modal = $(".modal-container");
       modal.removeClass("show");
       modal.addClass("hidden");
@@ -1801,7 +1931,11 @@ var Header = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "go_to_login",
     value: function go_to_login() {
-      this.props.history.push('/login');
+      if (this.props.currentUser) {
+        this.props.history.push('/account');
+      } else {
+        this.props.history.push('/login');
+      }
     }
   }, {
     key: "redirect_home",
@@ -1920,9 +2054,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1936,56 +2070,18 @@ var Home = /*#__PURE__*/function (_React$Component) {
   _inherits(Home, _React$Component);
 
   function Home(props) {
-    var _this;
-
     _classCallCheck(this, Home);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props));
-    _this.logout = _this.logout.bind(_assertThisInitialized(_this));
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props));
   }
 
   _createClass(Home, [{
-    key: "logout",
-    value: function logout(e) {
-      e.preventDefault();
-      this.props.logout();
-      this.props.history.push('/login');
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      if (this.props.currentUser) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "main"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "home-pic",
-          src: window.splashPicURL
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          className: "form-input",
-          id: "shop-now-button",
-          onClick: function onClick() {
-            return _this2.props.history.push("/categories");
-          }
-        }, "SHOP NOW"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "social-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://github.com/alexdeeguz/AD-Fit-Gear"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: window.githubURL,
-          id: "github-logo"
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://www.linkedin.com/in/alex-de-guzman-491728163/"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: window.linkedinURL,
-          id: "linked-in-logo"
-        }))));
-      }
+      var _this = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-container"
+        className: "main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-pic",
         src: window.splashPicURL
@@ -1993,9 +2089,21 @@ var Home = /*#__PURE__*/function (_React$Component) {
         className: "form-input",
         id: "shop-now-button",
         onClick: function onClick() {
-          return _this2.props.history.push("/categories");
+          return _this.props.history.push("/categories");
         }
-      }, "SHOP NOW"));
+      }, "SHOP NOW"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "social-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://github.com/alexdeeguz/AD-Fit-Gear"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: window.githubURL,
+        id: "github-logo"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://www.linkedin.com/in/alex-de-guzman-491728163/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: window.linkedinURL,
+        id: "linked-in-logo"
+      }))));
     }
   }]);
 
