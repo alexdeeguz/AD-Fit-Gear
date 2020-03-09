@@ -1,5 +1,6 @@
 import React from 'react'
 import CategoryProductIndexItem from './category_product_index_item'
+import HeaderContainer from './containers/header_container';
 
 class Search extends React.Component {
     constructor(props) {
@@ -28,26 +29,29 @@ class Search extends React.Component {
     render() {
         return (
             <div>
-                <div className="placement"></div>
-                <div className="search-container">
-                    <div className="search-bar">
-                        <p id="magnifying-glass">🔍</p>
-                        <input id="search-bar" type="text" placeholder="SEARCH..." onChange={this.search}/>
-                    </div>
-                </div>
-                
-                {this.props.searches.length === 0 ? <div className="search-modal"></div> : 
-
-                    <div>
-                        <div className="product-index-div">
-                            {
-                                this.props.searches.map(product => (
-                                    <CategoryProductIndexItem {...this.props} product={product} key={product.id} />
-                                ))
-                            }
+                <HeaderContainer {...this.props} />
+                <div>
+                    <div className="placement"></div>
+                    <div className="search-container">
+                        <div className="search-bar">
+                            <p id="magnifying-glass">🔍</p>
+                            <input id="search-bar" type="text" placeholder="SEARCH..." onChange={this.search}/>
                         </div>
                     </div>
-                }
+                    
+                    {this.props.searches.length === 0 ? <div className="search-modal"></div> : 
+
+                        <div>
+                            <div className="product-index-div">
+                                {
+                                    this.props.searches.map(product => (
+                                        <CategoryProductIndexItem {...this.props} product={product} key={product.id} />
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
         )
     }

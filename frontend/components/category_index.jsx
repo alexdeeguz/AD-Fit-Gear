@@ -1,5 +1,6 @@
 import React from 'react'
 import CategoryIndexItem from './category_index_item'
+import HeaderContainer from './containers/header_container'
 
 class CategoryIndex extends React.Component {
     constructor(props) {
@@ -22,6 +23,8 @@ class CategoryIndex extends React.Component {
         const { categories } = this.props
 
         return (
+            <div>
+            <HeaderContainer {...this.props} />
             <div className="categories">
                 <div className="placement"></div>
                 <h4>ALL CATEGORIES</h4>
@@ -32,6 +35,7 @@ class CategoryIndex extends React.Component {
                     ))
                     }
                 </div>
+            </div>
             </div>
         )
     }

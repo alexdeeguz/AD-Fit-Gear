@@ -1,7 +1,7 @@
 import React from 'react'
 import CategoryProductIndexItem from './category_product_index_item'
 import FiltersComponent from '../components/filters'
-
+import HeaderContainer from './containers/header_container'
 class CategoryProductIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -26,15 +26,18 @@ class CategoryProductIndex extends React.Component {
         const { products } = this.props
         return (
             <div>
-                <div className="placement"></div>
-                <div className="products">
-                    <FiltersComponent {...this.props} />
-                    <div className="product-index-div">
-                        {
-                        products.map(product => (
-                            <CategoryProductIndexItem {...this.props} product={product} key={product.id} />
-                        ))
-                        }
+                <HeaderContainer {...this.props}/>
+                <div>
+                    <div className="placement"></div>
+                    <div className="products">
+                        <FiltersComponent {...this.props} />
+                        <div className="product-index-div">
+                            {
+                            products.map(product => (
+                                <CategoryProductIndexItem {...this.props} product={product} key={product.id} />
+                            ))
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

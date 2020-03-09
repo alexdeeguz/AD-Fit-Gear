@@ -1,4 +1,5 @@
 import React from 'react'
+import HeaderContainer from './containers/header_container';
 
 class Account extends React.Component {
     constructor(props) {
@@ -26,10 +27,13 @@ class Account extends React.Component {
         if (this.props.currentUser) {
             return (
                 <div>
-                    <div className="placement"></div>
-                    <div className="account-container">
-                        <h1>Welcome {this.props.currentUser.username}</h1>
-                        <button onClick={this.logout}>Log out</button>
+                    <HeaderContainer {...this.props}/>
+                    <div>
+                        <div className="placement"></div>
+                        <div className="account-container">
+                            <h1>Welcome {this.props.currentUser.username}</h1>
+                            <button onClick={this.logout}>Log out</button>
+                        </div>
                     </div>
                 </div>
             )

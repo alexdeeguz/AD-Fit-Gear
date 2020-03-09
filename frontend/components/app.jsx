@@ -9,10 +9,11 @@ import ProductShowContainer from './containers/product_show_container';
 import HeaderContainer from './containers/header_container';
 import SearchContainer from './containers/search_container';
 import AccountContainer from './containers/account_container';
-import AuthRoute from '../utils/route_utils'
+import { AuthRoute } from '../utils/route_utils'
+import Error404 from './404'
 const App = () => (
     <div>
-        <Route path="/" component={HeaderContainer} />
+        {/* <Route path="/" component={HeaderContainer} /> */}
         <Switch>
             <AuthRoute path="/login" component={LoginContainer} />
             <AuthRoute path="/signup" component={SignupContainer} />
@@ -21,7 +22,8 @@ const App = () => (
             <Route exact path="/categories" component={CategoryIndexContainer} />
             <Route exact path="/search" component={SearchContainer} />
             <Route exact path="/account" component={AccountContainer} />
-            <Route path="/" component={HomeContainer} />
+            <Route exact path="/" component={HomeContainer} />
+            <Route component={Error404}/>
         </Switch>
     </div>
 )

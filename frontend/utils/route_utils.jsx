@@ -17,5 +17,5 @@ const Auth = ({loggedIn, path, component: Component}) => (
     />
 )
 
-export default withRouter(connect(mSTP)(Auth))
+export const AuthRoute = withRouter(connect(mSTP)(Auth))
 

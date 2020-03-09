@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import HeaderContainer from './containers/header_container';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -61,30 +62,33 @@ class SessionForm extends React.Component {
         const linkToSignup = formType === "sign up" ? <p>Have an account? <Link to="/login">Login</Link></p> : <p>Don't have an account? <Link to="/signup">Create one</Link></p>
 
         return (
-            <div className="main">
-                <div className="placement"></div>
-                <h1>{formType.toUpperCase()}</h1>
-                <p>{this.props.message}</p>
-                <div>
-                    <form onSubmit={this.handleSubmit}>
-                        <label>
-                            <input className="form-input" type="text" onChange={this.updateUsername} value={this.state.username} placeholder="Username" />
-                        </label>
-                        <br />
-                        <label>
-                            <input className="form-input" type="password" onChange={this.updatePassword} value={this.state.password} placeholder="Password" />
-                        </label>
-                        <br />
+            <div>
+                <HeaderContainer {...this.props}/>
+                <div className="main">
+                    <div className="placement"></div>
+                    <h1>{formType.toUpperCase()}</h1>
+                    <p>{this.props.message}</p>
+                    <div>
+                        <form onSubmit={this.handleSubmit}>
+                            <label>
+                                <input className="form-input" type="text" onChange={this.updateUsername} value={this.state.username} placeholder="Username" />
+                            </label>
+                            <br />
+                            <label>
+                                <input className="form-input" type="password" onChange={this.updatePassword} value={this.state.password} placeholder="Password" />
+                            </label>
+                            <br />
 
-                        <button className="form-input" id="button" type="submit">{formType.toUpperCase()}</button>
-                        <br />
-                        {
-                            this.props.errors.session.map(error => (
-                                <p className="errors">{error}</p>
-                            ))
-                        }
-                        {linkToSignup}
-                    </form>
+                            <button className="form-input" id="button" type="submit">{formType.toUpperCase()}</button>
+                            <br />
+                            {
+                                this.props.errors.session.map(error => (
+                                    <p className="errors">{error}</p>
+                                ))
+                            }
+                            {linkToSignup}
+                        </form>
+                    </div>
                 </div>
             </div>
         )
