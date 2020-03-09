@@ -33,22 +33,23 @@ class CartItems extends React.Component {
             this.props.getCartItems()
         } 
 
-        //  else if (this.props.items) {
-        //     if (prevProps.items.length !== this.props.items.length) {
-        //         this.props.getCartItems()
-        //     }
-        // }
+        if (this.props.items) {
+            if (prevProps.items.length !== this.props.items.length) {
+                this.props.getCartItems()
+            }
+        }
     }
 
     total() {
         let total = 0
         Object.values(this.props.items).forEach(item => {
-            total += Number(item.product.price)
+            total += (Number(item.product.price) * item.quantity)
         })
         return total
     }
 
     render() {
+        console.log(this.props)
         const total = this.total()
         if (this.props.currentUser) {
             if (this.props.items === undefined) {

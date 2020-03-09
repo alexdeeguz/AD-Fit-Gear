@@ -951,19 +951,20 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
         }
 
         this.props.getCartItems();
-      } //  else if (this.props.items) {
-      //     if (prevProps.items.length !== this.props.items.length) {
-      //         this.props.getCartItems()
-      //     }
-      // }
+      }
 
+      if (this.props.items) {
+        if (prevProps.items.length !== this.props.items.length) {
+          this.props.getCartItems();
+        }
+      }
     }
   }, {
     key: "total",
     value: function total() {
       var total = 0;
       Object.values(this.props.items).forEach(function (item) {
-        total += Number(item.product.price);
+        total += Number(item.product.price) * item.quantity;
       });
       return total;
     }
@@ -972,6 +973,7 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
+      console.log(this.props);
       var total = this.total();
 
       if (this.props.currentUser) {
