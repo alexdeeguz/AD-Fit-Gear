@@ -8,7 +8,14 @@ class CategoryIndex extends React.Component {
 
 
     componentDidMount() {
+        const header = $(".header-main")
+        header.addClass("white-header")
         this.props.getCategories()
+    }
+
+    componentDidUpdate(prevProps) {
+        const header = $(".header-main")
+        header.addClass("white-header")
     }
 
     render() {
@@ -16,6 +23,7 @@ class CategoryIndex extends React.Component {
 
         return (
             <div className="categories">
+                <div className="placement"></div>
                 <h4>ALL CATEGORIES</h4>
                 <div className="category-index-div">
                     {

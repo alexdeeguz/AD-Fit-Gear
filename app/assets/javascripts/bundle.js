@@ -904,7 +904,15 @@ var CategoryIndex = /*#__PURE__*/function (_React$Component) {
   _createClass(CategoryIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var header = $(".header-main");
+      header.addClass("white-header");
       this.props.getCategories();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var header = $(".header-main");
+      header.addClass("white-header");
     }
   }, {
     key: "render",
@@ -914,7 +922,9 @@ var CategoryIndex = /*#__PURE__*/function (_React$Component) {
       var categories = this.props.categories;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "categories"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "ALL CATEGORIES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "placement"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "ALL CATEGORIES"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "category-index-div"
       }, categories.map(function (category) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_category_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], _extends({}, _this.props, {
@@ -984,11 +994,21 @@ var CategoryIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var id = this.props.category.name;
       return (// id = { this.props.category.name }
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "category-item",
           className: "category-div"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, id === "hoodies" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          id: id,
+          src: window.hoodieURL
+        }) : "", id === "gear" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          id: id,
+          src: window.gearURL
+        }) : "", id === "joggers" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          id: id,
+          src: window.joggersURL
+        }) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "view-product-button-container"
         }, this.props.category.name === "gear" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "LIFTING GEAR") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.category.name.toUpperCase()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           id: "view-product-button",
@@ -1065,6 +1085,9 @@ var CategoryProductIndex = /*#__PURE__*/function (_React$Component) {
       if (prevProps.match.params.categoryId != this.props.match.params.categoryId) {
         this.props.getProducts(this.props.match.params.categoryId);
       }
+
+      var header = $(".header-main");
+      header.addClass("white-header");
     }
   }, {
     key: "render",
@@ -1072,7 +1095,9 @@ var CategoryProductIndex = /*#__PURE__*/function (_React$Component) {
       var _this = this;
 
       var products = this.props.products;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "placement"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "products"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_filters__WEBPACK_IMPORTED_MODULE_2__["default"], this.props), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-index-div"
@@ -1081,7 +1106,7 @@ var CategoryProductIndex = /*#__PURE__*/function (_React$Component) {
           product: product,
           key: product.id
         }));
-      })));
+      }))));
     }
   }]);
 
@@ -1737,12 +1762,22 @@ var Header = /*#__PURE__*/function (_React$Component) {
     _this.openModal = _this.openModal.bind(_assertThisInitialized(_this));
     _this.go_to_search = _this.go_to_search.bind(_assertThisInitialized(_this));
     return _this;
-  } // componentDidMount() {
-  //     this.props.getCategories()
-  // }
-
+  }
 
   _createClass(Header, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var header = $(".header-main");
+      header.removeClass("white-header");
+      this.props.getCategories();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      var header = $(".header-main");
+      header.removeClass("white-header");
+    }
+  }, {
     key: "closeModal",
     value: function closeModal() {
       // e.currentTarget.className = "modal-hidden"
@@ -1782,14 +1817,12 @@ var Header = /*#__PURE__*/function (_React$Component) {
       var id5 = this.props.categories[4] ? this.props.categories[4].id : "";
       var id6 = this.props.categories[5] ? this.props.categories[5].id : "";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "header"
+        className: "header-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "icon-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "USD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        id: "logo-icon",
-        src: window.logoURL,
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "USD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         onClick: this.redirect_home
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "AD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "icons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "user-icon",
@@ -1916,6 +1949,8 @@ var Home = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       if (this.props.currentUser) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "main"
@@ -1923,14 +1958,22 @@ var Home = /*#__PURE__*/function (_React$Component) {
           onClick: this.logout
         }, "Log out"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "form-input",
-          id: "view-all-products-button",
-          type: "submit"
-        }, "VIEW ALL PRODUCTS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_categories_container__WEBPACK_IMPORTED_MODULE_2__["default"], this.props));
+          id: "shop-now-button"
+        }, "VIEW ALL PRODUCTS"));
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "splash-pic"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_categories_container__WEBPACK_IMPORTED_MODULE_2__["default"], this.props));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "home-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "home-pic",
+        src: window.splashPicURL
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "form-input",
+        id: "shop-now-button",
+        onClick: function onClick() {
+          return _this2.props.history.push("/categories");
+        }
+      }, "SHOP NOW"));
     }
   }]);
 
@@ -2017,12 +2060,20 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
+      var header = $(".header-main");
+      header.addClass("white-header");
       var categoryId = this.props.match.params.categoryId;
       var productId = this.props.match.params.productId;
       this.props.getProduct(categoryId, productId);
       this.setState({
         cart_id: this.props.cartId
       });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      var header = $(".header-main");
+      header.addClass("white-header");
     }
   }, {
     key: "incrementQuantity",
@@ -2113,6 +2164,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "main"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "placement"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "main-product-show-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-show-container"
@@ -2629,6 +2682,8 @@ var Search = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "placement"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-bar"
@@ -2712,6 +2767,18 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(SessionForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var header = $(".header-main");
+      header.addClass("white-header");
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      var header = $(".header-main");
+      header.addClass("white-header");
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       var _this2 = this;
@@ -2762,7 +2829,9 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       }, "Create one"));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, formType.toUpperCase()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.message), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "placement"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, formType.toUpperCase()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.message), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-input",

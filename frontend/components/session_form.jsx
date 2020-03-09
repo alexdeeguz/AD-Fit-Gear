@@ -14,6 +14,16 @@ class SessionForm extends React.Component {
         }
     }
 
+    componentDidMount() {
+        const header = $(".header-main")
+        header.addClass("white-header")
+    }
+
+    componentDidUpdate() {
+        const header = $(".header-main")
+        header.addClass("white-header")
+    }
+
     handleSubmit(e) {
         e.preventDefault()
         const user = {
@@ -45,12 +55,14 @@ class SessionForm extends React.Component {
         })
     }
 
+
     render() {
         const formType = this.props.formType
         const linkToSignup = formType === "sign up" ? <p>Have an account? <Link to="/login">Login</Link></p> : <p>Don't have an account? <Link to="/signup">Create one</Link></p>
 
         return (
             <div className="main">
+                <div className="placement"></div>
                 <h1>{formType.toUpperCase()}</h1>
                 <p>{this.props.message}</p>
                 <div>

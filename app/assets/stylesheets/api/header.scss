@@ -1,8 +1,25 @@
-.header {
+.header-main {
+  position: fixed;
+  height: 20vh;
+  width: 100vw;
+  background-color: transparent;
+  z-index: 1;
+  transition: 0.5s ease;
+  // border: 1px solid red;
+}
+
+.white-header {
+  position: fixed;
   height: 20vh;
   width: 100vw;
   background-color: white;
-  // border: 1px solid red;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+
+.header-main:hover {
+  background-color: white;
+  transition: 0.5s ease;
 }
 
 .search-modal-container {
@@ -73,16 +90,6 @@
 #link {
   font-family: "Nunito Sans";
   text-decoration: none;
-}
-
-
-#logo-icon {
-  width: 120px;
-  height: 100%;
-  /* border: 1px solid red; */
-  background-image: url("./logo.png");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 #user-icon {
@@ -158,4 +165,15 @@
 
 a:visited {
   color: black;
+}
+
+.icon-header > h1 {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  border-radius: 50%;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.icon-header > h1:hover {
+  cursor: pointer;
 }

@@ -13,9 +13,17 @@ class Header extends React.Component {
         this.go_to_search = this.go_to_search.bind(this)
     }
 
-    // componentDidMount() {
-    //     this.props.getCategories()
-    // }
+    componentDidMount() {
+        const header = $(".header-main")
+        header.removeClass("white-header")
+        this.props.getCategories()
+    }
+
+    componentDidUpdate() {
+        const header = $(".header-main")
+        header.removeClass("white-header")
+    }
+
 
     closeModal() {
         // e.currentTarget.className = "modal-hidden"
@@ -51,11 +59,12 @@ class Header extends React.Component {
         const id6 = this.props.categories[5] ? this.props.categories[5].id : ""
         return (
             <div>
-                <div className="header">
+                <div className="header-main">
                     <div className="icon-header">
                         <p>USD</p>
                         {/* <div id="logo-icon" onClick={this.redirect_home}></div> */}
-                        <img id="logo-icon" src={window.logoURL} onClick={this.redirect_home}/>
+                        {/* <img id="logo-icon" src={window.logoURL} onClick={this.redirect_home}/> */}
+                        <h1 onClick={this.redirect_home}>AD</h1>
                         <div className="icons">
                             {/* <div id="user-icon" onClick={this.go_to_login}></div> */}
                             <img id="user-icon" src={window.userURL} onClick={this.go_to_login}/>

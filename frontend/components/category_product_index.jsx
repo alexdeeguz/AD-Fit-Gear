@@ -18,19 +18,24 @@ class CategoryProductIndex extends React.Component {
         if (prevProps.match.params.categoryId != this.props.match.params.categoryId) {
             this.props.getProducts(this.props.match.params.categoryId)
         }
+        const header = $(".header-main")
+        header.addClass("white-header")
     }
 
     render() {
         const { products } = this.props
         return (
-            <div className="products">
-                <FiltersComponent {...this.props} />
-                <div className="product-index-div">
-                    {
-                    products.map(product => (
-                        <CategoryProductIndexItem {...this.props} product={product} key={product.id} />
-                    ))
-                    }
+            <div>
+                <div className="placement"></div>
+                <div className="products">
+                    <FiltersComponent {...this.props} />
+                    <div className="product-index-div">
+                        {
+                        products.map(product => (
+                            <CategoryProductIndexItem {...this.props} product={product} key={product.id} />
+                        ))
+                        }
+                    </div>
                 </div>
             </div>
         )

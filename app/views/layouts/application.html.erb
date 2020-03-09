@@ -12,7 +12,27 @@
       window.userURL = "<%= image_url('profile.svg') %>";
       window.searchURL = "<%= image_url('search.svg') %>";
       window.cartURL = "<%= image_url('cart.svg') %>";
+      window.splashPicURL = "<%= image_url('home-page.jpg') %>";
+      window.hoodieURL = "<%= image_url('hoodie.jpg') %>";
+      window.gearURL = "<%= image_url('lifting-gear.jpg') %>";
+      window.joggersURL = "<%= image_url('joggers.jpg') %>";
     </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada&display=swap" rel="stylesheet">
+    <% if logged_in? %>
+      <script type="text/javascript">
+        window.currentUser = <%= render(
+          "api/users/user.json.jbuilder",
+          user: current_user
+        ).html_safe
+        %>
+      </script>
+    <% end %>
 
   </head>
 

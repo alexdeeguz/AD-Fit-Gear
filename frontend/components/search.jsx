@@ -23,6 +23,7 @@ class Search extends React.Component {
     render() {
         return (
             <div>
+                <div className="placement"></div>
                 <div className="search-container">
                     <div className="search-bar">
                         <p id="magnifying-glass">🔍</p>

@@ -30,12 +30,19 @@ class ProductShow extends React.Component {
     }
 
     componentDidMount() {
+        const header = $(".header-main")
+        header.addClass("white-header")
         const categoryId = this.props.match.params.categoryId
         const productId = this.props.match.params.productId
         this.props.getProduct(categoryId, productId)
         this.setState({
             cart_id: this.props.cartId
         })
+    }
+
+    componentDidUpdate() {
+        const header = $(".header-main")
+        header.addClass("white-header")
     }
 
     incrementQuantity() {
@@ -112,6 +119,7 @@ class ProductShow extends React.Component {
         if (this.props.product){
             return (
                 <div className="main">
+                    <div className="placement"></div>
                     <div className="main-product-show-container">
                         <div className="product-show-container">
                             <div className="product-image"></div>

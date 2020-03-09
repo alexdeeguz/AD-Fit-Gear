@@ -19,6 +19,11 @@ body {
   background-color: #efefef;
 }
 
+.placement {
+  height: 20vh;
+  /* border: 1px solid red; */
+}
+
 .main {
   background-color: #efefef;
   height: 100vh;
@@ -49,12 +54,28 @@ body {
   padding-left: 10px;
 }
 
-#button, #view-all-products-button, #view-product-button, #add-to-cart-button, #checkout-button {
+#button, #add-to-cart-button, #checkout-button {
   background: linear-gradient(to right, black 50%, #efefef 50%);
   background-size: 200% 100%;
   background-position:right bottom;
+  transition: all 1s ease;
 }
-#button:hover, #view-all-products-button:hover, #view-product-button:hover, #add-to-cart-button:hover, #checkout-button:hover {
+#button:hover, #add-to-cart-button:hover, #checkout-button:hover {
+  background-position: left bottom;
+  transition: all 1s ease;
+  color: white;
+  cursor: pointer;
+}
+
+#shop-now-button, #view-product-button {
+  background: linear-gradient(to right, transparent 50%, #efefef 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  transition: all 1s ease;
+  letter-spacing: 3px;
+}
+
+#shop-now-button:hover, #view-product-button:hover {
   background-position: left bottom;
   transition: all 1s ease;
   color: white;
@@ -73,19 +94,37 @@ body {
 }
 
 #splash-pic {
-  min-height: 600px;
-  width: 100%;
-  /* border: 1px solid red; */
-  /* margin-bottom: 0px; */
-  background-image: url("./splash-pic.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 50vh;
+  width: 100vw;
 }
 
 .listing-description {
   /* border: 1px solid red; */
   letter-spacing: 2.4px;
   font-size: 12px;
+  text-align: center;
+}
+
+.home-pic {
+  /* height: 100vh;
+  width: 100vw; */
+  width: 100vw;
+  height: 100vh;
+}
+
+.home-container {
+  position: relative;
+}
+
+#shop-now-button {
+  margin: 50px;
+  width: 25%;
+  border: 1px solid white;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 

@@ -84,6 +84,8 @@ ca1 = Cart.create(user_id: u1.id)
 
 CartItem.destroy_all
 
+Review.destroy_all
+
 
 
 

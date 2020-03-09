@@ -22,15 +22,16 @@ class Home extends React.Component {
             <div className="main">
                 <h1>Welcome {this.props.currentUser.username}</h1>
                 <button onClick={this.logout}>Log out</button>
-                <button className="form-input" id="view-all-products-button" type="submit">VIEW ALL PRODUCTS</button>
-                <CategoryIndexContainer {...this.props} />
+                <button className="form-input" id="shop-now-button">VIEW ALL PRODUCTS</button>
+                {/* <CategoryIndexContainer {...this.props} /> */}
             </div>
             )
         }
         return (   
-            <div>
-                <div id="splash-pic"></div>
-                <CategoryIndexContainer {...this.props} />
+            <div className="home-container">
+                <img className="home-pic" src={window.splashPicURL}/>
+                <button className="form-input" id="shop-now-button" onClick={() => this.props.history.push("/categories")}>SHOP NOW</button>
+                {/* <CategoryIndexContainer {...this.props} /> */}
             </div>
         )
     }
