@@ -973,7 +973,6 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      console.log(this.props);
       var total = this.total();
 
       if (this.props.currentUser) {

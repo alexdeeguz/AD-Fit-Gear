@@ -49,7 +49,6 @@ class CartItems extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         const total = this.total()
         if (this.props.currentUser) {
             if (this.props.items === undefined) {
