@@ -13,6 +13,7 @@
 .cart-item {
     // border: 1px solid red;
     width: 100%;
+    height: 20%;
     display: flex;
     font-family: "Nunito Sans";
     justify-content: space-between;
@@ -21,6 +22,7 @@
 
 .cart-product-image {
     width: 35%;
+    height: 100%;
     // border: 1px solid red;
 }
 
