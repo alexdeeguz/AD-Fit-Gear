@@ -62,7 +62,9 @@ class CartItem extends React.Component {
             const price = this.props.item.product === undefined ? null : this.props.item.product.price
             return (
                 <div className="cart-item">
-                    <div className="cart-product-image"></div>
+                    <div className="cart-product-image">
+                        {this.props.product ? <img src={this.props.product.photoUrls[0]} className="imagee"/> : ""}
+                    </div>
                     <div className="product-details">
                         <b><p id="name">{name}</p></b>
                         {size === "XS" ? <p>EXTRA SMALL</p> : ""}

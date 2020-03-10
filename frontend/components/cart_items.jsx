@@ -10,7 +10,7 @@ class CartItems extends React.Component {
     componentDidMount() {
         this.props.getCartItems()
         // this.props.getProducts()
-
+        
         if (this.props.currentUser) {
             this.props.getCart(this.props.currentUser.id)
         }
@@ -45,7 +45,7 @@ class CartItems extends React.Component {
         Object.values(this.props.items).forEach(item => {
             total += (Number(item.product.price) * item.quantity)
         })
-        return total
+        return total.toFixed(2)
     }
 
     render() {
@@ -66,7 +66,8 @@ class CartItems extends React.Component {
                             // let cartItem = this.getExtraProps(item.id)
                             return < CartItem key={item.id} item={item} 
                                             products={this.props.products} 
-                                            product={this.props.products[item.product_id]} 
+                                            // product={this.props.products[item.product_id]} 
+                                            product={this.props.product}
                                             removeItem={this.props.removeItem}
                                             updateCart={this.props.updateCart}
                                             getCartItem={this.props.getCartItem} />

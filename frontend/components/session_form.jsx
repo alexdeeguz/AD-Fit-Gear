@@ -22,6 +22,7 @@ class SessionForm extends React.Component {
         const header = $(".header-main")
         header.addClass("white-header")
         this.props.removeErrors()
+        window.scrollTo(0, 0)
     }
 
     // componentDidUpdate(prevProps) {

@@ -15,6 +15,7 @@ class CategoryProductIndex extends React.Component {
         this.props.getProducts(categoryId)
         const header = $(".header-main")
         header.addClass("white-header")
+        window.scrollTo(0, 0)
     }
 
     componentDidUpdate(prevProps) {

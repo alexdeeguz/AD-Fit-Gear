@@ -3,7 +3,6 @@ import React from 'react'
 class Images extends React.Component {
     constructor(props) {
         super(props)
-        // console.log(this.props)
         this.state = {
             selected: 0
         }
@@ -17,7 +16,6 @@ class Images extends React.Component {
     }
 
     render() {
-        // console.log(this.props)
         return (
             <div className="product-show-images-container">
                 <div className="image-clicks">

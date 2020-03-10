@@ -599,6 +599,7 @@ var Account = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       var header = $(".header-main");
       header.addClass("white-header");
+      window.scrollTo(0, 0);
     }
   }, {
     key: "componentDidUpdate",
@@ -844,7 +845,10 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         className: "cart-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.product ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.product.photoUrls[0],
+        className: "imagee"
+      }) : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-details"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         id: "name"
@@ -967,7 +971,7 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
       Object.values(this.props.items).forEach(function (item) {
         total += Number(item.product.price) * item.quantity;
       });
-      return total;
+      return total.toFixed(2);
     }
   }, {
     key: "render",
@@ -992,8 +996,9 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
             key: item.id,
             item: item,
-            products: _this.props.products,
-            product: _this.props.products[item.product_id],
+            products: _this.props.products // product={this.props.products[item.product_id]} 
+            ,
+            product: _this.props.product,
             removeItem: _this.props.removeItem,
             updateCart: _this.props.updateCart,
             getCartItem: _this.props.getCartItem
@@ -1070,6 +1075,7 @@ var CategoryIndex = /*#__PURE__*/function (_React$Component) {
       var header = $(".header-main");
       header.addClass("white-header");
       this.props.getCategories();
+      window.scrollTo(0, 0);
     }
   }, {
     key: "render",
@@ -1249,6 +1255,7 @@ var CategoryProductIndex = /*#__PURE__*/function (_React$Component) {
       this.props.getProducts(categoryId);
       var header = $(".header-main");
       header.addClass("white-header");
+      window.scrollTo(0, 0);
     }
   }, {
     key: "componentDidUpdate",
@@ -1417,12 +1424,7 @@ var ContactUs = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       var header = $(".header-main");
       header.addClass("white-header");
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      var header = $(".header-main");
-      header.addClass("white-header");
+      window.scrollTo(0, 0);
     }
   }, {
     key: "render",
@@ -2284,8 +2286,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         id: "link",
         to: "/categories/".concat(id6, "/products")
       }, "Lifting Gear"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        id: "nav-ele",
-        href: ""
+        id: "nav-ele"
       }, "PERSONAL TRAINING"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "nav-ele",
         className: "link",
@@ -2425,8 +2426,7 @@ var Images = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, Images);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Images).call(this, props)); // console.log(this.props)
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Images).call(this, props));
     _this.state = {
       selected: 0
     };
@@ -2444,7 +2444,6 @@ var Images = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // console.log(this.props)
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-show-images-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2576,6 +2575,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       this.setState({
         cart_id: this.props.cartId
       });
+      window.scrollTo(0, 0);
     }
   }, {
     key: "incrementQuantity",
@@ -2631,7 +2631,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           return modal.addClass("show");
         });
       } else {
-        alert("Please log in to add items to cart :)");
+        alert("Please log in to add items to cart");
         this.props.history.push("/login");
       }
     }
@@ -2645,7 +2645,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         modal.removeClass("hidden");
         modal.addClass("show");
       } else {
-        alert("Please log in to write a review :)");
+        alert("Please log in to write a review");
         this.props.history.push("/login");
       }
     }
@@ -3181,6 +3181,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
       this.props.getSearchResults();
       var header = $(".header-main");
       header.addClass("white-header");
+      window.scrollTo(0, 0);
     }
   }, {
     key: "render",
@@ -3283,6 +3284,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       var header = $(".header-main");
       header.addClass("white-header");
       this.props.removeErrors();
+      window.scrollTo(0, 0);
     } // componentDidUpdate(prevProps) {
     //     if (prevProps.match.url !== this.props.match.url) {
     //         this.props.removeErrors()

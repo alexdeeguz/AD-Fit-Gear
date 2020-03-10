@@ -10,11 +10,7 @@ class ContactUs extends React.Component {
     componentDidMount() {
         const header = $(".header-main")
         header.addClass("white-header")
-    }
-
-    componentDidUpdate() {
-        const header = $(".header-main")
-        header.addClass("white-header")
+        window.scrollTo(0, 0)
     }
 
     render() {

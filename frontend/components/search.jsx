@@ -21,6 +21,7 @@ class Search extends React.Component {
         this.props.getSearchResults()
         const header = $(".header-main")
         header.addClass("white-header")
+        window.scrollTo(0, 0)
     }
 
     render() {

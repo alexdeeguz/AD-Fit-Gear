@@ -41,6 +41,7 @@ class ProductShow extends React.Component {
         this.setState({
             cart_id: this.props.cartId
         })
+        window.scrollTo(0, 0)
     }
 
     incrementQuantity() {
@@ -88,7 +89,7 @@ class ProductShow extends React.Component {
         .then(() => modal.removeClass("hidden"))
         .then(() => modal.addClass("show"))
         } else {
-            alert("Please log in to add items to cart :)")
+            alert("Please log in to add items to cart")
             this.props.history.push("/login")
         }
     }
@@ -100,7 +101,7 @@ class ProductShow extends React.Component {
             modal.removeClass("hidden")
             modal.addClass("show")
         } else {
-            alert("Please log in to write a review :)")
+            alert("Please log in to write a review")
             this.props.history.push("/login")
         }
     }

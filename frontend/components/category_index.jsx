@@ -12,6 +12,7 @@ class CategoryIndex extends React.Component {
         const header = $(".header-main")
         header.addClass("white-header")
         this.props.getCategories()
+        window.scrollTo(0, 0)
     }
 
     render() {
