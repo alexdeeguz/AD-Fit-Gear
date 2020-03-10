@@ -2285,6 +2285,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
       }, "Lifting Gear"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: ""
       }, "TRAINING"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "link",
         to: "/contact-us"
       }, "CONTACT US"))));
     }

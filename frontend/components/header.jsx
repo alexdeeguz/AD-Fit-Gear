@@ -87,7 +87,7 @@ class Header extends React.Component {
                         </div>
                         <a href="">TRAINING</a>
                         {/* <a href="">CONTACT US</a> */}
-                        <Link to="/contact-us">CONTACT US</Link>
+                        <Link className="link" to="/contact-us">CONTACT US</Link>
                     </nav>
                 </div>
             </div>
