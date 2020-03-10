@@ -85,7 +85,7 @@ class Header extends React.Component {
                                 <Link id="link" to={`/categories/${id6}/products`}>Lifting Gear</Link>
                             </div>
                         </div>
-                        <a id="nav-ele" href="">TRAINING</a>
+                        <a id="nav-ele" href="">PERSONAL TRAINING</a>
                         {/* <a href="">CONTACT US</a> */}
                         <Link id="nav-ele" className="link" to="/contact-us">CONTACT US</Link>
                     </nav>

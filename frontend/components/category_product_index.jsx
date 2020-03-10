@@ -25,6 +25,7 @@ class CategoryProductIndex extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         const { products } = this.props
         return (
             <div>

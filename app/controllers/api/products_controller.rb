@@ -12,4 +12,9 @@ class Api::ProductsController < ApplicationController
         @product = Product.where(id: id)
         render :show
     end
+
+    # def product_params
+    #     params.require(:product).permit(:name, :price, :description, :category_id, photos: [])
+    # end
+
 end
