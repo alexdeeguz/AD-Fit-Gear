@@ -2641,7 +2641,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           className: "product-show-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-image-show-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_images__WEBPACK_IMPORTED_MODULE_5__["default"], this.props)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "product-form"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit
