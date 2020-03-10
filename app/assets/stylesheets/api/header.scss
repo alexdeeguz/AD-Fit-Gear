@@ -30,16 +30,18 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  // border: 1px solid red;
 }
 
 .droplinks {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  margin-top: 10px;
+  // margin-top: 10px;
   min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  // border: 1px solid red;
 }
 
 .droplinks > #link {
@@ -58,6 +60,7 @@
 
 .dropbtn {
   text-decoration: none;
+  // border: 1px solid red;
 }
 
 .droplinks > #link:hover {
@@ -130,8 +133,8 @@
 
 .nav-bar {
   font-family: 'Montserrat';
-  margin-left: 35%;
-  margin-right: 35%;
+  margin-left: 25%;
+  margin-right: 25%;
   text-align: center;
   display: flex;
   justify-content: space-around;
@@ -139,10 +142,16 @@
   // border: 1px solid red;
 }
 
+#nav-ele {
+  // border: 1px solid green;
+  height: 100%;
+}
+ 
+
 .nav-bar > a {
   letter-spacing: 2.4px;
   text-decoration: none;
-  padding: 5px;
+  padding-bottom: 20px;
 }
 
 .nav-bar > a:hover {
@@ -171,4 +180,9 @@ a:visited {
 .link {
   color: black
 }
+
+
+
+
+
 

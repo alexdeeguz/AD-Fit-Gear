@@ -78,7 +78,7 @@ class CartItem extends React.Component {
                                 <input id="cart-input" type="number" min="1" onChange={this.nothing} value={this.state.quantity} />
                                 <div id="cart-plus" className="cart-increment" onClick={this.incrementQuantity}>+</div>
                             </div>
-                            <h6 onClick={this.removeItem}>REMOVE</h6>
+                            <p id="remove" onClick={this.removeItem}>REMOVE</p>
                         </div>
 
                     </div>

@@ -868,7 +868,8 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         id: "cart-plus",
         className: "cart-increment",
         onClick: this.incrementQuantity
-      }, "+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+      }, "+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        id: "remove",
         onClick: this.removeItem
       }, "REMOVE"))));
     }
@@ -1262,7 +1263,6 @@ var CategoryProductIndex = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      console.log(this.props);
       var products = this.props.products;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_header_container__WEBPACK_IMPORTED_MODULE_3__["default"], this.props), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "placement"
@@ -2260,6 +2260,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        id: "nav-ele",
         to: "/categories",
         className: "dropbtn"
       }, "SHOP \u2304"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2283,8 +2284,10 @@ var Header = /*#__PURE__*/function (_React$Component) {
         id: "link",
         to: "/categories/".concat(id6, "/products")
       }, "Lifting Gear"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        id: "nav-ele",
         href: ""
       }, "TRAINING"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        id: "nav-ele",
         className: "link",
         to: "/contact-us"
       }, "CONTACT US"))));
@@ -2466,8 +2469,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       var header = $(".header-main");
       header.addClass("white-header");
       var categoryId = this.props.match.params.categoryId;
-      var productId = this.props.match.params.productId; // debugger
-
+      var productId = this.props.match.params.productId;
       this.props.getProduct(categoryId, productId);
       this.setState({
         cart_id: this.props.cartId
@@ -2556,7 +2558,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.props);
       var product = this.props.product;
 
       if (this.props.product) {

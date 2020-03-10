@@ -36,7 +36,6 @@ class ProductShow extends React.Component {
         header.addClass("white-header")
         const categoryId = this.props.match.params.categoryId
         const productId = this.props.match.params.productId
-        // debugger
         this.props.getProduct(categoryId, productId)
         this.setState({
             cart_id: this.props.cartId
@@ -113,7 +112,6 @@ class ProductShow extends React.Component {
     }
     
     render() {
-        console.log(this.props)
         const { product } = this.props 
         if (this.props.product){
             return (

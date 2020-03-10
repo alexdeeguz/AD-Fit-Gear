@@ -53,11 +53,11 @@ body {
   background: linear-gradient(to right, black 50%, #efefef 50%);
   background-size: 200% 100%;
   background-position:right bottom;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 #button:hover, #add-to-cart-button:hover, #checkout-button:hover {
   background-position: left bottom;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   color: white;
   cursor: pointer;
 }
@@ -81,13 +81,13 @@ body {
   background: linear-gradient(to right, transparent 50%, white 50%);
   background-size: 200% 100%;
   background-position:right bottom;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   letter-spacing: 3px;
 }
 
 #shop-now-button:hover, #view-product-button:hover {
   background-position: left bottom;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   color: white;
   cursor: pointer;
 }

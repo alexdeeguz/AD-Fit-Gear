@@ -75,7 +75,7 @@ class Header extends React.Component {
                     </div>
                     <nav className="nav-bar">
                         <div className="dropdown">
-                            <Link to="/categories" className="dropbtn">SHOP ⌄</Link>
+                            <Link id="nav-ele" to="/categories" className="dropbtn">SHOP ⌄</Link>
                             <div className="droplinks">
                                 <Link id="link" to={`/categories/${id1}/products`}>Tanks</Link>
                                 <Link id="link" to={`/categories/${id2}/products`}>Shirts</Link>
@@ -85,9 +85,9 @@ class Header extends React.Component {
                                 <Link id="link" to={`/categories/${id6}/products`}>Lifting Gear</Link>
                             </div>
                         </div>
-                        <a href="">TRAINING</a>
+                        <a id="nav-ele" href="">TRAINING</a>
                         {/* <a href="">CONTACT US</a> */}
-                        <Link className="link" to="/contact-us">CONTACT US</Link>
+                        <Link id="nav-ele" className="link" to="/contact-us">CONTACT US</Link>
                     </nav>
                 </div>
             </div>
