@@ -92,7 +92,7 @@ body {
   cursor: pointer;
 }
 
-.categories, .products {
+.categories {
   /* padding-top: 50px; */
   border: 1px solid #efefef;
   /* width: 100%; */

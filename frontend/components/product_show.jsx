@@ -36,6 +36,7 @@ class ProductShow extends React.Component {
         header.addClass("white-header")
         const categoryId = this.props.match.params.categoryId
         const productId = this.props.match.params.productId
+        // debugger
         this.props.getProduct(categoryId, productId)
         this.setState({
             cart_id: this.props.cartId
@@ -112,6 +113,7 @@ class ProductShow extends React.Component {
     }
     
     render() {
+        console.log(this.props)
         const { product } = this.props 
         if (this.props.product){
             return (
@@ -121,7 +123,10 @@ class ProductShow extends React.Component {
                         <div className="placement"></div>
                         <div className="main-product-show-container">
                             <div className="product-show-container">
-                                <div className="product-image"></div>
+                                {/* <div className="product-image"></div> */}
+                                <div className="product-image-show-container">
+                                    {/* <img className="product-image" src={this.props.product.photoUrl}/> */}
+                                </div>
                                 <div className="product-form">
                                     <form onSubmit={this.handleSubmit}>
                                         <h3>{product.name.toUpperCase()}</h3>
@@ -167,10 +172,10 @@ class ProductShow extends React.Component {
                                     <ReviewForm postReview={this.props.postReview} currentUser={this.props.currentUser} match={this.props.match} closeModal={this.closeModal}/>
                                 </div>
                             </div>
-                            <ReviewIndexContainer match={this.props.match} currentUser={this.props.currentUser}/>
                         </div> 
                     </div>
-                    <Footer />
+                        <ReviewIndexContainer match={this.props.match} currentUser={this.props.currentUser}/>
+                        <Footer />
                 </div>
             )
         }

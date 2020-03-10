@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.destroy_all
 
 u1 = User.create(username: "alex", password: "password")
@@ -30,6 +32,24 @@ p5 = Product.create(name: "black stringer", price: 29.95, description: "woah woa
 p6 = Product.create(name: "white stringer", price: 29.95, description: "woah woah woah", category_id: c1.id)
 p7 = Product.create(name: "black cutoff", price: 29.95, description: "100% aesthetic", category_id: c1.id)
 p8 = Product.create(name: "white cutoff", price: 29.95, description: "100% aesthetic", category_id: c1.id)
+
+f1 = open('https://ad-fit-gear-seeds.s3-us-west-1.amazonaws.com/ryan.jpg')
+f2 = open('https://ad-fit-gear-seeds.s3-us-west-1.amazonaws.com/ryan.jpg')
+f3 = open('https://ad-fit-gear-seeds.s3-us-west-1.amazonaws.com/ryan.jpg')
+f4 = open('https://ad-fit-gear-seeds.s3-us-west-1.amazonaws.com/ryan.jpg')
+f5 = open('https://ad-fit-gear-seeds.s3-us-west-1.amazonaws.com/ryan.jpg')
+f6 = open('https://ad-fit-gear-seeds.s3-us-west-1.amazonaws.com/ryan.jpg')
+f7 = open('https://ad-fit-gear-seeds.s3-us-west-1.amazonaws.com/ryan.jpg')
+f8 = open('https://ad-fit-gear-seeds.s3-us-west-1.amazonaws.com/ryan.jpg')
+
+p1.photo.attach(io: f1, filename: 'ryan.jpg')
+p2.photo.attach(io: f2, filename: 'ryan.jpg')
+p3.photo.attach(io: f3, filename: 'ryan.jpg')
+p4.photo.attach(io: f4, filename: 'ryan.jpg')
+p5.photo.attach(io: f5, filename: 'ryan.jpg')
+p6.photo.attach(io: f6, filename: 'ryan.jpg')
+p7.photo.attach(io: f7, filename: 'ryan.jpg')
+p8.photo.attach(io: f8, filename: 'ryan.jpg')
 
 p9 = Product.create(name: "black shirt", price: 29.95, description: "100% aesthetic", category_id: c2.id)
 p10 = Product.create(name: "white shirt", price: 29.95, description: "100% aesthetic", category_id: c2.id)

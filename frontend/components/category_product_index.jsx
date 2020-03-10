@@ -25,23 +25,22 @@ class CategoryProductIndex extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         const { products } = this.props
         return (
             <div>
                 <HeaderContainer {...this.props}/>
-                <div>
-                    <div className="placement"></div>
+                <div className="placement"></div>
                     <div className="products">
                         <FiltersComponent {...this.props} />
                         <div className="product-index-div">
                             {
                             products.map(product => (
-                                <CategoryProductIndexItem {...this.props} product={product} key={product.id} />
+                                <CategoryProductIndexItem {...this.props} product={product} key={product.id} getReviews={this.props.getReviews} reviews={this.props.reviews}/>
                             ))
                             }
                         </div>
                     </div>
-                </div>
                 <Footer />
             </div>
         )

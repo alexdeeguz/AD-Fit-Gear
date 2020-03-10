@@ -17,9 +17,12 @@ class CategoryProductIndexItem extends React.Component {
         const { product } = this.props
         const { name, price, description } = product
         return (
-            <div id="product-item" className="product-div">
-                <div id="img" onClick={this.redirect_to_item}>
+            <div className="product-div">
+                {/* <div id="img" onClick={this.redirect_to_item}>
                     
+                </div> */}
+                <div className="img-container" onClick={this.redirect_to_item}>
+                    <img src={this.props.product.photoUrl} className="imagee"/>
                 </div>
                 <div className="listing-description">
                     <p>{name.toUpperCase()}</p>

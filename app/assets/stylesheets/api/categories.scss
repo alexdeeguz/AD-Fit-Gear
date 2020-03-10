@@ -78,18 +78,24 @@
 }
 
 .filters {
-  height: 300px;
-  width: 100px;
-  /* border: 1px solid red; */
+  width: 5vw;
+  // border: 1px solid red; 
   text-align: left;
+  margin-left: 2%;
+  font-family: "Nunito Sans";
+}
+
+.filters > h6 {
+  font-size: 12pt;
+  letter-spacing: 3px;
 }
 
 .filters li {
   /* list-style: none; */
   padding: 5px;
-  font-size: 8pt;
+  font-size: 10pt;
   letter-spacing: normal;
-  /* color: gray; */
+  color: gray; 
 }
 
 .filters li:hover {
