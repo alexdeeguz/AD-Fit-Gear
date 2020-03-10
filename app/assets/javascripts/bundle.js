@@ -836,6 +836,17 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "helper",
+    value: function helper() {
+      var _this2 = this;
+
+      this.props.products.forEach(function (prod) {
+        if (_this2.props.item.product_id === prod.id) {
+          _this2.props.product = prod;
+        }
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var size = this.props.item.size;
@@ -845,8 +856,8 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         className: "cart-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-product-image"
-      }, this.props.product ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.props.product.photoUrls[0],
+      }, this.props.item.photoUrls ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.item.photoUrls[0],
         className: "imagee"
       }) : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "product-details"
@@ -933,7 +944,7 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
   _createClass(CartItems, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.getCartItems(); // this.props.getProducts()
+      this.props.getCartItems(); // .then(() => this.props.getProducts())
 
       if (this.props.currentUser) {
         this.props.getCart(this.props.currentUser.id);
@@ -995,13 +1006,14 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
           // let cartItem = this.getExtraProps(item.id)
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cart_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
             key: item.id,
-            item: item,
-            products: _this.props.products // product={this.props.products[item.product_id]} 
+            item: item // products={this.props.products} 
+            // product={this.props.products[item.product_id]} 
             ,
             product: _this.props.product,
             removeItem: _this.props.removeItem,
             updateCart: _this.props.updateCart,
-            getCartItem: _this.props.getCartItem
+            getCartItem: _this.props.getCartItem,
+            getProduct: _this.props.getProduct
           });
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "checkout-container"
@@ -1719,7 +1731,8 @@ var mSTP = function mSTP(state, ownProps) {
     cart: Object.values(state.entities.cart)[0],
     categories: Object.values(state.entities.categories),
     currentUser: state.entities.users[state.session.id],
-    reviews: Object.values(state.entities.reviews)
+    reviews: Object.values(state.entities.reviews),
+    cartItems: Object.values(state.entities.cartItems)
   };
 };
 
@@ -1736,6 +1749,9 @@ var mDTP = function mDTP(dispatch) {
     },
     postReview: function postReview(categoryId, productId, review) {
       return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_5__["postReview"])(categoryId, productId, review));
+    },
+    updateCart: function updateCart(id, productId, cartId, size, quantity) {
+      return dispatch(Object(_actions_cart_item_actions__WEBPACK_IMPORTED_MODULE_4__["updateCart"])(id, productId, cartId, size, quantity));
     }
   };
 };

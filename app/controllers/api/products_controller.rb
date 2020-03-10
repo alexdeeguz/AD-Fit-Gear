@@ -8,8 +8,7 @@ class Api::ProductsController < ApplicationController
 
     def show
         # category_id = params[:category_id]
-        id = params[:id]
-        @product = Product.where(id: id)
+        @product = Product.find_by(id: params[:id])
         render :show
     end
 

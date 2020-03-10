@@ -9,7 +9,7 @@ class CartItems extends React.Component {
 
     componentDidMount() {
         this.props.getCartItems()
-        // this.props.getProducts()
+            // .then(() => this.props.getProducts())
         
         if (this.props.currentUser) {
             this.props.getCart(this.props.currentUser.id)
@@ -65,12 +65,13 @@ class CartItems extends React.Component {
                         this.props.items.map(item => {
                             // let cartItem = this.getExtraProps(item.id)
                             return < CartItem key={item.id} item={item} 
-                                            products={this.props.products} 
+                                            // products={this.props.products} 
                                             // product={this.props.products[item.product_id]} 
                                             product={this.props.product}
                                             removeItem={this.props.removeItem}
                                             updateCart={this.props.updateCart}
-                                            getCartItem={this.props.getCartItem} />
+                                            getCartItem={this.props.getCartItem} 
+                                            getProduct={this.props.getProduct}/>
                         })
                     }
                 </div>

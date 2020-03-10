@@ -54,16 +54,26 @@ class CartItem extends React.Component {
         }
     }
 
+    helper() {
+        
+        this.props.products.forEach(prod => {
+            if (this.props.item.product_id === prod.id) {
+                this.props.product = prod
+            }
+        })
+    }
+
     
 
     render() {
+
             const size = this.props.item.size
             const name = this.props.item.product === undefined ? null : this.props.item.product.name.toUpperCase() 
             const price = this.props.item.product === undefined ? null : this.props.item.product.price
             return (
                 <div className="cart-item">
                     <div className="cart-product-image">
-                        {this.props.product ? <img src={this.props.product.photoUrls[0]} className="imagee"/> : ""}
+                        {this.props.item.photoUrls ? <img src={this.props.item.photoUrls[0]} className="imagee"/> : ""}
                     </div>
                     <div className="product-details">
                         <b><p id="name">{name}</p></b>

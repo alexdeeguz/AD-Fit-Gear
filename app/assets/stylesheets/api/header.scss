@@ -121,9 +121,14 @@
   margin-right: 20%;
 }
 
-#user-icon, #search-icon, #cart-icon {
+#user-icon, #search-icon {
   width: 20px;
 }
+
+#cart-icon {
+  width: 18px;
+}
+
 .icon-header > p, .icons {
   margin-top: 1%;
   font-family: 'Montserrat';

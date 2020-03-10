@@ -103,10 +103,10 @@ body {
   /* margin-top: 0px; */
 }
 
-#splash-pic {
+/* #splash-pic {
   height: 50vh;
   width: 100vw;
-}
+} */
 
 .listing-description {
   /* border: 1px solid red; */
@@ -122,9 +122,9 @@ body {
   height: 100vh;
 }
 
-.home-container {
+/* .home-container {
   position: relative;
-}
+} */
 
 #shop-now-button {
   margin: 50px;
@@ -135,16 +135,13 @@ body {
   top: 50%;
   left: 45%;
   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
 }
 
 .social-container {
-  /* border: 1px solid white; */
   position: absolute;
   bottom: 0;
   left: 10%;
   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   width: 15%;
   display: flex;
   justify-content: space-around;
