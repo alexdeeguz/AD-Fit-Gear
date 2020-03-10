@@ -8,11 +8,28 @@
 .image-clicks{
     height: 100%;
     width: 10%;
-    border: 1px solid red;
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .main-product-image {
     height: 100%;
     width: 50%;
-    border: 1px solid orange;
+    // border: 1px solid orange;
+}
+
+.image-click {
+    height: 30%;
+    width: 100%;
+    list-style: none;
+    // border: 1px solid blue;
+}
+
+.selected-image {
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+    list-style: none;
 }

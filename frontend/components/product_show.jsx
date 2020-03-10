@@ -125,7 +125,7 @@ class ProductShow extends React.Component {
                                 {/* <div className="product-image"></div> */}
                                 <div className="product-image-show-container">
                                     {/* <img className="product-image" src={this.props.product.photoUrl}/> */}
-                                    {/* <Images {...this.props}/> */}
+                                    <Images {...this.props}/>
                                 </div>
                                 <div className="product-form">
                                     <form onSubmit={this.handleSubmit}>

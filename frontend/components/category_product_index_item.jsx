@@ -22,7 +22,7 @@ class CategoryProductIndexItem extends React.Component {
                     
                 </div> */}
                 <div className="img-container" onClick={this.redirect_to_item}>
-                    <img src={this.props.product.photoUrl} className="imagee"/>
+                    {this.props.product.photoUrls? <img src={this.props.product.photoUrls[1]} className="imagee"/> : ""}
                 </div>
                 <div className="listing-description">
                     <p>{name.toUpperCase()}</p>
