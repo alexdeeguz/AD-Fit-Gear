@@ -14,6 +14,9 @@ class CartItem extends React.Component {
 
     redirect_to_product() {
         this.props.history.push(`/categories/${this.props.item.product.category_id}/products/${this.props.item.product_id}`)
+        const modal = $(".modal-container")
+        modal.removeClass("show")
+        modal.addClass("hidden")
     }
 
     removeItem(e) {
