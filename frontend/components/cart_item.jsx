@@ -68,7 +68,6 @@ class CartItem extends React.Component {
     
 
     render() {
-            console.log(this.props)
             const size = this.props.item.size
             const name = this.props.item.product === undefined ? null : this.props.item.product.name.toUpperCase() 
             const price = this.props.item.product === undefined ? null : this.props.item.product.price

@@ -666,12 +666,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers_categories_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./containers/categories_container */ "./frontend/components/containers/categories_container.jsx");
 /* harmony import */ var _containers_products_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./containers/products_container */ "./frontend/components/containers/products_container.jsx");
 /* harmony import */ var _containers_product_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./containers/product_show_container */ "./frontend/components/containers/product_show_container.jsx");
-/* harmony import */ var _containers_header_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./containers/header_container */ "./frontend/components/containers/header_container.jsx");
-/* harmony import */ var _containers_search_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./containers/search_container */ "./frontend/components/containers/search_container.jsx");
-/* harmony import */ var _containers_account_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./containers/account_container */ "./frontend/components/containers/account_container.jsx");
-/* harmony import */ var _utils_route_utils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/route_utils */ "./frontend/utils/route_utils.jsx");
-/* harmony import */ var _404__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./404 */ "./frontend/components/404.jsx");
-/* harmony import */ var _contact_us__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./contact_us */ "./frontend/components/contact_us.jsx");
+/* harmony import */ var _containers_search_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./containers/search_container */ "./frontend/components/containers/search_container.jsx");
+/* harmony import */ var _containers_account_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./containers/account_container */ "./frontend/components/containers/account_container.jsx");
+/* harmony import */ var _utils_route_utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/route_utils */ "./frontend/utils/route_utils.jsx");
+/* harmony import */ var _404__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./404 */ "./frontend/components/404.jsx");
+/* harmony import */ var _contact_us__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./contact_us */ "./frontend/components/contact_us.jsx");
+/* harmony import */ var _training__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./training */ "./frontend/components/training.jsx");
 
 
 
@@ -679,6 +679,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // import HeaderContainer from './containers/header_container';
 
 
 
@@ -688,10 +689,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_utils__WEBPACK_IMPORTED_MODULE_11__["AuthRoute"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_utils__WEBPACK_IMPORTED_MODULE_10__["AuthRoute"], {
     path: "/login",
     component: _containers_login_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_utils__WEBPACK_IMPORTED_MODULE_11__["AuthRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_utils__WEBPACK_IMPORTED_MODULE_10__["AuthRoute"], {
     path: "/signup",
     component: _containers_signup_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
@@ -709,21 +710,25 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/search",
-    component: _containers_search_container__WEBPACK_IMPORTED_MODULE_9__["default"]
+    component: _containers_search_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/account",
-    component: _containers_account_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _containers_account_container__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/contact-us",
-    component: _contact_us__WEBPACK_IMPORTED_MODULE_13__["default"]
+    component: _contact_us__WEBPACK_IMPORTED_MODULE_12__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    exact: true,
+    path: "/training",
+    component: _training__WEBPACK_IMPORTED_MODULE_13__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
     component: _containers_home_container__WEBPACK_IMPORTED_MODULE_1__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    component: _404__WEBPACK_IMPORTED_MODULE_12__["default"]
+    component: _404__WEBPACK_IMPORTED_MODULE_11__["default"]
   })));
 };
 
@@ -851,7 +856,6 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.props);
       var size = this.props.item.size;
       var name = this.props.item.product === undefined ? null : this.props.item.product.name.toUpperCase();
       var price = this.props.item.product === undefined ? null : this.props.item.product.price;
@@ -2305,9 +2309,10 @@ var Header = /*#__PURE__*/function (_React$Component) {
       }, "Hats"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "link",
         to: "/categories/".concat(id6, "/products")
-      }, "Lifting Gear"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        id: "nav-ele"
-      }, "PERSONAL TRAINING"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Lifting Gear"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        id: "nav-ele",
+        to: "/training"
+      }, "TRAINING"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         id: "nav-ele",
         className: "link",
         to: "/contact-us"
@@ -3412,6 +3417,99 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (SessionForm);
+
+/***/ }),
+
+/***/ "./frontend/components/training.jsx":
+/*!******************************************!*\
+  !*** ./frontend/components/training.jsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Training = /*#__PURE__*/function (_React$Component) {
+  _inherits(Training, _React$Component);
+
+  function Training(props) {
+    _classCallCheck(this, Training);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Training).call(this, props));
+  }
+
+  _createClass(Training, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "training-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "training-intro"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        id: "ad-logo",
+        onClick: function onClick() {
+          return _this.props.history.push('/');
+        }
+      }, "AD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "GET BIGGER, LEANER, &"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        id: "stronger"
+      }, "STRONGER"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Join now to keep track of personal records and body composition logs to reach your fitness goals!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://personal-record-tracker.herokuapp.com/session/new"
+      }, "PERSONAL RECORD TRACKER"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        id: "down-arrow"
+      }, "Or Learn More"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        id: "down-arrow"
+      }, "\u2193\u2193\u2193")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "training-details"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "training-details-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: window.icon1URL
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Strength Tracker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Keep track of both your absolute strength and relative strength by logging your 1 rep max and rep max personal records")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "training-details-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: window.icon2URL
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Body Composition Tracker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Keep track of your body composition. The body composition log will tell you how much lean mass, fat mass, and total bodyweight you gain and lose since the last log")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "training-details-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: window.icon3URL
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Training Logs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Log training data to see how you progress throughout time")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "training-details-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: window.icon4URL
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Fitness Assessments"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "The application will take all the logged data to calculate your fitness levels for muscular strength, muscular endurance, and cardiovascular fitness"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "training-details-content-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "The Most Dependable Fitness Tracker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. ")));
+    }
+  }]);
+
+  return Training;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Training);
 
 /***/ }),
 
