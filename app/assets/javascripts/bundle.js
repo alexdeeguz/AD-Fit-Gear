@@ -833,6 +833,8 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         if (prevProps.item.quantity !== this.props.item.quantity) {
           this.props.getCartItem(this.props.item.id);
         }
+      } else {
+        this.props.getCartItem(this.props.item.id);
       }
     }
   }, {
@@ -849,6 +851,7 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      console.log(this.props);
       var size = this.props.item.size;
       var name = this.props.item.product === undefined ? null : this.props.item.product.name.toUpperCase();
       var price = this.props.item.product === undefined ? null : this.props.item.product.price;
@@ -1013,7 +1016,8 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
             removeItem: _this.props.removeItem,
             updateCart: _this.props.updateCart,
             getCartItem: _this.props.getCartItem,
-            getProduct: _this.props.getProduct
+            getProduct: _this.props.getProduct,
+            getCartItems: _this.props.getCartItems
           });
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "checkout-container"
