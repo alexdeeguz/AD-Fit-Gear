@@ -66,13 +66,13 @@ body {
   background: linear-gradient(to right, #efefef 50%, black 50%);
   background-size: 200% 100%;
   background-position:right bottom;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   color: white;
 }
 
 #demo-button:hover {
   background-position: left bottom;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   cursor: pointer;
   color: black;
 }

@@ -42,7 +42,7 @@
   background: linear-gradient(to right, white 50%, black 50%);
   background-size: 200% 100%;
   background-position:right bottom;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   color: white;
   letter-spacing: 3px;
   font-family: 'Montserrat';
@@ -50,7 +50,7 @@
 
 #subscribe-button:hover {
   background-position: left bottom;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   color: black;
   cursor: pointer;
 }
