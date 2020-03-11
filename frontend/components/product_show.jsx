@@ -76,6 +76,10 @@ class ProductShow extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        if (this.hasSize() && this.state.size === "") {
+            alert("Please enter a size")
+            return
+        }
         const cartId = this.props.currentUser ? Number(this.props.currentUser.id) : ""
         this.setState({
             cart_id: cartId
