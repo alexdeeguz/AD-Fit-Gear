@@ -44,6 +44,14 @@ class ProductShow extends React.Component {
         window.scrollTo(0, 0)
     }
 
+    componentDidUpdate(prevProps) {
+        const categoryId = this.props.match.params.categoryId
+        const productId = this.props.match.params.productId
+        if (this.props.match.url !== prevProps.match.url) {
+            this.props.getProduct(categoryId, productId)
+        }
+    }
+
     incrementQuantity() {
         const num = this.state.quantity + 1
         this.setState({
@@ -111,7 +119,7 @@ class ProductShow extends React.Component {
     }
 
     closeModal(e) {
-        e.preventDefault()
+        // e.preventDefault()
         const modal = $(".review-modal-container")
         modal.removeClass("show")
         modal.addClass("hidden")

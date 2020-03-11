@@ -9,6 +9,11 @@ class CartItem extends React.Component {
         this.removeItem = this.removeItem.bind(this)
         this.decrementQuantity = this.decrementQuantity.bind(this)
         this.incrementQuantity = this.incrementQuantity.bind(this)
+        this.redirect_to_product = this.redirect_to_product.bind(this)
+    }
+
+    redirect_to_product() {
+        this.props.history.push(`/categories/${this.props.item.product.category_id}/products/${this.props.item.product_id}`)
     }
 
     removeItem(e) {
@@ -74,10 +79,10 @@ class CartItem extends React.Component {
             return (
                 <div className="cart-item">
                     <div className="cart-product-image">
-                        {this.props.item.photoUrls ? <img src={this.props.item.photoUrls[0]} className="imagee"/> : ""}
+                        {this.props.item.photoUrls ? <img onClick={this.redirect_to_product} src={this.props.item.photoUrls[0]} className="imagee"/> : ""}
                     </div>
                     <div className="product-details">
-                        <b><p id="name">{name}</p></b>
+                        <b><p id="name" onClick={this.redirect_to_product}>{name}</p></b>
                         {size === "XS" ? <p>EXTRA SMALL</p> : ""}
                         {size === "S" ? <p>SMALL</p> : ""}
                         {size === "M" ? <p>MEDIUM</p> : ""}

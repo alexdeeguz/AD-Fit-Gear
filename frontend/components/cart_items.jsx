@@ -72,7 +72,8 @@ class CartItems extends React.Component {
                                             updateCart={this.props.updateCart}
                                             getCartItem={this.props.getCartItem} 
                                             getProduct={this.props.getProduct}
-                                            getCartItems={this.props.getCartItems}/>
+                                            getCartItems={this.props.getCartItems}
+                                            history={this.props.history} />
                         })
                     }
                 </div>
