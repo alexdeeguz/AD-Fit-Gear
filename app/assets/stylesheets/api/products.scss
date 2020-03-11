@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .product-index-div {
-  // border: 1px solid red; 
-  width: 95vw;
+//   border: 1px solid red; 
+  width: 90vw;
   background-color: #efefef;
   display: flex;
   flex-wrap: wrap;
@@ -15,9 +15,16 @@
 //   overflow: auto;
 }
 
+.listing-description {
+//   border: 1px solid red; 
+  letter-spacing: 2.4px;
+  font-size: 12px;
+  text-align: center;
+}
+
 .listing-description p{
     // border: 1px solid green;
-    // height: 15%;
+    height: 20%;
     font-size: 12pt;
     font-family: 'Montserrat';
     letter-spacing: 2px;
@@ -51,7 +58,7 @@
     //   display: flex;
     //   flex-direction: column;
     //   justify-content: flex-end;
-    //   margin-top: 50px;
+      margin-top: 5%;
     // border: 1px solid purple;
 }
 
