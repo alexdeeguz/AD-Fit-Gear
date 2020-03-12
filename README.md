@@ -1,6 +1,8 @@
 # ADFitGear
 [View the live site](https://ad-fit-gear.herokuapp.com/#/)
 
+![Alt text](readme_images/home.png)
+
 ADFitGear, inspired by [BMFitGear](https://www.bmfitgear.com/), is an e-commerce store where users can view and buy product listings for fitness gear and apparel. 
 
 # Technologies Used
@@ -37,6 +39,8 @@ Users can search for a product by name and can easily view the search results wh
 
 ### Shopping Cart
 Users have a shopping cart in which they can add, remove, and update items in their cart. The shopping cart displays all items/products that the user has added. Clicking on the cart item image or name will redirect the user to that product's show page.
+
+![Alt text](readme_images/cart.png)
 ***
 
 ### Ratings/Reviews
