@@ -1,24 +1,17 @@
-# README
+# ADFitGear
+[View the live site](https://ad-fit-gear.herokuapp.com/#/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ADFitGear, inspired by BMFitGear, is an e-commerce store where users can view and buy product listings for fitness gear and apparel. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Technologies Used
+### Backend
+* Ruby on Rails
+* PostgreSQL
+### Frontend
+* React/Redux
+### Other
+* Rails Active Storage
+* Amazon S3
+* SCSS
+* Webpack
+* Heroku
