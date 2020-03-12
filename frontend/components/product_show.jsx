@@ -82,8 +82,32 @@ class ProductShow extends React.Component {
     nothing() {
     }
 
+    isInCart() {
+        for (let i = 0; i < this.props.cartItems.length; i++) {
+            const item = this.props.cartItems[i]
+            if (this.state.product_id === item.product_id) {
+                return true
+            }
+        } 
+        return false
+    }
+
+    sameSize() {
+        for (let i = 0; i < this.props.cartItems.length; i++) {
+            const item = this.props.cartItems[i]
+            if (this.state.size === item.size) {
+                return true
+            }
+        }
+        return false
+    }
+
     handleSubmit(e) {
         e.preventDefault()
+        if (this.isInCart() && this.sameSize()) {
+            alert("Item already in cart")
+            return
+        }
         if (this.hasSize() && this.state.size === "") {
             alert("Please enter a size")
             return
