@@ -35,7 +35,9 @@ Products are listed for sale and is organized by category. Product listings incl
 
 ### Search
 Users can search for a product by name and can easily view the search results while typing instead of having to navigate away from the page.
+
 ![Alt text](readme_images/search1.png)
+
 ![Alt text](readme_images/search2.png)
 ***
 
