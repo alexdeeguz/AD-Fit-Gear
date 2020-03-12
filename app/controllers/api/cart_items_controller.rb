@@ -1,7 +1,6 @@
 class Api::CartItemsController < ApplicationController
 
     def index
-        # @cart_items = current_user.cart.products
         if logged_in?
             @cart_items = current_user.cart.cart_items
         else  

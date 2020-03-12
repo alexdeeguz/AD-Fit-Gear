@@ -19,6 +19,10 @@ class ReviewIndex extends React.Component {
         if (prevProps.reviews.length !== this.props.reviews.length) {
             this.props.getReviews(categoryId, productId)
         }
+
+        if (this.props.match.url !== prevProps.match.url) {
+            this.props.getReviews(categoryId, productId)
+        }
     }
 
 

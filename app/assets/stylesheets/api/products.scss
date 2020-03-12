@@ -3,27 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .product-index-div {
-//   border: 1px solid red; 
   width: 90vw;
   background-color: #efefef;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-//   margin-top: 5%;
-//   border: 1px solid orangered;
-  // height: 1200px;
-//   overflow: auto;
 }
 
 .listing-description {
-//   border: 1px solid red; 
   letter-spacing: 2.4px;
   font-size: 12px;
   text-align: center;
 }
 
 .listing-description p{
-    // border: 1px solid green;
     height: 20%;
     font-size: 12pt;
     font-family: 'Montserrat';
@@ -32,17 +25,14 @@
 
 .img-container {
     width: 100%;
-    // border: 1px solid red;
     cursor: pointer;
     height: 85%;
 }
 
 .imagee {
-    // height: 100%;
     height: 100%;
     width: 100%;
     cursor: pointer;
-    // width: 100%;
 }
 
 #img:hover {
@@ -55,37 +45,25 @@
     float: left;
     border: 1px solid #efefef;
     background-color: #efefef;
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: flex-end;
-      margin-top: 5%;
-    // border: 1px solid purple;
+    margin-top: 5%;
 }
 
 .product-image {
     height: 80%;
     width: 20%;
-    // border: 1px solid red;
     margin-left: 5%;
     margin-top: 10%;
 }
 
 .product-image-show-container {
-    // border: 1px solid green;
     height: 100%;
     width: 70%;
-    // margin-left: 20%;
 }
 
-
-// .main-product-show-container {
-//     border: 1px solid green;
-// }
 .product-show-container {
     display: flex;
     justify-content: space-between;
     background-color: #efefef;
-    // border: 1px solid purple;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 5%;
@@ -93,8 +71,6 @@
 }
 
 .product-form {
-
-    // border: 1px solid blue;
     width: 30%;
     height: 100%;
     font-family: 'Montserrat';
@@ -108,7 +84,6 @@
 
 .product-form > form {
     height: 100%;
-    // border: 1px solid red;
 }
 
 
@@ -137,8 +112,6 @@ input[type=number] {
 
 .increment-container {
     display: flex;
-    // border: 1px solid red;
-    // margin-top: 50px;
 }
 
 .increment-container > div {
@@ -174,11 +147,9 @@ input[type=number] {
 }
 
 .sizes-container > p, .quantity-container > p {
-    // border: 1px solid red;
     letter-spacing: normal;
     font-size: 10pt;
     font-family: "Nunito Sans";
-    // margin-top: 50px;
 }
 
 .selected {
@@ -191,11 +162,6 @@ input[type=number] {
     border: 1px solid rgb(196, 194, 194)
 }
 
-//product index
-
-
-
-
 #product-description {
     letter-spacing: normal;
     font-size: 10pt;
@@ -207,12 +173,10 @@ input[type=number] {
   height: 40px;
   margin-top: 20px;
   outline: none;
-  /* border: 1px solid black; */
 }
 
 
 .products {
   display: flex;
   margin-top: 5%;
-//   height: 100vh;
 }

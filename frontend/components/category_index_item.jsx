@@ -13,7 +13,6 @@ class CategoryIndexItem extends React.Component {
     render() {
         const id = this.props.category.name
         return (
-            // id = { this.props.category.name }
             <div  id="category-item" className="category-div">
                 {id === "hoodies" ? <img id={id} src={window.hoodieURL}/> : ""}
                 {id === "gear" ? <img id={id} src={window.gearURL}/> : ""}

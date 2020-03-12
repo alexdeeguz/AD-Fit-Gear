@@ -19,7 +19,6 @@ class CategoryProductIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        // const categoryId = this.props.match.params.categoryId
         if (prevProps.match.params.categoryId != this.props.match.params.categoryId) {
             this.props.getProducts(this.props.match.params.categoryId)
         }

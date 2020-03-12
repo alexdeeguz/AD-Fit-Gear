@@ -143,7 +143,7 @@ class ProductShow extends React.Component {
     }
 
     closeModal(e) {
-        // e.preventDefault()
+        e.preventDefault()
         const modal = $(".review-modal-container")
         modal.removeClass("show")
         modal.addClass("hidden")

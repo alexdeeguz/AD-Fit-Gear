@@ -5,7 +5,6 @@
   background-color: transparent;
   z-index: 1;
   transition: 0.5s ease;
-  // border: 1px solid red;
 }
 
 .white-header {
@@ -19,7 +18,6 @@
 
 .placement {
   height: 20vh;
-  /* border: 1px solid red; */
 }
 
 .header-main:hover {
@@ -30,18 +28,15 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  // border: 1px solid red;
 }
 
 .droplinks {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  // margin-top: 10px;
   min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  // border: 1px solid red;
 }
 
 .droplinks > #link {
@@ -60,7 +55,6 @@
 
 .dropbtn {
   text-decoration: none;
-  // border: 1px solid red;
 }
 
 .droplinks > #link:hover {
@@ -75,7 +69,6 @@
 #user-icon {
   width: 40%;
   height: 40%;
-  // background-image: url("./profile.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -87,7 +80,6 @@
 #search-icon {
   width: 40%;
   height: 40%;
-  // background-image: url("./search.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -95,8 +87,6 @@
 #cart-icon {
   width: 40%;
   height: 40%;
-  /* border: 1px solid red */
-  // background-image: url("./cart.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -104,17 +94,14 @@
 .icon-header {
   display: flex;
   justify-content: space-between;
-  // border: 1px solid red;
   margin-right: 3%;
   margin-left: 3%;
 }
 
 .icons {
   width: 5%;
-  // border: 1px solid red;
   display: flex;
   justify-content: space-around;
-  // margin-right: 1%;
 }
 
 .icons > img {
@@ -133,7 +120,6 @@
   margin-top: 1%;
   font-family: 'Montserrat';
   font-size: 9pt;
-  // border: 1px solid red;
 }
 
 .nav-bar {
@@ -143,12 +129,9 @@
   text-align: center;
   display: flex;
   justify-content: space-around;
-  // background-color: white;
-  // border: 1px solid red;
 }
 
 #nav-ele {
-  // border: 1px solid green;
   height: 100%;
 }
  

@@ -30,10 +30,6 @@ body {
 
 .main > h1 {
   font-size: 20px;
-  /* border: 1px solid green; */
-  /* background-color: red; */
-  /* font-family: 'Montserrat'; */
-  /* margin-top: 50px; */
   margin-top: 0;
   padding-top: 50px;
   margin-bottom: 15px;
@@ -93,31 +89,17 @@ body {
 }
 
 .categories {
-  /* padding-top: 50px; */
   border: 1px solid #efefef;
-  /* width: 100%; */
   background-color: #efefef;
   font-family: 'Montserrat';
   text-align: center;
   letter-spacing: 4px;
-  /* margin-top: 0px; */
 }
 
-/* #splash-pic {
-  height: 50vh;
-  width: 100vw;
-} */
-
 .home-pic {
-  /* height: 100vh;
-  width: 100vw; */
   width: 100vw;
   height: 100vh;
 }
-
-/* .home-container {
-  position: relative;
-} */
 
 #shop-now-button {
   margin: 50px;
@@ -148,5 +130,11 @@ body {
   color: red;
 }
 
+#four-o-four {
+  font-size: 800pt;
+  border: 1px solid red;
+  margin: 0;
+  text-align: center;
+}
 
 

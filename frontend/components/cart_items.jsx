@@ -1,6 +1,5 @@
 import React from 'react'
 import CartItem from './cart_item'
-import { updateCart } from '../actions/cart_item_actions'
 
 class CartItems extends React.Component {
     constructor(props) {
@@ -9,21 +8,11 @@ class CartItems extends React.Component {
 
     componentDidMount() {
         this.props.getCartItems()
-            // .then(() => this.props.getProducts())
         
         if (this.props.currentUser) {
             this.props.getCart(this.props.currentUser.id)
         }
     }
-
-    // getExtraProps(productId) {
-    //     let items = this.props.items
-    //     for (let i = 0; i < items.length; i++) {
-    //         if (items[i].product_id === productId) {
-    //             return items[i]
-    //         }
-    //     }
-    // }
 
     componentDidUpdate(prevProps) {
         if (this.props.currentUser !== prevProps.currentUser) {
@@ -58,15 +47,9 @@ class CartItems extends React.Component {
             <div>
                 <div className="cart-items-container">
                     {
-                        // Object.values(this.props.products).map(prod => {
-                        //     let cartItem = this.getExtraProps(prod.id)
-                        //     return < CartItem cartItem={cartItem} product={prod} getProduct={this.props.getProduct} key={prod.id} />
-                        // })
                         this.props.items.map(item => {
-                            // let cartItem = this.getExtraProps(item.id)
+
                             return < CartItem key={item.id} item={item} 
-                                            // products={this.props.products} 
-                                            // product={this.props.products[item.product_id]} 
                                             product={this.props.product}
                                             removeItem={this.props.removeItem}
                                             updateCart={this.props.updateCart}
