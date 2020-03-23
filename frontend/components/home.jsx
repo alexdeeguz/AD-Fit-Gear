@@ -16,7 +16,7 @@ class Home extends React.Component {
                     <button className="form-input" id="shop-now-button" onClick={() => this.props.history.push("/categories")}>SHOP NOW</button>
                     <div className="social-container">
                         <a href="https://github.com/alexdeeguz/AD-Fit-Gear"><img src={window.githubURL} id="github-logo" /></a>
-                        <a href="https://www.linkedin.com/in/alex-de-guzman-491728163/"><img src={window.linkedinURL} id="linked-in-logo" /></a>
+                        <a href="https://www.linkedin.com/in/alex-de-guzman/"><img src={window.linkedinURL} id="linked-in-logo" /></a>
                     </div>
                 </div>
             </div>
