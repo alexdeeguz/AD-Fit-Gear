@@ -2388,7 +2388,7 @@ var Home = /*#__PURE__*/function (_React$Component) {
         src: window.githubURL,
         id: "github-logo"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://www.linkedin.com/in/alex-de-guzman-491728163/"
+        href: "https://www.linkedin.com/in/alex-de-guzman/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: window.linkedinURL,
         id: "linked-in-logo"
@@ -3514,7 +3514,7 @@ var Training = /*#__PURE__*/function (_React$Component) {
       }, "AD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "GET BIGGER, LEANER, &"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         id: "stronger"
       }, "STRONGER"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Join now to keep track of personal records and body composition logs to reach your fitness goals!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://personal-record-tracker.herokuapp.com/session/new"
+        href: "https://personal-record-tracker.herokuapp.com/"
       }, "PERSONAL RECORD TRACKER"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         id: "down-arrow"
       }, "Or Learn More"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -3929,6 +3929,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/root_reducer */ "./frontend/reducers/root_reducer.js");
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
+ // import logger from 'redux-logger'
 
 
 
