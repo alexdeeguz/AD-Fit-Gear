@@ -27,10 +27,14 @@ ADFitGear, inspired by [BMFitGear](https://www.bmfitgear.com/), is an e-commerce
 
 ### User Authentication
 Users can create an account and log in. User authentication for this web application was made using the BCrypt gem and SecureRandom module. 
+
+![Alt text](readme_images/user-auth.png)
 ***
 
 ### Product Listings
 Products are listed for sale and is organized by category. Product listings include images, price, and description.
+
+![Alt text](readme_images/product.png)
 ***
 
 ### Search
@@ -49,3 +53,7 @@ Users have a shopping cart in which they can add, remove, and update items in th
 
 ### Ratings/Reviews
 Users can rate and review a product. After creating the review, it is posted on the product's show page.
+
+![Alt text](readme_images/review1.png)
+
+![Alt text](readme_images/review2.png)
