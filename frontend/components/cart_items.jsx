@@ -31,14 +31,16 @@ class CartItems extends React.Component {
 
     total() {
         let total = 0
+        
         Object.values(this.props.items).forEach(item => {
-            total += (Number(item.product.price) * item.quantity)
+            let product_price = item.product ? item.product.price : 0
+            total += (Number(product_price) * item.quantity)
         })
         return total.toFixed(2)
     }
 
     render() {
-        const total = this.total()
+        const total = this.total() 
         if (this.props.currentUser) {
             if (this.props.items === undefined) {
                 return <h1>FIRST RENDER THIS IS NULL OIASDJFIOASDJO</h1>

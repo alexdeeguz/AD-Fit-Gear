@@ -989,7 +989,8 @@ var CartItems = /*#__PURE__*/function (_React$Component) {
     value: function total() {
       var total = 0;
       Object.values(this.props.items).forEach(function (item) {
-        total += Number(item.product.price) * item.quantity;
+        var product_price = item.product ? item.product.price : 0;
+        total += Number(product_price) * item.quantity;
       });
       return total.toFixed(2);
     }
