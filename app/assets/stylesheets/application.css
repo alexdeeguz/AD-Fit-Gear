@@ -73,7 +73,7 @@ body {
   color: black;
 }
 
-#shop-now-button, #view-product-button {
+#shop-now-button, #view-product-button, #demo-shop-button {
   background: linear-gradient(to right, transparent 50%, white 50%);
   background-size: 200% 100%;
   background-position:right bottom;
@@ -81,7 +81,7 @@ body {
   letter-spacing: 3px;
 }
 
-#shop-now-button:hover, #view-product-button:hover {
+#shop-now-button:hover, #view-product-button:hover, #demo-shop-button:hover {
   background-position: left bottom;
   transition: all 0.5s ease;
   color: white;
@@ -110,6 +110,18 @@ body {
   top: 50%;
   left: 45%;
   transform: translate(-50%, -50%);
+}
+
+#demo-shop-button {
+  margin: 50px;
+  width: 10%;
+  height: 5%;
+  border: 1px solid white;
+  position: absolute;
+  top: 58%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  outline: none;
 }
 
 .social-container {

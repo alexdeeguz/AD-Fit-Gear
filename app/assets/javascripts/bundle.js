@@ -2343,9 +2343,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -2360,15 +2360,33 @@ var Home = /*#__PURE__*/function (_React$Component) {
   _inherits(Home, _React$Component);
 
   function Home(props) {
+    var _this;
+
     _classCallCheck(this, Home);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props));
+    _this.demoLogin = _this.demoLogin.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Home, [{
+    key: "demoLogin",
+    value: function demoLogin(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      var user = {
+        username: "demo-user",
+        password: "password"
+      };
+      this.props.login(user).then(function () {
+        return _this2.props.history.push('/categories');
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this3 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_header_container__WEBPACK_IMPORTED_MODULE_3__["default"], this.props), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main"
@@ -2379,9 +2397,13 @@ var Home = /*#__PURE__*/function (_React$Component) {
         className: "form-input",
         id: "shop-now-button",
         onClick: function onClick() {
-          return _this.props.history.push("/categories");
+          return _this3.props.history.push("/categories");
         }
-      }, "SHOP NOW"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "SHOP NOW"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "form-input",
+        id: "demo-shop-button",
+        onClick: this.demoLogin
+      }, "DEMO SHOP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "social-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/alexdeeguz/AD-Fit-Gear"
