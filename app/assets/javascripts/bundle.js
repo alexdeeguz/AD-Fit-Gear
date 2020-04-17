@@ -1195,7 +1195,7 @@ var CategoryIndexItem = /*#__PURE__*/function (_React$Component) {
         src: window.hatsURL
       }) : "", id === "tanks" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: id,
-        src: window.ryanURL
+        src: window.tanksURL
       }) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "view-product-button-container"
       }, this.props.category.name === "gear" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "LIFTING GEAR") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.category.name.toUpperCase()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
