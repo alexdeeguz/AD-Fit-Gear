@@ -13,7 +13,7 @@ class Training extends React.Component {
                     <h1>GET BIGGER, LEANER, &</h1>
                     <h1 id="stronger">STRONGER</h1>
                     <p>Join now to keep track of personal records and body composition logs to reach your fitness goals!</p>
-                    <a href="https://personal-record-tracker.herokuapp.com/">PERSONAL RECORD TRACKER</a>
+                    <a id="visited" href="https://personal-record-tracker.herokuapp.com/">PERSONAL RECORD TRACKER</a>
                     <p id="down-arrow">Or Learn More</p>
                     <p id="down-arrow">↓↓↓</p>
                 </div>
