@@ -3537,6 +3537,7 @@ var Training = /*#__PURE__*/function (_React$Component) {
       }, "AD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "GET BIGGER, LEANER, &"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         id: "stronger"
       }, "STRONGER"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Join now to keep track of personal records and body composition logs to reach your fitness goals!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        id: "visited",
         href: "https://personal-record-tracker.herokuapp.com/"
       }, "PERSONAL RECORD TRACKER"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         id: "down-arrow"
